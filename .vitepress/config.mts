@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-import { markdown, nav, sidebar, search, footer } from './configs/index.mts'
+import { markdown, nav, sidebar, search, footer, vite } from './configs/index.mts'
 
 export default defineConfig({
   srcDir: 'Article',
@@ -8,6 +8,7 @@ export default defineConfig({
   titleTemplate: false,
   description: '个人博客,前端技术,JavaScript,Typescript,Vue3,React,Node,小程序,面试题',
   markdown,
+  vite,
   themeConfig: {
     nav,
     sidebar,

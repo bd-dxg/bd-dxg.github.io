@@ -2,12 +2,12 @@ export default {
   '/InterviewQ/': [
     {
       text: '前端',
-      collapsed: true,
+      collapsed: false,
       items: [{}]
     },
     {
       text: '后端',
-      collapsed: true,
+      collapsed: false,
       items: [{}]
     }
   ],
