@@ -1,5 +1,4 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
 hero:
@@ -14,9 +13,10 @@ hero:
 features:
   - title: 告诫我自己
     details: 如果回到过去，我会这样告诫我自己
-    link: /Article/Lives/AdviceToMyPastSelf
+    link: /Lives/AdviceToMyPastSelf
   - title: 自我的提升
     details: 怎么知道我的能力处于什么水平我该往哪里努力
+    link: /Lives/AssessAndImprove
   - title: 记性与烂笔头
     details: 程序员应该怎么写博客
     link: /Lives/BloggingForProgrammers
