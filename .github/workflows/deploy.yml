@@ -51,7 +51,7 @@ jobs:
       - name: 上传构建的网页
         uses: actions/upload-pages-artifact@v3
         with:
-          path: /.vitepress/dist
+          path: .vitepress/dist
 
   # 部署工作
   deploy:
