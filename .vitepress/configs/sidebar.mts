@@ -3,7 +3,19 @@ export default {
     {
       text: '前端',
       collapsed: false,
-      items: [{}]
+      items: [
+        {
+          text: '前端性能优化',
+
+          collapsed: false,
+          items: [
+            {
+              text: '首屏优化',
+              link: '/InterviewQ/Frontend/FrontendOptimization/FirstScreenOptimization'
+            }
+          ]
+        }
+      ]
     },
     {
       text: '后端',

@@ -9,6 +9,9 @@ hero:
     - theme: brand
       text: 开始刷题!
       link: /InterviewQ/index
+    - theme: alt
+      text: 访问旧站
+      link: https://bddxg.top
 
 features:
   - title: 告诫我自己
