@@ -1,14 +1,8 @@
-# 构建 VitePress 站点并将其部署到 GitHub Pages 的示例工作流程
-#
 name: 部署博客
 
 on:
-  # 在针对 `main` 分支的推送上运行。如果你
-  # 使用 `master` 分支作为默认分支，请将其更改为 `master`
   push:
     branches: [main]
-
-  # 允许你从 Actions 选项卡手动运行此工作流程
   workflow_dispatch:
 
 # 设置 GITHUB_TOKEN 的权限，以允许部署到 GitHub Pages
@@ -26,6 +20,7 @@ concurrency:
 jobs:
   # 构建工作
   build:
+    name: 构建博客
     runs-on: ubuntu-latest
     steps:
       - name: 检查仓库
@@ -41,13 +36,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: pnpm # 或 pnpm / yarn
+          cache: pnpm
       - name: 安装Pages资源
         uses: actions/configure-pages@v4
       - name: 安装依赖
-        run: pnpm install # 或 pnpm install / yarn install / bun install
+        run: pnpm install
       - name: 打包网页
-        run: pnpm build # 或 pnpm docs:build / yarn docs:build / bun run docs:build
+        run: pnpm build
       - name: 上传构建的网页
         uses: actions/upload-pages-artifact@v3
         with:
