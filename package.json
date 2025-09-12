@@ -18,6 +18,7 @@
     "vitepress-plugin-group-icons": "^1.6.3"
   },
   "dependencies": {
+    "rough-notation": "^0.5.1",
     "vue": "^3.5.21"
   }
 }

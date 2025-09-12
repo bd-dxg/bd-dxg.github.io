@@ -1,0 +1,92 @@
+/* .vitepress/theme/rough-notation.css */
+
+/* 确保标注元素的相对定位 */
+.content-container .main :is(strong, b, em, i, code:not(pre code), mark, del, s) {
+  position: relative;
+  display: inline-block;
+}
+
+/* 为引用块添加间距 */
+.content-container .main blockquote {
+  position: relative;
+  margin: 1.5em 0;
+}
+
+/* 防止标注溢出 */
+.content-container .main {
+  overflow-x: visible;
+}
+
+/* 优化链接的标注显示 */
+.content-container .main a:not(.header-anchor):not(.nav-link) {
+  position: relative;
+  display: inline-block;
+  padding: 0 2px;
+}
+
+/* 动画过渡效果 */
+.rough-annotation {
+  transition: opacity 0.3s ease;
+}
+
+/* 自定义标注颜色主题 */
+:root {
+  --rn-highlight-color: #ffd54f;
+  --rn-underline-color: #ff6b6b;
+  --rn-box-color: #4ecdc4;
+  --rn-circle-color: #3498db;
+  --rn-bracket-color: #95a5a6;
+  --rn-strike-color: #e74c3c;
+}
+
+/* 暗色模式适配 */
+.dark {
+  --rn-highlight-color: #d19200;
+  --rn-underline-color: #ff8787;
+  --rn-box-color: #6bcfcf;
+  --rn-circle-color: #5dade2;
+  --rn-bracket-color: #bdc3c7;
+  --rn-strike-color: #ff6b6b;
+}
+
+/* 防止标注影响布局 - 针对实际生成的SVG结构 */
+svg.rough-annotation {
+  pointer-events: none !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  overflow: visible !important;
+  z-index: 1 !important;
+}
+
+/* 确保被标注的元素和容器具有正确的层级 */
+.content-container .main :is(strong, b, em, i, code:not(pre code), mark, del, s, a:not(.header-anchor):not(.nav-link)) {
+  position: relative !important;
+  z-index: 2 !important;
+  display: inline-block !important;
+}
+
+/* 为引用块设置相对定位 */
+.content-container .main blockquote {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* 确保包含SVG和标注元素的容器有正确的层叠上下文 */
+.content-container .main p,
+.content-container .main div,
+.content-container .main span {
+  position: relative;
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+  /* 在小屏幕上减少标注的 padding */
+  .content-container .main strong,
+  .content-container .main b,
+  .content-container .main em,
+  .content-container .main i,
+  .content-container .main code:not(pre code) {
+    padding: 0 1px;
+  }
+}
