@@ -29,7 +29,7 @@ export default {
     { text: '规避笔记陷阱', link: '/Lives/AvoidNoteTrap' },
     { text: '程序员该如何写博客', link: '/Lives/BloggingForProgrammers' },
     { text: '如何面对第一份开发工作', link: '/Lives/FirstDevJob' },
-    { text: '建议与身份', link: 'IdentityMatters' },
+    { text: '建议与身份', link: '/Lives/IdentityMatters' },
     { text: '一个人也可以过得很好', link: '/Lives/LivingWellAlone' },
     { text: '如何超过大多数人', link: '/Lives/OutperformOthers' },
     { text: '如果善于提问，你会厉害很多', link: '/Lives/PowerOfAsking' },
@@ -38,7 +38,6 @@ export default {
     { text: '如何做一名高级开发', link: '/Lives/QualifiedSeniorDev' },
     { text: '软件推荐', link: '/Lives/RecSoftware' },
     { text: '谎谬之言or至理名言', link: '/Lives/ProgrammerMyths' },
-    { text: '程序员从幼稚走向成熟的标志', link: '/Lives/SuccessfulMarketing' },
-    { text: '如何学习新技术', link: '/Lives/LearningNewTech' }
+    { text: '程序员从幼稚走向成熟的标志', link: '/Lives/SuccessfulMarketing' }
   ]
 }
