@@ -39,5 +39,6 @@ export default {
     { text: '软件推荐', link: '/Lives/RecSoftware' },
     { text: '谎谬之言or至理名言', link: '/Lives/ProgrammerMyths' },
     { text: '程序员从幼稚走向成熟的标志', link: '/Lives/SuccessfulMarketing' }
-  ]
+  ],
+  '/Tips/': [{ text: 'eslint与prettier配置', link: '/Tips/EslintPrettierConfig' }]
 }
