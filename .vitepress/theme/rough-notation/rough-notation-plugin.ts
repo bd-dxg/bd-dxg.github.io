@@ -37,29 +37,38 @@ const config = {
     // 加粗文本 -> 高亮效果
     'strong, b': {
       type: 'highlight' as const,
-      get color() { return getCSSVariable('--rn-highlight-color') },
+      get color() {
+        return getCSSVariable('--rn-highlight-color')
+      },
       multiline: true,
       iterations: 1,
-      padding: 2
+      padding: 2,
+      fontSize: 1.1
     },
     // 斜体文本 -> 下划线效果
     'em, i': {
       type: 'underline' as const,
-      get color() { return getCSSVariable('--rn-underline-color') },
+      get color() {
+        return getCSSVariable('--rn-underline-color')
+      },
       strokeWidth: 2,
       padding: 2
     },
     // 行内代码 -> 方框效果
     'code:not(pre code)': {
       type: 'box' as const,
-      get color() { return getCSSVariable('--rn-box-color') },
+      get color() {
+        return getCSSVariable('--rn-box-color')
+      },
       strokeWidth: 1.5,
       padding: 4
     },
     // 引用块 -> 括号效果
     blockquote: {
       type: 'bracket' as const,
-      get color() { return getCSSVariable('--rn-bracket-color') },
+      get color() {
+        return getCSSVariable('--rn-bracket-color')
+      },
       strokeWidth: 2,
       padding: [10, 10, 10, 20] as [number, number, number, number],
       brackets: ['left']
@@ -67,20 +76,26 @@ const config = {
     // 删除线文本 -> 删除效果
     'del, s': {
       type: 'crossed-off' as const,
-      get color() { return getCSSVariable('--rn-strike-color') },
+      get color() {
+        return getCSSVariable('--rn-strike-color')
+      },
       strokeWidth: 2
     },
     // 链接 -> 下划线效果
     'a:not(.header-anchor):not(.nav-link)': {
       type: 'underline' as const,
-      get color() { return getCSSVariable('--rn-link-color') },
+      get color() {
+        return getCSSVariable('--rn-link-color')
+      },
       strokeWidth: 1.5,
       padding: 5
     },
     // 标记文本 -> 高亮效果（不同颜色）
     mark: {
       type: 'highlight' as const,
-      get color() { return getCSSVariable('--rn-mark-color') },
+      get color() {
+        return getCSSVariable('--rn-mark-color')
+      },
       multiline: true,
       iterations: 2
     }
@@ -88,12 +103,42 @@ const config = {
   // 自定义数据属性配置
   customAttributes: {
     'data-notation': {
-      highlight: { type: 'highlight' as const, get color() { return getCSSVariable('--rn-custom-highlight-color') } },
-      underline: { type: 'underline' as const, get color() { return getCSSVariable('--rn-custom-underline-color') } },
-      box: { type: 'box' as const, get color() { return getCSSVariable('--rn-custom-box-color') } },
-      circle: { type: 'circle' as const, get color() { return getCSSVariable('--rn-custom-circle-color') } },
-      bracket: { type: 'bracket' as const, get color() { return getCSSVariable('--rn-custom-bracket-color') } },
-      strike: { type: 'crossed-off' as const, get color() { return getCSSVariable('--rn-custom-strike-color') } }
+      highlight: {
+        type: 'highlight' as const,
+        get color() {
+          return getCSSVariable('--rn-custom-highlight-color')
+        }
+      },
+      underline: {
+        type: 'underline' as const,
+        get color() {
+          return getCSSVariable('--rn-custom-underline-color')
+        }
+      },
+      box: {
+        type: 'box' as const,
+        get color() {
+          return getCSSVariable('--rn-custom-box-color')
+        }
+      },
+      circle: {
+        type: 'circle' as const,
+        get color() {
+          return getCSSVariable('--rn-custom-circle-color')
+        }
+      },
+      bracket: {
+        type: 'bracket' as const,
+        get color() {
+          return getCSSVariable('--rn-custom-bracket-color')
+        }
+      },
+      strike: {
+        type: 'crossed-off' as const,
+        get color() {
+          return getCSSVariable('--rn-custom-strike-color')
+        }
+      }
     }
   } as Record<string, Record<string, AnnotationOptions>>
 }

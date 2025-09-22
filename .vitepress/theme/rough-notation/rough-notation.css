@@ -41,7 +41,7 @@
 
 /* 暗色模式适配 */
 .dark {
-  --rn-highlight-color: #d19200;
+  --rn-highlight-color: #682d2d;
   --rn-underline-color: #ff8787;
   --rn-box-color: #6bcfcf;
   --rn-circle-color: #5dade2;
