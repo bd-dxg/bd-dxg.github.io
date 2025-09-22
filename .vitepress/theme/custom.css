@@ -1,0 +1,10 @@
+/* 修改VPBadge标签位置为同标题同一水平线 */
+.VPBadge {
+  margin-top: unset !important;
+  vertical-align: middle !important;
+}
+
+/* 修改文章中粗体字大小 */
+.VPDoc main strong {
+  font-size: 1.1rem;
+}

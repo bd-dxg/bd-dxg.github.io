@@ -8,8 +8,9 @@ import { useRoute } from 'vitepress'
 import roughNotationPlugin from './rough-notation/rough-notation-plugin'
 
 import './style.css'
+import 'virtual:group-icons.css'
 import './rough-notation/rough-notation.css'
-
+import './custom.css'
 export default {
   extends: DefaultTheme,
   Layout: () => {
@@ -42,8 +43,8 @@ export default {
 
       // 监听主题变化
       if (typeof window !== 'undefined') {
-        const observer = new MutationObserver((mutations) => {
-          mutations.forEach((mutation) => {
+        const observer = new MutationObserver(mutations => {
+          mutations.forEach(mutation => {
             if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
               const target = mutation.target as HTMLElement
               if (target === document.documentElement) {
