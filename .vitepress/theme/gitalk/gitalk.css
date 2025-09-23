@@ -11,7 +11,9 @@
   color: var(--vp-c-text-1) !important;
   background-color: var(--vp-c-bg) !important;
 }
-
+.gt-container .gt-comment-content:hover {
+  box-shadow: 0 0.625em 3.75em 0 #4444 !important;
+}
 .gt-header {
   border-bottom: 1px solid var(--vp-c-divider) !important;
 }
@@ -28,20 +30,17 @@
 }
 
 .gt-btn {
-  background-color: var(--vp-c-brand-1) !important;
-  border: 1px solid var(--vp-c-brand-1) !important;
+  background-image: linear-gradient(120deg, #bd34fe 30%, #41d1ff) !important;
+  /* border: 1px solid var(--vp-c-brand-1) !important; */
   color: var(--vp-c-white) !important;
 }
 
 .gt-btn:hover {
   background-color: var(--vp-c-brand-2) !important;
-  border-color: var(--vp-c-brand-2) !important;
 }
 
 .gt-btn-preview {
   background-color: var(--vp-c-bg-alt) !important;
-  border: 1px solid var(--vp-c-border) !important;
-  color: var(--vp-c-text-1) !important;
 }
 
 .gt-btn-preview:hover {
@@ -51,10 +50,13 @@
 .gt-comment {
   background-color: var(--vp-c-bg-alt) !important;
   border: 1px solid var(--vp-c-divider) !important;
+  border-radius: 5px;
 }
 
 .gt-comment-content {
   color: var(--vp-c-text-1) !important;
+  background-color: var(--vp-c-bg) !important;
+  border-radius: 5px;
 }
 
 .gt-comment-username {
@@ -64,10 +66,12 @@
 .gt-comment-date {
   color: var(--vp-c-text-2) !important;
 }
-
+/* 管理员名字样式 */
 .gt-comment-admin .gt-comment-username {
-  background-color: var(--vp-c-brand-1) !important;
+  background-image: linear-gradient(120deg, #bd34fe 30%, #41d1ff) !important;
   color: var(--vp-c-white) !important;
+  border-radius: 5px;
+  padding: 2px 5px;
 }
 
 .gt-popup {
@@ -134,7 +138,19 @@
   background-color: var(--vp-c-bg-soft) !important;
   color: var(--vp-c-text-2) !important;
 }
-
+/* 裁剪头像为圆形 */
+.gt-container .gt-avatar {
+  border-radius: 999px !important;
+  overflow: hidden !important;
+}
+/* 调整头像与回帖的间距 */
+.gt-container .gt-comment {
+  padding: 0.625rem !important;
+}
+/* 取消文字颜色指定,方便主题色切换 */
+.gt-container .gt-comment-body {
+  color: unset !important;
+}
 /* 响应式设计 */
 @media (max-width: 768px) {
   #gitalk-container {
