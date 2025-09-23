@@ -43,6 +43,9 @@ jobs:
         run: pnpm install
       - name: 打包网页
         run: pnpm build
+        env:
+          VITE_GITALK_CLIENT_ID: ${{ secrets.GITALK_CLIENT_ID }}
+          VITE_GITALK_CLIENT_SECRET: ${{ secrets.GITALK_CLIENT_SECRET }}
       - name: 上传构建的网页
         uses: actions/upload-pages-artifact@v3
         with:

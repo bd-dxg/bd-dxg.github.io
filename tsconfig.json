@@ -16,5 +16,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": [".vitepress/**/*", "Article/**/*"]
+  "include": [".vitepress/**/*", "Article/**/*", "*.d.ts"]
 }

@@ -1,0 +1,148 @@
+/* Gitalk 样式定制 */
+
+#gitalk-container {
+  margin-top: 2rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+/* 适配VitePress的颜色变量 */
+.gt-container {
+  color: var(--vp-c-text-1) !important;
+  background-color: var(--vp-c-bg) !important;
+}
+
+.gt-header {
+  border-bottom: 1px solid var(--vp-c-divider) !important;
+}
+
+.gt-header-textarea {
+  background-color: var(--vp-c-bg-alt) !important;
+  border: 1px solid var(--vp-c-border) !important;
+  color: var(--vp-c-text-1) !important;
+}
+
+.gt-header-textarea:focus {
+  border-color: var(--vp-c-brand-1) !important;
+  box-shadow: 0 0 0 2px var(--vp-c-brand-soft) !important;
+}
+
+.gt-btn {
+  background-color: var(--vp-c-brand-1) !important;
+  border: 1px solid var(--vp-c-brand-1) !important;
+  color: var(--vp-c-white) !important;
+}
+
+.gt-btn:hover {
+  background-color: var(--vp-c-brand-2) !important;
+  border-color: var(--vp-c-brand-2) !important;
+}
+
+.gt-btn-preview {
+  background-color: var(--vp-c-bg-alt) !important;
+  border: 1px solid var(--vp-c-border) !important;
+  color: var(--vp-c-text-1) !important;
+}
+
+.gt-btn-preview:hover {
+  background-color: var(--vp-c-bg-elv) !important;
+}
+
+.gt-comment {
+  background-color: var(--vp-c-bg-alt) !important;
+  border: 1px solid var(--vp-c-divider) !important;
+}
+
+.gt-comment-content {
+  color: var(--vp-c-text-1) !important;
+}
+
+.gt-comment-username {
+  color: var(--vp-c-brand-1) !important;
+}
+
+.gt-comment-date {
+  color: var(--vp-c-text-2) !important;
+}
+
+.gt-comment-admin .gt-comment-username {
+  background-color: var(--vp-c-brand-1) !important;
+  color: var(--vp-c-white) !important;
+}
+
+.gt-popup {
+  background-color: var(--vp-c-bg) !important;
+  border: 1px solid var(--vp-c-border) !important;
+  box-shadow: var(--vp-shadow-3) !important;
+}
+
+.gt-action {
+  color: var(--vp-c-text-2) !important;
+}
+
+.gt-action:hover {
+  color: var(--vp-c-brand-1) !important;
+}
+
+.gt-svg {
+  fill: var(--vp-c-text-2) !important;
+}
+
+.gt-svg:hover {
+  fill: var(--vp-c-brand-1) !important;
+}
+
+/* 分页器样式 */
+.gt-page-btn {
+  background-color: var(--vp-c-bg-alt) !important;
+  border: 1px solid var(--vp-c-border) !important;
+  color: var(--vp-c-text-1) !important;
+}
+
+.gt-page-btn:hover {
+  background-color: var(--vp-c-bg-elv) !important;
+}
+
+.gt-page-btn.gt-page-btn-current {
+  background-color: var(--vp-c-brand-1) !important;
+  border-color: var(--vp-c-brand-1) !important;
+  color: var(--vp-c-white) !important;
+}
+
+/* 链接样式 */
+.gt-link {
+  color: var(--vp-c-brand-1) !important;
+}
+
+.gt-link:hover {
+  color: var(--vp-c-brand-2) !important;
+}
+
+/* 代码块样式 */
+.gt-comment-content pre,
+.gt-comment-content code {
+  background-color: var(--vp-code-bg) !important;
+  color: var(--vp-c-text-code) !important;
+}
+
+.gt-comment-content pre {
+  border: 1px solid var(--vp-c-divider) !important;
+}
+
+.gt-comment-content blockquote {
+  border-left: 4px solid var(--vp-c-brand-1) !important;
+  background-color: var(--vp-c-bg-soft) !important;
+  color: var(--vp-c-text-2) !important;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  #gitalk-container {
+    margin-top: 1rem;
+    padding: 0.5rem 0;
+  }
+
+  .gt-container {
+    padding: 0 1rem !important;
+  }
+}
