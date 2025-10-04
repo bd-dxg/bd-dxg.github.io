@@ -1,30 +1,22 @@
 # 常用软件
 
-## MacOS 软件
+## win 软件
 
-|         **名称**          |               **功能**               | **支持平台**  |                                                                                                            **主页**                                                                                                             |
-| :-----------------------: | :----------------------------------: | :-----------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|          Alfred           |    快捷启动、剪贴板管理、代码片段    |    `MacOS`    |                                                                                        [macapp](https://macapp.org.cn/app/alfred-5.html)                                                                                        |
-|           ishot           | 截图工具(长截图、贴图、gif/MP4 录制) |    `MacOS`    | [AppStore](https://apps.apple.com/cn/app/ishot-%E4%BC%98%E7%A7%80%E7%9A%84%E6%88%AA%E5%9B%BE%E8%B4%B4%E5%9B%BE%E5%BD%95%E5%B1%8F%E5%BD%95%E9%9F%B3ocr%E5%8F%96%E8%89%B2%E6%A0%87%E6%B3%A8%E5%B7%A5%E5%85%B7/id1485844094?mt=12) |
-|     Macs Fan Control      |             风扇主动控制             | `MacOS`,`Win` |                                                                                    [官网](https://crystalidea.com/macs-fan-control/download)                                                                                    |
-|            bob            |          划词翻译 截图翻译           |    `MacOS`    |                                                       [AppStore](https://apps.apple.com/cn/app/bob-%E7%BF%BB%E8%AF%91%E5%92%8C-ocr-%E5%B7%A5%E5%85%B7/id1630034110?mt=12)                                                       |
-| A Better Finder Rename 11 |         批量重命名(支持正则)         |    `MacOS`    |                                                                                  [xclient](https://xclient.info/s/a-better-finder-rename.html)                                                                                  |
-|           Picgo           |               图床工具               | `MacOS`,`Win` |                                                                                     [GitHub](https://github.com/Molunerfinn/PicGo/releases)                                                                                     |
-|         Rectangle         |             窗口管理工具             |    `MacOS`    |                                                                                                [官网](https://rectangleapp.com/)                                                                                                |
-|          PopClip          |     划词后打开链接、复制、翻译等     |    `MacOS`    |                                                                                        [macapp](https://macapp.org.cn/app/popclip.html)                                                                                         |
-|         Geelevel          |             远程控制工具             | `MacOS`,`Win` |                                                                                     [官网](https://www.geelevel.com/softwaredownload.html)                                                                                      |
-|      MonitorControl       |           外接屏幕亮度控制           |    `MacOS`    |                                                                                   [Github](https://github.com/MonitorControl/MonitorControl)                                                                                    |
+这次更新系统到 25H2, 顺便整理一下常用的软件,大部分软件我都是用了免安装版本(便携版/绿色版), 这样重装系统后,这些软件不需要重新安装一遍,只需要把程序图标链接到桌面即可.
 
-## Windows 软件
+| 软件名称      | 软件描述                                               | 软件地址                                                                                        |
+| ------------- | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
+| scoop         | 便捷安装开源软件,例如 nodeJS,pnpm,oh-my-posh,NF 字体等 | [点我跳转](https://scoop.sh/)                                                                   |
+| oh-my-posh    | 终端套件,可以使用很多的终端主题,还有自动补全等插件     | [点我跳转](https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest)                        |
+| clash-party   | 代理软件,程序员必备                                    | [点我跳转](https://github.com/mihomo-party-org/clash-party/releases/latest)                     |
+| lx-music      | 听全平台的音乐(网易云,酷狗,酷我,QQ 等)                 | [点我跳转](https://github.com/lyswhut/lx-music-desktop/releases/latest)                         |
+| Pixpin        | 截图软件,长截图,录制 gif,mp4,高亮,曲线箭头等           | [点我跳转](https://pixpin.cn/docs/change-log/2.1.5.0.html#%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80) |
+| utools        | 效率软件,推荐插件:悬浮剪贴板,易翻翻译,超级文本片段     | [点我跳转](https://www.u-tools.cn/download/)                                                    |
+| PortableGit   | 便携版 git,重装系统不需要再次安装,只需配置环境变量     | [点我跳转](https://git-scm.com/downloads/win)                                                   |
+| Wise Care 365 | 系统清理软件,可清理残留注册表,系统垃圾等,还能优化系统  | [点我跳转](https://www.fzxx.xyz/wise-care-365/)                                                 |
 
-|   **名称**    |       **功能**       | **支持平台**  |                                                  **主页**                                                  |
-| :-----------: | :------------------: | :-----------: | :--------------------------------------------------------------------------------------------------------: |
-|     ditto     |    剪贴板管理软件    |     `Win`     |                                [Github](https://github.com/sabrogden/Ditto)                                |
-|    Pixpin     | 截图工具,支持长截图  |     `Win`     |                                       [官网](https://pixpinapp.com/)                                       |
-|      pot      |  划词翻译,截图翻译   | `Win`,`MacOS` |                                        [官网](https://pot-app.com/)                                        |
-|      IDM      |    多线程下载工具    |     `Win`     | [官网](https://www.internetdownloadmanager.com/) [激活](https://github.com/lstprjct/IDM-Activation-Script) |
-|  oh-my-posh   |     终端主题脚本     |     `Win`     |                           [Github](https://github.com/JanDeDobbeleer/oh-my-posh)                           |
-|     Picgo     | 图片上传指定图床工具 | `Win`,`MacOS` |                                [Github](https://picgo.github.io/PicGo-Doc/)                                |
-|   PowerToys   |   win 官方工具合集   |     `win`     |                              [Github](https://github.com/microsoft/PowerToys)                              |
-|  FancyZones   |     窗口管理工具     |     `win`     |                                              来自`PowerToys`                                               |
-| PowerToys Run |  快速启动/搜索/计算  |     `win`     |                                              来自`PowerToys`                                               |
+还有些杂七杂八的 比如绿色版迅雷(仅 250MB),绿色版 WPS(仅 150MB),批量重命名工具,就不一一例举了
+
+## Mac 软件
+
+> 因目前已经没有在用 mac 了, 所以对之前使用的软件不做推荐

@@ -45,6 +45,7 @@ export default {
   "/Tips/": [
     { text: "eslint与prettier配置", link: "/Tips/EslintPrettierConfig" },
     { text: "本地开发启用https", link: "/Tips/LocalHttpsSetup" },
-    { text: "软件推荐", link: "/Lives/RecSoftware" },
+    { text: "软件推荐", link: "/Tips/RecSoftware" },
+    { text: "自用插件", link: "/Tips/MyCodePlugin" },
   ],
 };
