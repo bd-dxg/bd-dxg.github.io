@@ -1,4 +1,8 @@
 <template>
+  <div class="comment-rules">
+    <p>📌 评论规则</p>
+    需要 GitHub 账号登录 禁止发布广告、无关内容 请保持友善讨论
+  </div>
   <div id="gitalk-container"></div>
 </template>
 
@@ -74,7 +78,10 @@
   #gitalk-container {
     margin-top: 2rem;
   }
-
+  .comment-rules {
+    margin-top: 1rem;
+    text-align: center;
+  }
   /* 深色主题适配 */
   .dark #gitalk-container {
     --gitalk-color-main: #ffffff;
