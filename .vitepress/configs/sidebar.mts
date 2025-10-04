@@ -28,6 +28,7 @@ export default {
       text: "如果回到过去，我会这样告诫我自己",
       link: "/Lives/AdviceToMyPastSelf",
     },
+    { text: "学不进去到主动突破", link: "/Lives/FromStuckToBreakthrough" },
     { text: "自我的提升", link: "/Lives/AssessAndImprove" },
     { text: "规避笔记陷阱", link: "/Lives/AvoidNoteTrap" },
     { text: "程序员该如何写博客", link: "/Lives/BloggingForProgrammers" },
