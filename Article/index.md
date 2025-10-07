@@ -14,9 +14,9 @@ hero:
       link: https://old.bddxg.top
 
 features:
-  - title: 告诫我自己
-    details: 如果回到过去，我会这样告诫我自己
-    link: /Lives/AdviceToMyPastSelf
+  - title: AI 工具配置
+    details: 配置使用方法及提示词
+    link: /Tips/AIToolsConfig
   - title: 自我的提升
     details: 怎么知道我的能力处于什么水平我该往哪里努力
     link: /Lives/AssessAndImprove

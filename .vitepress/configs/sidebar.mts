@@ -44,6 +44,7 @@ export default {
     { text: "程序员从幼稚走向成熟的标志", link: "/Lives/SuccessfulMarketing" },
   ],
   "/Tips/": [
+    { text: "AI工具配置", link: "/Tips/AIToolsConfig" },
     { text: "eslint与prettier配置", link: "/Tips/EslintPrettierConfig" },
     { text: "本地开发启用https", link: "/Tips/LocalHttpsSetup" },
     { text: "软件推荐", link: "/Tips/RecSoftware" },
