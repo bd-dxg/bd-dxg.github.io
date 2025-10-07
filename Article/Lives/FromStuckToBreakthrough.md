@@ -1,5 +1,7 @@
 # 从“学不进去” 到 “主动突破”
 
+> 原地址: [Advice for lost computer science students](https://www.youtube.com/watch?v=RoW5E-HGP5Y)
+
 ## 专注深耕领域,突破瓶颈
 
 ![软件工程师学习.webp](https://images.bddxg.top/blog/1759548908093.webp)
@@ -122,7 +124,7 @@
 
 我知道有很多人像我一样在计算机科学领域挣扎
 
-所以我考虑或许创建一个社区比如 Discord 我们可以分享想法和所有想说的话
+所以我考虑或许创建一个社区比如 [Discord](https://discord.gg/dMFBYRPdvG) 我们可以分享想法和所有想说的话
 
 如果你还在这里告诉我如果你如果你对此感兴趣
 
