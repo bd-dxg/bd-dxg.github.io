@@ -49,5 +49,7 @@ export default {
     { text: "本地开发启用https", link: "/Tips/LocalHttpsSetup" },
     { text: "软件推荐", link: "/Tips/RecSoftware" },
     { text: "自用插件", link: "/Tips/MyCodePlugin" },
+    { text: "glazeWM平铺窗口管理器", link: "/Tips/GlazeWMIntro" },
+    { text: "职场高频英语词汇", link: "/Tips/WorkplaceAbbreviations" },
   ],
 };
