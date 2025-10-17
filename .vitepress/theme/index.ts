@@ -19,7 +19,7 @@ export default {
   Layout: () => {
     return h(DefaultTheme.Layout, null, {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
-      'doc-after': () => h(GitalkLayout)
+      'doc-after': () => h(GitalkLayout),
     })
   },
   // enhanceApp({ app, router, siteData }) {
@@ -64,7 +64,7 @@ export default {
 
         observer.observe(document.documentElement, {
           attributes: true,
-          attributeFilter: ['class']
+          attributeFilter: ['class'],
         })
 
         // 清理函数
@@ -91,7 +91,7 @@ export default {
             }, 100)
           })
         }
-      }
+      },
     )
-  }
+  },
 } satisfies Theme

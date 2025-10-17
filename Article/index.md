@@ -2,9 +2,9 @@
 layout: home
 
 hero:
-  name: "冰冻大西瓜"
-  text: "简单的个人博客"
-  tagline: "技术栈: vue2/3,typescript,tailwindcss,miniprogram"
+  name: '冰冻大西瓜'
+  text: '简单的个人博客'
+  tagline: '技术栈: vue2/3,typescript,tailwindcss,miniprogram'
   actions:
     - theme: brand
       text: 加入Discord群组

@@ -20,7 +20,7 @@ export default defineConfig({
     lastUpdatedText: '更新于',
     docFooter: {
       prev: '上一页',
-      next: '下一页'
-    }
-  }
+      next: '下一页',
+    },
+  },
 })

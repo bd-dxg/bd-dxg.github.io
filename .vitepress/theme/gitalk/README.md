@@ -22,6 +22,7 @@ VITE_GITALK_CLIENT_SECRET=your_client_secret_here
 ```
 
 **注意**:
+
 - 使用 `VITE_` 前缀，这样 Vite 会自动注入这些变量
 - 确保将 `.env` 文件添加到 `.gitignore` 中，避免提交敏感信息
 
@@ -47,7 +48,7 @@ export const gitalkConfig: GitalkConfig = {
   perPage: 10, // 每页评论数
   pagerDirection: 'last', // 排序方式
   createIssueManually: true, // 手动创建issue
-  enableHotKey: true // 启用快捷键
+  enableHotKey: true, // 启用快捷键
 
   // 代理配置（可选，用于解决网络问题）
   // proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token',
@@ -87,6 +88,7 @@ export const gitalkConfig: GitalkConfig = {
 ## 7. 配置选项详解
 
 ### 必需配置
+
 - `clientID`: GitHub OAuth App 的 Client ID
 - `clientSecret`: GitHub OAuth App 的 Client Secret
 - `repo`: GitHub 仓库名
@@ -94,6 +96,7 @@ export const gitalkConfig: GitalkConfig = {
 - `admin`: 管理员用户名数组
 
 ### 可选配置
+
 - `labels`: GitHub Issue 标签（默认: `['Gitalk']`）
 - `language`: 界面语言（默认: `'zh-CN'`）
 - `perPage`: 每页显示评论数（默认: `10`）
@@ -127,6 +130,7 @@ export const gitalkConfig: GitalkConfig = {
 ### 调试方法
 
 1. **检查环境变量**:
+
    ```javascript
    console.log('Client ID:', import.meta.env.VITE_GITALK_CLIENT_ID)
    // 注意：不要在生产环境中打印 Client Secret

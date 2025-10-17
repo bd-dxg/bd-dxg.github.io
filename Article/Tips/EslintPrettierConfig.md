@@ -35,7 +35,7 @@ configureVueProject({
   // 指定.vue文件中的脚本语言
   scriptLangs: ['ts'], // 推荐只使用TypeScript
   // 项目根目录
-  rootDir: import.meta.dirname
+  rootDir: import.meta.dirname,
 })
 
 export default defineConfigWithVueTs(
@@ -122,9 +122,9 @@ export default defineConfigWithVueTs(
       // 禁止使用var声明变量
       // 强制使用let/const，避免var的作用域问题
       // 例如：let count = 0 ✓，var count = 0 ✗
-      'no-var': 'error'
-    }
-  }
+      'no-var': 'error',
+    },
+  },
 )
 ```
 
@@ -180,7 +180,7 @@ const config = {
   bracketSpacing: true,
   arrowParens: 'avoid',
   htmlWhitespaceSensitivity: 'ignore',
-  bracketSameLine: true
+  bracketSameLine: true,
 }
 
 export default config

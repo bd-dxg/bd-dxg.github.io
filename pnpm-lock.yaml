@@ -21,6 +21,9 @@ importers:
       '@types/node':
         specifier: ^24.5.2
         version: 24.5.2
+      prettier:
+        specifier: ^3.6.2
+        version: 3.6.2
       typescript:
         specifier: ^5.9.2
         version: 5.9.2
@@ -1047,6 +1050,11 @@ packages:
 
   preact@8.1.0:
     resolution: {integrity: sha512-JrRktQ5XOM5TXAc47FED+KKamm9yopsrLSj0x6e8++gZanXag4G84Zyz713LoywGDfXCi9acT5y/Hs3NhP+SdQ==}
+
+  prettier@3.6.2:
+    resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
+    engines: {node: '>=14'}
+    hasBin: true
 
   pretty-format@3.8.0:
     resolution: {integrity: sha512-WuxUnVtlWL1OfZFQFuqvnvs6MiAGk9UNsBostyBOB0Is9wb5uRESevA6rnl/rkksXaGX3GzZhPup5d6Vp1nFew==}
@@ -2415,6 +2423,8 @@ snapshots:
       preact: 8.1.0
 
   preact@8.1.0: {}
+
+  prettier@3.6.2: {}
 
   pretty-format@3.8.0: {}
 

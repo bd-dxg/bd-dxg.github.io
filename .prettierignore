@@ -1,0 +1,14 @@
+# Prettier 忽略文件
+
+# 忽略 .vitepress 项目相关
+.vitepress/cache
+.vitepress/dist
+# 常见的其他忽略项
+node_modules
+
+# 锁定文件
+package-lock.json
+pnpm-lock.yaml
+
+# 环境变量文件
+.env

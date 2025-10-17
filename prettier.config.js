@@ -8,11 +8,11 @@ const config = {
   useTabs: false,
   semi: false,
   singleQuote: true,
-  quoteProps: "as-needed",
+  quoteProps: 'as-needed',
   bracketSpacing: true,
-  arrowParens: "avoid",
-  htmlWhitespaceSensitivity: "ignore",
+  arrowParens: 'avoid',
+  htmlWhitespaceSensitivity: 'ignore',
   bracketSameLine: true,
-};
+}
 
-export default config;
+export default config

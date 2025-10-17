@@ -16,7 +16,7 @@ export const gitalkConfig: GitalkConfig = {
   perPage: 10, // 每页评论数
   pagerDirection: 'last', // 排序方式
   createIssueManually: true, // 手动创建issue
-  enableHotKey: true // 启用快捷键
+  enableHotKey: true, // 启用快捷键
 
   // 代理配置（可选，用于解决网络问题）
   // proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token',
