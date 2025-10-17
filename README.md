@@ -111,6 +111,7 @@ pnpm preview
 3. 部署到 GitHub Pages
 
 需要在仓库 Settings > Secrets 中配置：
+
 - `GITALK_CLIENT_ID`
 - `GITALK_CLIENT_SECRET`
 
@@ -129,25 +130,13 @@ pnpm preview
 Rough Notation 已自动适配 Markdown 语法，无需手动添加类名：
 
 ```markdown
-**加粗文本** - 自动应用手绘高亮效果
-*斜体文本* - 自动应用手绘下划线效果
+_斜体文本_ - 自动应用手绘下划线效果
 `行内代码` - 自动应用手绘方框效果
+
 > 引用内容 - 自动应用手绘左括号效果
-~~删除线~~ - 自动应用手绘删除效果
-[链接文本](url) - 自动应用手绘下划线效果
+> ~~删除线~~ - 自动应用手绘删除效果
+> [链接文本](url) - 自动应用手绘下划线效果
 ```
-
-还支持自定义数据属性进行更精细的控制：
-
-```html
-<span data-notation="highlight">自定义高亮</span>
-<span data-notation="circle">圆圈标注</span>
-<span data-notation="box">方框标注</span>
-```
-
-## 🤝 贡献
-
-欢迎提交 Issue 和 Pull Request！
 
 ## 📄 许可证
 
