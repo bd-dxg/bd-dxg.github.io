@@ -35,16 +35,16 @@ const config = {
   // 元素选择器和对应的标注样式
   selectors: {
     // 加粗文本 -> 高亮效果
-    'strong, b': {
-      type: 'highlight' as const,
-      get color() {
-        return getCSSVariable('--rn-highlight-color')
-      },
-      multiline: true,
-      iterations: 1,
-      padding: 2,
-      fontSize: 1.1
-    },
+    // 'strong, b': {
+    //   type: 'highlight' as const,
+    //   get color() {
+    //     return getCSSVariable('--rn-highlight-color')
+    //   },
+    //   multiline: true,
+    //   iterations: 1,
+    //   padding: 2,
+    //   fontSize: 1.1
+    // },
     // 斜体文本 -> 下划线效果
     'em, i': {
       type: 'underline' as const,
@@ -52,7 +52,7 @@ const config = {
         return getCSSVariable('--rn-underline-color')
       },
       strokeWidth: 2,
-      padding: 2
+      padding: 2,
     },
     // 行内代码 -> 方框效果
     'code:not(pre code)': {
@@ -61,7 +61,7 @@ const config = {
         return getCSSVariable('--rn-box-color')
       },
       strokeWidth: 1.5,
-      padding: 4
+      padding: 4,
     },
     // 引用块 -> 括号效果
     blockquote: {
@@ -71,7 +71,7 @@ const config = {
       },
       strokeWidth: 2,
       padding: [10, 10, 10, 20] as [number, number, number, number],
-      brackets: ['left']
+      brackets: ['left'],
     },
     // 删除线文本 -> 删除效果
     'del, s': {
@@ -79,7 +79,7 @@ const config = {
       get color() {
         return getCSSVariable('--rn-strike-color')
       },
-      strokeWidth: 2
+      strokeWidth: 2,
     },
     // 链接 -> 下划线效果
     'a:not(.header-anchor):not(.nav-link)': {
@@ -88,7 +88,7 @@ const config = {
         return getCSSVariable('--rn-link-color')
       },
       strokeWidth: 1.5,
-      padding: 5
+      padding: 5,
     },
     // 标记文本 -> 高亮效果（不同颜色）
     mark: {
@@ -97,8 +97,8 @@ const config = {
         return getCSSVariable('--rn-mark-color')
       },
       multiline: true,
-      iterations: 2
-    }
+      iterations: 2,
+    },
   },
   // 自定义数据属性配置
   customAttributes: {
@@ -107,40 +107,40 @@ const config = {
         type: 'highlight' as const,
         get color() {
           return getCSSVariable('--rn-custom-highlight-color')
-        }
+        },
       },
       underline: {
         type: 'underline' as const,
         get color() {
           return getCSSVariable('--rn-custom-underline-color')
-        }
+        },
       },
       box: {
         type: 'box' as const,
         get color() {
           return getCSSVariable('--rn-custom-box-color')
-        }
+        },
       },
       circle: {
         type: 'circle' as const,
         get color() {
           return getCSSVariable('--rn-custom-circle-color')
-        }
+        },
       },
       bracket: {
         type: 'bracket' as const,
         get color() {
           return getCSSVariable('--rn-custom-bracket-color')
-        }
+        },
       },
       strike: {
         type: 'crossed-off' as const,
         get color() {
           return getCSSVariable('--rn-custom-strike-color')
-        }
-      }
-    }
-  } as Record<string, Record<string, AnnotationOptions>>
+        },
+      },
+    },
+  } as Record<string, Record<string, AnnotationOptions>>,
 }
 
 // 存储所有标注实例
@@ -177,7 +177,7 @@ function applyAnnotation(element: HTMLElement, options: AnnotationOptions, delay
   const annotationConfig = {
     ...options,
     animate: config.animate,
-    animationDuration: config.animationDuration
+    animationDuration: config.animationDuration,
   } as any
 
   // 创建标注
@@ -279,8 +279,8 @@ function lazyInitRoughNotation(container = document.body) {
       })
     },
     {
-      rootMargin: '50px'
-    }
+      rootMargin: '50px',
+    },
   )
 
   // 观察所有目标元素
@@ -303,7 +303,7 @@ export default {
   init: initRoughNotation,
   lazyInit: lazyInitRoughNotation,
   cleanup: cleanupAnnotations,
-  annotate: applyAnnotation
+  annotate: applyAnnotation,
 }
 
 // 也可以单独导出 annotate 函数供手动使用

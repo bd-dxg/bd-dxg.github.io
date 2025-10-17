@@ -4,7 +4,28 @@
   vertical-align: middle !important;
 }
 
-/* 修改文章中粗体字大小 */
+/* 修改文章中粗体样式 */
 .VPDoc main strong {
-  font-size: 1.1rem;
+  --num: 0;
+  --deg: calc(var(--num) * 1deg);
+  background: linear-gradient(120deg, hsl(var(--deg), 70%, 60%) 30%, hsl(calc(var(--deg) + 30deg), 70%, 60%));
+  font-weight: bold;
+  color: transparent;
+  background-clip: text;
+  animation: rotate 12s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    --num: 0;
+  }
+  to {
+    --num: 360;
+  }
+}
+
+@property --num {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
 }
