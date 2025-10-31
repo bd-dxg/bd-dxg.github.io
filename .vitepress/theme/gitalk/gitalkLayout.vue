@@ -7,8 +7,15 @@
 </template>
 
 <script setup>
-import 'gitalk/dist/gitalk.css'
-import Gitalk from 'gitalk'
+// 动态导入Gitalk以减少主bundle大小
+const loadGitalk = async () => {
+  if (typeof window !== 'undefined') {
+    const { default: Gitalk } = await import('gitalk')
+    await import('gitalk/dist/gitalk.css')
+    return Gitalk
+  }
+  return null
+}
 import { onMounted, onUnmounted, watch } from 'vue'
 import { useRoute } from 'vitepress'
 import { gitalkConfig, generatePageId, getPageTitle, generateBody } from './config'
@@ -49,8 +56,12 @@ watch(
   },
 )
 
-function initGitalk() {
+async function initGitalk() {
   try {
+    // 动态加载Gitalk
+    const Gitalk = await loadGitalk()
+    if (!Gitalk) return
+
     // 生成页面唯一ID
     const id = generatePageId(route.path)
 
