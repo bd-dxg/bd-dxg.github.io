@@ -9,6 +9,7 @@ export default defineConfig({
   description: '个人博客,前端技术,JavaScript,Typescript,Vue3,React,Node,小程序,面试题',
   markdown,
   vite,
+  head: [['link', { rel: 'icon', href: 'https://images.bddxg.top/blog/logo.webp' }]],
   themeConfig: {
     nav,
     sidebar,
