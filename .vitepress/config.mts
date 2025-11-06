@@ -14,7 +14,7 @@ export default defineConfig({
     sidebar,
     search,
     footer,
-    logo: 'https://images.bddxg.top/blog/logo.webp',
+    logo: 'https://images.bddxg.top/blog/1762394897704.png',
     outline: 'deep',
     outlineTitle: '文章目录',
     lastUpdatedText: '更新于',
