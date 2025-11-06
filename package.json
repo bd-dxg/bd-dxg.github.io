@@ -12,7 +12,6 @@
   },
   "author": "bddxg",
   "license": "GPL-3.0-only",
-  "packageManager": "pnpm@10.15.0",
   "devDependencies": {
     "@types/node": "^24.5.2",
     "prettier": "^3.6.2",
