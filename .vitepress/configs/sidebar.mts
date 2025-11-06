@@ -5,15 +5,12 @@ export default {
       collapsed: false,
       items: [
         {
-          text: '前端性能优化',
-
-          collapsed: false,
-          items: [
-            {
-              text: '首屏优化',
-              link: '/InterviewQ/Frontend/FrontendOptimization/FirstScreenOptimization',
-            },
-          ],
+          text: '首屏优化',
+          link: '/InterviewQ/Frontend/FirstScreenOptimization',
+        },
+        {
+          text: '系统稳定性保障方案',
+          link: '/InterviewQ/Frontend/SystemStability',
         },
       ],
     },
