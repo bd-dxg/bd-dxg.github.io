@@ -3,10 +3,11 @@ import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 
-import { onMounted, watch, nextTick } from 'vue'
+import { onMounted, watch, nextTick, onUnmounted } from 'vue'
 import { useRoute } from 'vitepress'
 import roughNotationPlugin from './rough-notation/rough-notation-plugin'
 import GitalkLayout from './gitalk/gitalkLayout.vue'
+import { initCopyListener, removeCopyListener } from './utils/copyWithCopyright'
 
 import './style.css'
 import 'virtual:group-icons.css'
@@ -45,6 +46,14 @@ export default {
     onMounted(() => {
       initAnnotations()
 
+      // 初始化复制版权信息功能
+      if (typeof window !== 'undefined') {
+        initCopyListener({
+          author: '冰冻大西瓜',
+          minLength: 50,
+        })
+      }
+
       // 监听主题变化
       if (typeof window !== 'undefined') {
         const observer = new MutationObserver(mutations => {
@@ -73,6 +82,13 @@ export default {
             observer.disconnect()
           }
         })
+      }
+    })
+
+    // 组件卸载时移除复制监听器
+    onUnmounted(() => {
+      if (typeof window !== 'undefined') {
+        removeCopyListener()
       }
     })
 
