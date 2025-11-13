@@ -5,40 +5,30 @@ on:
     branches: [main]
   workflow_dispatch:
 
-# 设置 GITHUB_TOKEN 的权限，以允许部署到 GitHub Pages
+# 设置 GITHUB_TOKEN 的权限
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 # 只允许同时进行一次部署，跳过正在运行和最新队列之间的运行队列
 # 但是，不要取消正在进行的运行，因为我们希望允许这些生产部署完成
 concurrency:
-  group: pages
+  group: deploy-to-server
   cancel-in-progress: false
 
 jobs:
-  # 构建工作
-  build:
-    name: 构建博客
+  # 构建并部署到自用服务器
+  build-and-deploy:
+    name: 构建并部署博客
     runs-on: ubuntu-latest
     steps:
       - name: 检查仓库
-        uses: actions/checkout@v4
+        uses: actions/checkout@main
         with:
           fetch-depth: 0 # 如果未启用 lastUpdated，则不需要
       - name: 设置 pnpm 为包管理器
-        uses: pnpm/action-setup@v3 # 如果使用 pnpm，请取消此区域注释
-        with:
-          version: 10
-      # - uses: oven-sh/setup-bun@v1 # 如果使用 Bun，请取消注释
+        uses: pnpm/action-setup@main
       - name: 安装Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: pnpm
-      - name: 安装Pages资源
-        uses: actions/configure-pages@v4
+        uses: actions/setup-node@main
       - name: 安装依赖
         run: pnpm install
       - name: 打包网页
@@ -46,20 +36,18 @@ jobs:
         env:
           VITE_GITALK_CLIENT_ID: ${{ secrets.GITALK_CLIENT_ID }}
           VITE_GITALK_CLIENT_SECRET: ${{ secrets.GITALK_CLIENT_SECRET }}
-      - name: 上传构建的网页
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: .vitepress/dist
-
-  # 部署工作
-  deploy:
-    environment:
-      name: 设置环境变量
-      url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
-    runs-on: ubuntu-latest
-    name: 部署博客
-    steps:
-      - name: 部署github.io页面
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: 发布到腾讯云
+        uses: easingthemes/ssh-deploy@main
+        env:
+          # 私钥
+          SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+          # SCP参数
+          ARGS: '-avzr --delete'
+          # 源目录
+          SOURCE: '.vitepress/dist'
+          # 服务器ip
+          REMOTE_HOST: ${{ secrets.REMOTE_TXHOST }}
+          # 用户
+          REMOTE_USER: 'root'
+          # 目标地址
+          TARGET: '/var/www/site'
