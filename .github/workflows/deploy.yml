@@ -26,7 +26,7 @@ jobs:
         with:
           fetch-depth: 0 # 如果未启用 lastUpdated，则不需要
       - name: 设置 pnpm 为包管理器
-        uses: pnpm/action-setup@main
+        uses: pnpm/action-setup@v4
       - name: 安装Node
         uses: actions/setup-node@main
       - name: 安装依赖
