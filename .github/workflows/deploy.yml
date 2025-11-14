@@ -48,8 +48,8 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
           # SCP参数
           ARGS: '-avzr --delete'
-          # 源目录
-          SOURCE: '.vitepress/dist'
+          # 源目录（末尾的斜杠表示复制目录内容而非目录本身）
+          SOURCE: '.vitepress/dist/'
           # 服务器ip
           REMOTE_HOST: ${{ secrets.REMOTE_TXHOST }}
           # 用户
