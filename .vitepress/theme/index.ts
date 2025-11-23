@@ -77,7 +77,7 @@ export default {
         })
 
         // 清理函数
-        onMounted(() => {
+        onUnmounted(() => {
           return () => {
             observer.disconnect()
           }
