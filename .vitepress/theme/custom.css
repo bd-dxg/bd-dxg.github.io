@@ -4,6 +4,12 @@
   vertical-align: middle !important;
 }
 
+@property --num {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
+}
+
 /* 修改文章中粗体样式 */
 .VPDoc main strong {
   --num: 0;
@@ -17,6 +23,13 @@
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
+/* 覆盖系统的"减少动画"设置，强制显示动画 */
+@media (prefers-reduced-motion: reduce) {
+  .VPDoc main strong {
+    animation: rotate 12s linear infinite !important;
+  }
+}
+
 @keyframes rotate {
   from {
     --num: 0;
@@ -24,12 +37,6 @@
   to {
     --num: 360;
   }
-}
-
-@property --num {
-  syntax: '<number>';
-  inherits: false;
-  initial-value: 0;
 }
 
 /* 调整页面默认宽度,适配高分屏 */
