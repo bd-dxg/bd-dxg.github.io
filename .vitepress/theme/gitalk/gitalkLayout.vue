@@ -6,13 +6,11 @@
   <div id="gitalk-container"></div>
 </template>
 
-<script setup>
-// 动态导入Gitalk以减少主bundle大小
-const loadGitalk = async () => {
-  if (typeof window !== 'undefined') {
-    const { default: Gitalk } = await import('gitalk')
-    await import('gitalk/dist/gitalk.css')
-    return Gitalk
+<script setup lang="ts">
+// 从全局变量获取 Gitalk（已通过 CDN 引入）
+const loadGitalk = () => {
+  if (typeof window !== 'undefined' && (window as any).Gitalk) {
+    return (window as any).Gitalk
   }
   return null
 }
@@ -56,10 +54,10 @@ watch(
   },
 )
 
-async function initGitalk() {
+function initGitalk() {
   try {
-    // 动态加载Gitalk
-    const Gitalk = await loadGitalk()
+    // 从全局变量获取 Gitalk
+    const Gitalk = loadGitalk()
     if (!Gitalk) return
 
     // 生成页面唯一ID

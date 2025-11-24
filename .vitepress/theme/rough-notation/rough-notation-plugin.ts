@@ -1,5 +1,11 @@
 // .vitepress/theme/rough-notation-plugin.ts
-import { annotate } from 'rough-notation'
+// 从全局变量获取 annotate 函数（已通过 CDN 引入）
+const getAnnotate = () => {
+  if (typeof window !== 'undefined' && (window as any).RoughNotation) {
+    return (window as any).RoughNotation.annotate
+  }
+  return null
+}
 
 // 定义标注选项类型
 interface AnnotationOptions {
@@ -173,6 +179,13 @@ function applyAnnotation(element: HTMLElement, options: AnnotationOptions, delay
     return
   }
 
+  // 动态获取 annotate 函数
+  const annotateFn = getAnnotate()
+  if (!annotateFn) {
+    console.warn('RoughNotation 未加载')
+    return
+  }
+
   // 创建标注配置
   const annotationConfig = {
     ...options,
@@ -181,7 +194,7 @@ function applyAnnotation(element: HTMLElement, options: AnnotationOptions, delay
   } as any
 
   // 创建标注
-  const annotation = annotate(element, annotationConfig)
+  const annotation = annotateFn(element, annotationConfig)
   annotations.set(element, annotation)
 
   // 如果启用动画，延迟显示

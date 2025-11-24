@@ -17,11 +17,7 @@
     "prettier": "^3.6.2",
     "typescript": "^5.9.3",
     "vitepress": "2.0.0-alpha.15",
-    "vitepress-plugin-group-icons": "^1.6.5"
-  },
-  "dependencies": {
-    "gitalk": "^1.8.0",
-    "rough-notation": "^0.5.1",
+    "vitepress-plugin-group-icons": "^1.6.5",
     "vue": "^3.5.24"
   }
 }
