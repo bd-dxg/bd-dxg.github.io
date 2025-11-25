@@ -1,3 +1,8 @@
+---
+title: AI 工具配置
+description: Claude Code 配置指南，包含环境变量设置、全局提示词和子代理配置
+---
+
 # AI 工具配置
 
 ## Claude Code <Badge type="tip" text="版本: 2.0.5" />

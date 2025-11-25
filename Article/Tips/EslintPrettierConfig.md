@@ -1,3 +1,8 @@
+---
+title: eslint 与 prettier 配置
+description: ESLint 9.x 和 Prettier 3.x 的完整配置指南，涵盖 Vue 和 React 项目
+---
+
 # eslint 与 prettier 配置
 
 今天在群里又看到群友讨论 eslint 和 prettier 的配置, 感觉有必要写一篇博客记录一下, 顺便加深一下印象.

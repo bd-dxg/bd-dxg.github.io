@@ -1,3 +1,8 @@
+---
+title: 规避笔记陷阱
+description: 如何做有效笔记，避开工具选择、内容形式和组织方式的三大陷阱
+---
+
 # 规避笔记陷阱
 
 > 作者: 家诚 链接: https://www.jason-liang.com/article/note-taking

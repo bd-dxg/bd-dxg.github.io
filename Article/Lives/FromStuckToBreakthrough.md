@@ -1,4 +1,9 @@
-# 从“学不进去” 到 “主动突破”
+---
+title: 从"学不进去" 到 "主动突破"
+description: 计算机专业学生的学习突破指南，专注深耕、转变思维、主动实践的成长之路
+---
+
+# 从"学不进去" 到 "主动突破"
 
 > 原地址: [Advice for lost computer science students](https://www.youtube.com/watch?v=RoW5E-HGP5Y)
 

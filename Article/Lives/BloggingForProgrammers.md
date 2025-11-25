@@ -1,3 +1,8 @@
+---
+title: 程序员应该怎么写博客?
+description: 从学习笔记到技术深度文章，程序员写作的四个阶段与成长心得
+---
+
 # 程序员应该怎么写博客?
 
 > 作者:4ark 原文链接:https://4ark.me/post/weekly-12.html

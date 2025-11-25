@@ -1,3 +1,8 @@
+---
+title: Windows 上终于有了真正好用的平铺窗口管理器：GlazeWM
+description: GlazeWM 使用体验分享，让 Windows 也能拥有媲美 Linux 的平铺窗口管理
+---
+
 # Windows 上终于有了真正好用的平铺窗口管理器：GlazeWM
 
 作为一个长期在 Windows 的开发者,我一直羡慕 Linux 用户能够使用 i3、hyprland 这样优雅的平铺式窗口管理器。面对传统的层叠式窗口管理,总觉得效率被大打折扣。但现在,这一切都改变了——**GlazeWM** 的出现,让 Windows 也能拥有媲美 Linux 的平铺窗口管理体验。
