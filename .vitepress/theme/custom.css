@@ -40,20 +40,22 @@
 }
 
 /* 调整页面默认宽度,适配高分屏 */
-:root {
-  --vp-layout-max-width: 1920px;
-}
+@media (min-width: 1920px) {
+  :root {
+    --vp-layout-max-width: 1920px;
+  }
 
-.VPDoc:not(.has-sidebar) .container {
-  max-width: 1584px !important;
-}
+  .VPDoc:not(.has-sidebar) .container {
+    max-width: 1584px !important;
+  }
 
-.VPDoc:not(.has-sidebar) .content {
-  max-width: 1264px !important;
-}
+  .VPDoc:not(.has-sidebar) .content {
+    max-width: 1264px !important;
+  }
 
-.VPDoc.has-aside .content-container {
-  max-width: 1168px !important;
+  .VPDoc.has-aside .content-container {
+    max-width: 1168px !important;
+  }
 }
 
 /* 调整主页按钮样式 */
