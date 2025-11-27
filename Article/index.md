@@ -17,9 +17,9 @@ features:
   - title: AI 工具配置
     details: 配置使用方法及提示词
     link: /Tips/AIToolsConfig
-  - title: 自我的提升
-    details: 怎么知道我的能力处于什么水平我该往哪里努力
-    link: /Lives/AssessAndImprove
+  - title: 做通用服务的一些感悟
+    details: 总结通用服务开发的核心理念
+    link: /Lives/CommonServiceInsights
   - title: 从“学不进去” 到 “主动突破”
     details: 专注深耕领域,突破瓶颈
     link: /Lives/FromStuckToBreakthrough

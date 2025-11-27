@@ -39,6 +39,7 @@ export default {
     { text: '如何做一名高级开发', link: '/Lives/QualifiedSeniorDev' },
     { text: '谎谬之言or至理名言', link: '/Lives/ProgrammerMyths' },
     { text: '程序员从幼稚走向成熟的标志', link: '/Lives/SuccessfulMarketing' },
+    { text: '做通用服务的一些感悟', link: '/Lives/CommonServiceInsights' },
   ],
   '/Tips/': [
     { text: 'AI工具配置', link: '/Tips/AIToolsConfig' },
