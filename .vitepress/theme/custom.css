@@ -39,6 +39,21 @@
   }
 }
 
+/* 为所有响应式布局变化添加平滑过渡 */
+.VPDoc .container,
+.VPDoc .content,
+.VPDoc .content-container,
+.VPDoc .aside,
+.VPSidebar,
+.VPNavBar .content,
+.VPContent {
+  transition:
+    max-width 0.3s ease-in-out,
+    width 0.3s ease-in-out,
+    padding 0.3s ease-in-out,
+    margin 0.3s ease-in-out;
+}
+
 /* 调整页面默认宽度,适配高分屏 */
 @media (min-width: 1920px) {
   :root {
