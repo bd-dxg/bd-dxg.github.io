@@ -45,7 +45,6 @@
 .VPDoc .content-container,
 .VPDoc .aside,
 .VPSidebar,
-.VPNavBar .content,
 .VPContent {
   transition:
     max-width 0.3s ease-in-out,
