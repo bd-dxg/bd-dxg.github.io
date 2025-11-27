@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-import { markdown, nav, sidebar, search, footer, vite } from './configs/index.mts'
+import { markdown, nav, sidebar, search, footer, vite, head } from './configs/index.mts'
 
 export default defineConfig({
   srcDir: 'Article',
@@ -7,13 +7,7 @@ export default defineConfig({
   title: '冰冻大西瓜',
   titleTemplate: false,
   description: '个人博客,前端技术,JavaScript,Typescript,Vue3,React,Node,小程序,面试题',
-  head: [
-    // 引入 Gitalk CDN
-    ['script', { src: 'https://unpkg.com/gitalk@1.8.0/dist/gitalk.min.js' }],
-    ['link', { rel: 'stylesheet', href: 'https://unpkg.com/gitalk@1.8.0/dist/gitalk.css' }],
-    // 引入 RoughNotation CDN (IIFE 格式)
-    ['script', { src: 'https://unpkg.com/rough-notation@0.5.1/lib/rough-notation.iife.js' }],
-  ],
+  head,
   markdown,
   vite,
   themeConfig: {
