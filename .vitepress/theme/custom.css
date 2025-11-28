@@ -137,3 +137,23 @@
   background-color: #ffec8f;
   color: #000;
 }
+
+/* 添加首页背景 */
+.Layout:has(.VPHome) {
+  background-image: url('https://images.bddxg.top/blog/1764343184722.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  .VPFeature {
+    background-color: #ffec8fdd;
+  }
+  .VPFooter {
+    border-top: unset !important;
+    background-color: unset !important;
+
+    .container p {
+      color: aliceblue !important;
+      text-shadow: 0 0 2px #000;
+    }
+  }
+}
