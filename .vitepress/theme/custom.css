@@ -125,3 +125,15 @@
     opacity: 0;
   }
 }
+
+/* 自定义选中文字样式 */
+::selection {
+  background-color: #ffec8f;
+  color: #000;
+}
+
+/* 兼容 Firefox */
+::-moz-selection {
+  background-color: #ffec8f;
+  color: #000;
+}
