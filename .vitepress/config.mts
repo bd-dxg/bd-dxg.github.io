@@ -5,6 +5,7 @@ export default defineConfig({
   srcDir: 'Article',
   lang: 'zh-CN',
   title: '冰冻大西瓜',
+  appearance: false,
   titleTemplate: false,
   description: '个人博客,前端技术,JavaScript,Typescript,Vue3,React,Node,小程序,面试题',
   head,
