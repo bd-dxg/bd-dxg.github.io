@@ -48,5 +48,8 @@ export default {
     { text: '自用插件', link: '/Tips/MyCodePlugin' },
     { text: 'glazeWM平铺窗口管理器', link: '/Tips/GlazeWMIntro' },
     { text: '职场高频英语词汇', link: '/Tips/WorkplaceAbbreviations' },
+    { text: 'eslint配置插件指南 - JS项目', link: '/Tips/EslintJs' },
+    { text: 'eslint配置插件指南 - TS项目', link: '/Tips/EslintTs' },
+    { text: 'eslint配置插件指南 - Vue3项目', link: '/Tips/EslintVue3Ts' },
   ],
 }
