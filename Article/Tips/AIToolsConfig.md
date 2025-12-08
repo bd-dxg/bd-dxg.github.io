@@ -58,46 +58,49 @@ export ANTHROPIC_BASE_URL="https://open.bigmodel.cn/api/anthropic"
 
 ## 语言和环境
 
-- 语言：简体中文（包括代码注释和 commit 信息）
-- 系统：Windows 11 + PowerShell
-- 包管理器：pnpm
+- **语言**: 始终使用简体中文回复（包括代码注释和 commit 信息）
+- **操作系统**: Windows 11
+- **包管理器**: 所有前端项目使用 pnpm
 
-## 工具使用规则（强制）
+## 文件操作规范
 
-**核心原则**：文件操作用专用工具，系统命令用 Bash
+**核心原则**: 必须使用专用工具，禁止使用 Shell 命令操作文件
 
-| 操作     | 使用工具 | 禁止                      |
-| -------- | -------- | ------------------------- |
-| 读文件   | Read     | cat/head/tail/Get-Content |
-| 搜文件   | Glob     | find/ls/Get-ChildItem     |
-| 搜内容   | Grep     | grep/rg/Select-String     |
-| 编辑     | Edit     | sed/awk                   |
-| 创建     | Write    | echo >/cat <<EOF          |
-| 系统命令 | Bash     | git/npm/pnpm/docker 等    |
+| 操作     | 必须使用       | 严格禁止                                   |
+| -------- | -------------- | ------------------------------------------ |
+| 创建文件 | **Write 工具** | `touch`、`New-Item`、`echo >`、`cat <<EOF` |
+| 编辑文件 | **Edit 工具**  | `sed`、`awk`                               |
+| 读取文件 | **Read 工具**  | `cat`、`head`、`tail`、`Get-Content`       |
+| 搜索文件 | **Glob 工具**  | `find`、`Get-ChildItem`、`ls`              |
+| 搜索内容 | **Grep 工具**  | `grep`、`rg`、`Select-String`              |
 
-**Bash 仅用于**：git、pnpm、npm、vite、tsc、docker 等系统命令
+**Bash 工具仅用于**: 包管理（`pnpm install`）、版本控制（`git status`）等系统命令
 
-**原因**：Bash 运行在 `/usr/bin/bash`，不支持 PowerShell 命令
+## 工作流程
 
-## 网络搜索
+### 信息获取
 
-禁用 WebSearch，使用：
+- 需要搜索网络或不确定代码框架时，使用 exa mcp 服务
+- 优先查阅项目级 CLAUDE.md 了解项目特定上下文
 
-- mcp**fetch**fetch：获取已知 URL
-- mcp**exa**web_search_exa：搜索信息/文档
-- mcp**exa**get_code_context_exa：搜索代码/API 文档
+### 复杂任务处理
 
-## 复杂任务
+- **需求分析**: 使用 requirements-analyst 代理
+- **架构设计**: 使用 senior-code-architect 代理
+- **测试编写**: 使用 vitest-tester 代理
 
-- 需求分析：requirements-analyst 代理
-- 架构设计：senior-code-architect 代理
-- 代码审查：code-reviewer 代理
-- 测试编写：vitest-tester 代理
+### 任务管理
 
-## Git 规范
+- 优先编辑现有文件，而不是创建新文件
+- 使用 TodoWrite 工具跟踪多步骤任务
 
-允许：log、status、diff、branch、show（只读操作）
-禁止：commit、push、pull、merge、rebase、reset
+## Git 操作规范
+
+**原则**: 只允许读取，禁止修改
+
+**允许**: `git log`、`git status`、`git diff`、`git branch`、`git show`
+
+**禁止**: `git commit`、`git push`、`git pull`、`git merge`、`git rebase`、`git reset`
 ```
 
 ### 子代理
