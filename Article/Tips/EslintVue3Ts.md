@@ -2,8 +2,8 @@
 
 之前的文章:
 
-- [eslint配置插件指南 - JS项目](./eslint-js)
-- [eslint配置插件指南 - TS项目](./eslint-ts)
+- [eslint配置插件指南 - JS项目](./EslintJs)
+- [eslint配置插件指南 - TS项目](./EslintTs)
 
 ---
 
@@ -28,28 +28,23 @@ AI相关配置:
 | vue-eslint-parser | 让eslint可以解析vue文件     |
 
 TS插件我就不重复了,引用一下:
-[quote="Waviness6884, post:1, topic:1183746"]
 
-## 现代插件介绍
-
-| 包名                              | 主要作用                                                                                  |
-| --------------------------------- | ----------------------------------------------------------------------------------------- |
-| typescript-eslint                 | 取代了旧的 `@typescript-eslint/parser` 和 `@typescript-eslint/eslint-plugin`,统一为一个包 |
-| eslint-import-resolver-typescript | 正确解析 TypeScript 中 paths 和 .ts 文件                                                  |
-| @types/node                       | 让 Node 支持 TypeScript 类型和语法                                                        |
-| globals                           | 提供预定义的全局变量集合,如:`process`,`__dirname`等                                       |
-
-JS项目中的包都支持TS:
-
-| 包名                         | 主要作用                                                                                             |
-| ---------------------------- | ---------------------------------------------------------------------------------------------------- |
-| eslint-plugin-import         | 检查 import/export 语法是否正确                                                                      |
-| eslint-plugin-unicorn        | 由社区大神 sindresorhus 维护的「现代最佳实践」合集,目前 290+ 条规则，基本全是 2020~2025 年新推荐写法 |
-| eslint-plugin-unused-imports | 目前最好用的「检测 + 自动删除」未使用 import 的插件,比 ESLint 内置 no-unused-vars 快 10 倍、准 100%  |
-| eslint-plugin-perfectionist  | 超级强大的 import、export、对象属性、class、member 排序插件, 支持自然排序、分组、自定义顺序          |
-| @eslint/js                   | ESLint 官方自己出的规则集合(相当于内置规则的精选版),包含所有 recommended 规则                        |
-
-[/quote]
+> | 包名                              | 主要作用                                                                                  |
+> | --------------------------------- | ----------------------------------------------------------------------------------------- |
+> | typescript-eslint                 | 取代了旧的 `@typescript-eslint/parser` 和 `@typescript-eslint/eslint-plugin`,统一为一个包 |
+> | eslint-import-resolver-typescript | 正确解析 TypeScript 中 paths 和 .ts 文件                                                  |
+> | @types/node                       | 让 Node 支持 TypeScript 类型和语法                                                        |
+> | globals                           | 提供预定义的全局变量集合,如:`process`,`__dirname`等                                       |
+>
+> JS项目中的包都支持TS:
+>
+> | 包名                         | 主要作用                                                                                             |
+> | ---------------------------- | ---------------------------------------------------------------------------------------------------- |
+> | eslint-plugin-import         | 检查 import/export 语法是否正确                                                                      |
+> | eslint-plugin-unicorn        | 由社区大神 sindresorhus 维护的「现代最佳实践」合集,目前 290+ 条规则，基本全是 2020~2025 年新推荐写法 |
+> | eslint-plugin-unused-imports | 目前最好用的「检测 + 自动删除」未使用 import 的插件,比 ESLint 内置 no-unused-vars 快 10 倍、准 100%  |
+> | eslint-plugin-perfectionist  | 超级强大的 import、export、对象属性、class、member 排序插件, 支持自然排序、分组、自定义顺序          |
+> | @eslint/js                   | ESLint 官方自己出的规则集合(相当于内置规则的精选版),包含所有 recommended 规则                        |
 
 ## 安装
 
