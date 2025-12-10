@@ -1,3 +1,8 @@
+---
+title: eslint配置插件指南 － Vue3+TS 项目
+description: Vue3 + TypeScript 项目 ESLint 配置方案，整合 Vue 官方规则与 TS 类型检查
+---
+
 # eslint配置插件指南 － Vue3+TS 项目
 
 之前的文章:

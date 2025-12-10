@@ -1,3 +1,8 @@
+---
+title: eslint配置插件指南 - JS项目
+description: 详解 ESLint v9 扁平化配置，涵盖现代 JS 项目必备插件及最佳实践配置方案
+---
+
 # eslint配置插件指南 - JS项目
 
 建立本文档的目的,在于 `eslint` 规则在v9后启用了扁平化配置规则,

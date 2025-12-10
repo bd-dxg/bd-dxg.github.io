@@ -1,3 +1,8 @@
+---
+title: eslint配置插件指南 - TS项目
+description: TypeScript 项目 ESLint 完整配置指南，包含类型检查、路径解析等现代化规则
+---
+
 # eslint配置插件指南 - TS项目
 
 JS项目配置指南:
