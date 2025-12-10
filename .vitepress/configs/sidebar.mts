@@ -51,5 +51,6 @@ export default {
     { text: 'eslint配置插件指南 - JS项目', link: '/Tips/EslintJs' },
     { text: 'eslint配置插件指南 - TS项目', link: '/Tips/EslintTs' },
     { text: 'eslint配置插件指南 - Vue3项目', link: '/Tips/EslintVue3Ts' },
+    { text: '自动导入后不能跳转组件的解决办法', link: '/Tips/AutoImportJumpFix' },
   ],
 }
