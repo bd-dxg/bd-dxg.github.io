@@ -28,7 +28,7 @@ $env:CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC = 1
 # 智谱AI
 $env:ANTHROPIC_AUTH_TOKEN = "your token"
 $env:ANTHROPIC_BASE_URL = "https://open.bigmodel.cn/api/anthropic"
-# $env:ANTHROPIC_MODEL = "glm-4.6" (可选,如需使用,删除本行括号及内容)
+# $env:ANTHROPIC_MODEL = "glm-4.7" (可选,如需使用,删除本行括号及内容)
 ```
 
 ```zsh [linux/macos]
@@ -62,6 +62,10 @@ export ANTHROPIC_BASE_URL="https://open.bigmodel.cn/api/anthropic"
 - **操作系统**: Windows 11
 - **包管理器**: 所有前端项目使用 pnpm
 
+## 权限说明
+
+- **文件读取权限**: 我拥有读取任意文档和文件的权限，无需每次询问确认，可以直接使用 Read 工具读取任何文件
+
 ## 文件操作规范
 
 **核心原则**: 必须使用专用工具，禁止使用 Shell 命令操作文件
@@ -80,7 +84,20 @@ export ANTHROPIC_BASE_URL="https://open.bigmodel.cn/api/anthropic"
 
 ### 信息获取
 
-- 需要搜索网络或不确定代码框架时，使用 exa mcp 服务
+**MCP 服务功能定位**:
+
+- **web-reader**: 专用于网页内容抓取，支持完整获取指定网页的文本、链接等内容
+- **web-search-prime**: 专用于网络搜索，获取实时信息和搜索结果
+- **zai-mcp-server**: 专用于媒体内容分析，支持多种图像格式的智能分析及视频的视觉理解
+- **zread**: 专用于 GitHub 仓库查询与分析，提供以下工具：
+  - **search_doc**: 搜索 GitHub 仓库的知识文档，快速了解仓库信息、新闻、最近的 issue、PR 和贡献者等
+  - **get_repo_structure**: 获取 GitHub 仓库的目录结构和文件列表，了解项目模块拆分和目录组织方式
+  - **read_file**: 读取 GitHub 仓库中指定文件的完整代码内容，深入文件代码的实现细节
+
+**备用选项**:
+
+- **exa mcp**: 支持网络搜索和网页内容获取，同时支持代码文档查询（作为备用选项，服务不太稳定）
+
 - 优先查阅项目级 CLAUDE.md 了解项目特定上下文
 
 ### 复杂任务处理
@@ -101,6 +118,7 @@ export ANTHROPIC_BASE_URL="https://open.bigmodel.cn/api/anthropic"
 **允许**: `git log`、`git status`、`git diff`、`git branch`、`git show`
 
 **禁止**: `git commit`、`git push`、`git pull`、`git merge`、`git rebase`、`git reset`
+
 ```
 
 ### 子代理

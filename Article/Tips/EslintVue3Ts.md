@@ -27,42 +27,29 @@ AI相关配置:
 
 ## 现代插件介绍
 
-| 包名              | 主要作用                    |
-| ----------------- | --------------------------- |
-| eslint-plugin-vue | vue官方团队维护的eslint规则 |
-| vue-eslint-parser | 让eslint可以解析vue文件     |
+|包名|主要作用|
+|---|---|
+|eslint-plugin-vue|vue 官方团队维护的 eslint 规则|
+|@vue/eslint-config-prettier|进一步的规则封装|
+|@vue/eslint-config-typescript|进一步的规则封装|
+|@types/node|让 Node 支持 TypeScript 类型和语法|
+|globals|提供预定义的全局变量集合, 如:`process`,`__dirname` 等|
+|eslint-plugin-unused-imports|目前最好用的「检测 + 自动删除」未使用 import 的插件, 比 ESLint 内置 no-unused-vars 快 10 倍、准 100%|
+|eslint-plugin-perfectionist|超级强大的 import、export、对象属性、class、member 排序插件, 支持自然排序、分组、自定义顺序|
 
-TS插件我就不重复了,引用一下:
-
-> | 包名                              | 主要作用                                                                                  |
-> | --------------------------------- | ----------------------------------------------------------------------------------------- |
-> | typescript-eslint                 | 取代了旧的 `@typescript-eslint/parser` 和 `@typescript-eslint/eslint-plugin`,统一为一个包 |
-> | eslint-import-resolver-typescript | 正确解析 TypeScript 中 paths 和 .ts 文件                                                  |
-> | @types/node                       | 让 Node 支持 TypeScript 类型和语法                                                        |
-> | globals                           | 提供预定义的全局变量集合,如:`process`,`__dirname`等                                       |
->
-> JS项目中的包都支持TS:
->
-> | 包名                         | 主要作用                                                                                             |
-> | ---------------------------- | ---------------------------------------------------------------------------------------------------- |
-> | eslint-plugin-import         | 检查 import/export 语法是否正确                                                                      |
-> | eslint-plugin-unicorn        | 由社区大神 sindresorhus 维护的「现代最佳实践」合集,目前 290+ 条规则，基本全是 2020~2025 年新推荐写法 |
-> | eslint-plugin-unused-imports | 目前最好用的「检测 + 自动删除」未使用 import 的插件,比 ESLint 内置 no-unused-vars 快 10 倍、准 100%  |
-> | eslint-plugin-perfectionist  | 超级强大的 import、export、对象属性、class、member 排序插件, 支持自然排序、分组、自定义顺序          |
-> | @eslint/js                   | ESLint 官方自己出的规则集合(相当于内置规则的精选版),包含所有 recommended 规则                        |
 
 ## 安装
 
 如果你已经安装了 TS 的 eslint 规则插件,执行以下命令:
 
 ```shell
-pnpm add -D eslint-plugin-vue vue-eslint-parser
+pnpm add -D eslint-plugin-vue @vue/eslint-config-prettier @vue/eslint-config-typescript
 ```
 
 如果是项目初始化, 先用vite创建好项目后(vite会自动在package.json中写入基本的vue相关的插件), 执行以下命令:
 
 ```shell
-pnpm add -D eslint eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-perfectionist eslint-plugin-unicorn eslint-plugin-unused-imports eslint-plugin-vue globals prettier typescript typescript-eslint vue-eslint-parser  @eslint/js @types/node jiti
+pnpm add -D eslint eslint-plugin-perfectionist eslint-plugin-unused-imports eslint-plugin-vue globals prettier typescript @types/node jiti @vue/eslint-config-prettier @vue/eslint-config-typescript
 ```
 
 > [!tip]提示
@@ -73,57 +60,22 @@ pnpm add -D eslint eslint-import-resolver-typescript eslint-plugin-import eslint
 项目根目录创建 `eslint.config.ts`
 
 ```ts
-import js from '@eslint/js'
-import imports from 'eslint-plugin-import'
+import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
+import { defineConfigWithVueTs, vueTsConfigs } from '@vue/eslint-config-typescript'
 import perfectionist from 'eslint-plugin-perfectionist'
-import unicorn from 'eslint-plugin-unicorn'
+import pluginVue from 'eslint-plugin-vue'
 import unusedImports from 'eslint-plugin-unused-imports'
-import vue from 'eslint-plugin-vue'
-import globals from 'globals'
-import tseslint from 'typescript-eslint'
-import vueParser from 'vue-eslint-parser'
-export default [
-  // 0. 忽略配置文件(这些文件不需要 TypeScript 项目服务)
+import { globalIgnores } from 'eslint/config'
+
+export default defineConfigWithVueTs(
   {
-    ignores: ['postcss.config.js', 'tailwind.config.js', '*.config.js'],
-  },
-  // 1. 基础 + TS 专用 parser
-  { files: ['**/*.{js,ts,mjs,cjs}'] },
-  {
-    languageOptions: {
-      globals: { ...globals.node },
-      parserOptions: {
-        projectService: true, // 使用 projectService 支持 project references
-        tsconfigRootDir: import.meta.dirname,
-      },
-    },
+    name: 'app/files-to-lint',
+    files: ['**/*.{vue,ts,mts}'],
   },
 
-  // 2. 官方 + TS 官方推荐规则（必须最先）
-  js.configs.recommended,
-  ...tseslint.configs.recommended, // 基础 TS 检查
-  ...tseslint.configs.recommendedTypeChecked, // 开启类型检查（强烈推荐）
-  ...tseslint.configs.stylisticTypeChecked, // 可选：TS 风格建议
+  globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**']),
 
-  // 3. unicorn（大部分规则对 TS 也适用）
-  unicorn.configs.recommended,
-
-  // 4. import 插件（支持 .ts/.tsx 路径解析）
-  {
-    plugins: { import: imports },
-    rules: {
-      ...imports.configs.recommended.rules,
-      'import/order': 'off', // 我们用 perfectionist 排序，关闭内置
-    },
-    settings: {
-      'import/resolver': {
-        typescript: {}, // eslint-import-resolver-typescript在这里调用 自动读取 tsconfig.json 的 paths、baseUrl
-        node: true, // 同时保留 node 解析（防止 .json、.node 等文件报错）
-      },
-    },
-  },
-
-  // 6. perfectionist（完美支持 TS）
+  // 通用规则配置
   {
     plugins: { perfectionist },
     rules: {
@@ -138,7 +90,6 @@ export default [
             'parent',
             'sibling',
             'index',
-            'object',
             'unknown',
           ],
         },
@@ -147,84 +98,35 @@ export default [
     },
   },
 
-  // 7. unused-imports（TS 下表现更好）
+  // Vue 框架配置
+  ...pluginVue.configs['flat/essential'],
+  vueTsConfigs.recommended,
+
+  // 自定义规则调整
   {
-    plugins: { 'unused-imports': unusedImports },
+    plugins: {
+      'unused-imports': unusedImports,
+    },
     rules: {
+      // Vue 相关放宽
+      'vue/multi-word-component-names': 'off', // 允许单单词组件名
+
+      // TypeScript 相关放宽
+      '@typescript-eslint/no-explicit-any': 'warn', // any 类型作为警告
+      '@typescript-eslint/no-non-null-assertion': 'warn', // 非空断言作为警告
+
+      // 通用规则放宽
+      'no-console': 'off', // 允许 console 调试
+
+      // 自动清理未使用的导入
       'unused-imports/no-unused-imports': 'error',
-      // @typescript-eslint/no-unused-vars 会被自动关闭
     },
   },
 
-  // 8. Vue 文件配置
-  {
-    files: ['**/*.vue'],
-    languageOptions: {
-      parser: vueParser,
-      parserOptions: {
-        parser: tseslint.parser, // 用于 <script> 部分的 TypeScript 解析
-        projectService: true,
-        extraFileExtensions: ['.vue'],
-        sourceType: 'module',
-      },
-      globals: {
-        ...globals.browser, // Vue 运行在浏览器环境
-      },
-    },
-  },
+  // 跳过格式化配置(放在最后避免冲突)
+  skipFormatting,
+)
 
-  // 9. Vue 推荐规则
-  ...vue.configs['flat/recommended'],
-
-  // 10. Vue 自定义规则
-  {
-    files: ['**/*.vue'],
-    rules: {
-      'vue/multi-word-component-names': 'warn', // 组件名建议使用多个单词 eslintunicorn/filename-case
-      'vue/component-name-in-template-casing': ['error', 'PascalCase'], // 模板中组件名使用 PascalCase
-      'vue/singleline-html-element-content-newline': 'off', // 关闭单行 HTML 元素内容换行规则
-      'vue/max-attributes-per-line': 'off', // 关闭单行 HTML 元素内容换行规则
-      'vue/block-lang': [
-        'error',
-        {
-          script: { lang: 'ts' }, // 强制 <script lang="ts">
-        },
-      ],
-      'vue/define-macros-order': [
-        'error',
-        {
-          order: ['defineProps', 'defineEmits'], // 宏定义顺序
-        },
-      ],
-      'vue/no-unused-refs': 'warn', // 警告未使用的 ref
-      'vue/no-v-html': 'off', // 允许 v-html（根据项目需求调整）
-    },
-  },
-
-  // 11. 个人最常用的微调（可以直接复制）
-  {
-    rules: {
-      // 关闭与 @typescript-eslint 重叠的原生规则
-      'no-unused-vars': 'off',
-      'no-undef': 'off',
-
-      // 后端常见放宽
-      'no-console': 'off', // 方便调试
-      'no-underscore-dangle': 'off', // 允许下划线命名 如 __dirname
-
-      // TS 项目常见放宽
-      'unicorn/filename-case': 'off', // 关闭组件名风格检查
-      '@typescript-eslint/no-explicit-any': 'warn', // 禁止使用 any 类型, 不是 off，只是 warn
-      '@typescript-eslint/no-non-null-assertion': 'warn', // 禁止使用 ! 非空断言操作符
-      '@typescript-eslint/no-empty-object-type': 'off', // 禁止空对象类型定义,关闭 interface {} 很常用
-      '@typescript-eslint/consistent-type-imports': [
-        // 强制 type import（推荐）强制 import { type User } from './types'
-        'error',
-        { prefer: 'type-imports', fixStyle: 'inline-type-imports' },
-      ],
-    },
-  },
-]
 ```
 
 > [!tip] 提示
@@ -264,6 +166,15 @@ export default [
 `target` 可以按需求自行修改,**关键点是 `include` 要把这些包含进去**, 不然配置文件会遇到ts警告
 
 ## 插件周下载量
-
-- [vue-eslint-parser](https://www.npmjs.com/package/vue-eslint-parser):5,995,435
+- [@vue/eslint-config-prettier](https://www.npmjs.com/package/@vue/eslint-config-prettier?activeTab=versions):336,898
+- [@vue/eslint-config-typescript](https://www.npmjs.com/package/@vue/eslint-config-typescript):491,247
 - [eslint-plugin-vue](https://www.npmjs.com/package/eslint-plugin-vue): 4,515,034
+
+## 更新内容
+### 2026年1月1日
+- 新增`@vue/eslint-config-prettier`和`@vue/eslint-config-typescript`库
+- 移除了 `eslint-plugin-import`、`eslint-plugin-unicorn`、`eslint-import-resolver-typescript`、`typescript-eslint`和`@eslint/js`
+- **更简洁**：从 150 行减少到 67 行
+- **更易维护**：使用 Vue 官方推荐的 `defineConfigWithVueTs`
+### 2025年12月13日
+ - 将 vue 的 eslint 规则由 `flat/recommended` 降级为 `flat/essential`,因为前者保留了大量格式化规则, 与 prettier 造成冲突
