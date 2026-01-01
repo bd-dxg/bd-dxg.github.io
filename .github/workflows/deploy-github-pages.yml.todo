@@ -1,0 +1,66 @@
+name: 部署到 GitHub Pages
+
+on:
+  # 推送到 main 分支时自动触发
+  push:
+    branches: [main]
+  # 手动触发（在 GitHub Actions 页面可以手动运行）
+  workflow_dispatch:
+
+# GitHub Pages 部署需要的权限
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 只允许同时进行一次部署
+concurrency:
+  group: deploy-to-github-pages
+  cancel-in-progress: false
+
+# 设置 GitHub Pages 环境
+environment:
+  name: github-pages
+  url: ${{ steps.deployment.outputs.page_url }}
+
+jobs:
+  build-and-deploy:
+    name: 构建并部署到 GitHub Pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检查仓库
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 设置 pnpm 为包管理器
+        uses: pnpm/action-setup@v3
+        with:
+          version: 10
+
+      - name: 安装 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 25
+          cache: pnpm
+
+      - name: 安装依赖
+        run: pnpm install
+
+      - name: 打包网页
+        run: pnpm build
+        env:
+          VITE_GITALK_CLIENT_ID: ${{ secrets.GITALK_CLIENT_ID }}
+          VITE_GITALK_CLIENT_SECRET: ${{ secrets.GITALK_CLIENT_SECRET }}
+
+      - name: 设置 GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: 上传构建产物
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .vitepress/dist/
+
+      - name: 部署到 GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
