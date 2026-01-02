@@ -17,7 +17,12 @@ export default {
     {
       text: '后端',
       collapsed: false,
-      items: [{}],
+      items: [
+        {
+          text: '32位机器上的int64类型',
+          link: '/InterviewQ/Backend/goInt64On32Bit',
+        },
+      ],
     },
   ],
   '/Lives/': [
