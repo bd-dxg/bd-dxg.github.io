@@ -7,7 +7,7 @@ hero:
   tagline: '技术栈: vue2/3,typescript,tailwindcss,miniprogram'
   actions:
     - theme: brand
-      text: 加入群组聊天群
+      text: 加入聊天群
       link: https://t.me/+BTMz5PhmElJiMjBl
     - theme: alt
       text: 访问旧站
