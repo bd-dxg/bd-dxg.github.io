@@ -7,11 +7,11 @@ description: 详解 GitFlow 工作流的五大核心分支及其使用场景
 
 ![fI6dAXt_8.webp](https://images.bddxg.top/blog/1767398313326.webp)
 
-- ** 主分支 (main/master)**: 项目的生产发布分支, 始终保持稳定可发布状态
-- ** 热修复分支 (hotfix/\*)**: 从 `main` 分支创建, 用于紧急修复线上 BUG, 修复后同时合并回 `main` 和 `develop`
-- ** 开发分支 (develop)**: 日常开发的主分支, 所有功能开发的集成分支
-- ** 特性分支 (feature/\*)**: 从 `develop` 创建, 开发新功能, 完成后合并回 `develop`
-- ** 预发布分支 (release/\*)**: 从 `develop` 创建, 用于发布前的测试和最终调整, 测试通过后合并回 `main`(打版本标签) 和 `develop`
+- **主分支 (main/master)**: 项目的生产发布分支, 始终保持稳定可发布状态
+- **热修复分支 (hotfix/\*)**: 从 `main` 分支创建, 用于紧急修复线上 BUG, 修复后同时合并回 `main` 和 `develop`
+- **开发分支 (develop)**: 日常开发的主分支, 所有功能开发的集成分支
+- **特性分支 (feature/\*)**: 从 `develop` 创建, 开发新功能, 完成后合并回 `develop`
+- **预发布分支 (release/\*)**: 从 `develop` 创建, 用于发布前的测试和最终调整, 测试通过后合并回 `main`(打版本标签) 和 `develop`
 
 ## 分支合并关系
 
@@ -34,7 +34,7 @@ hotfix/*   →  main + develop
 
 ## 开发分支
 
-作用: 存放 ** 最新开发成果 ** 的集成分支, 是功能开发的集线器
+作用: 存放 **最新开发成果** 的集成分支, 是功能开发的集线器
 
 特点:
 
@@ -71,7 +71,7 @@ hotfix/*   →  main + develop
 
 - 当 `develop` 分支的功能足够进行一次发布时, 从 `develop` 拉出 `release` 分支
 - 在此分支上进行最后的测试和修复
-- 准备就绪后, 将 `release` 分支合并到 `main` 分支 ** 并打上版本标签 **
+- 准备就绪后, 将 `release` 分支合并到 `main` 分支 **并打上版本标签**
 - 同时, 必须合并回 `develop` 分支, 因为 `release` 分支上修复的 BUG 可能 `develop` 分支上还没修复
 
 ## 热修复分支
