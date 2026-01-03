@@ -14,7 +14,6 @@
 - 📝 **VitePress 驱动** - 基于 Vue 3 + Vite 的静态站点生成器
 - 🎨 **Rough Notation 手绘风格** - 独特的手绘标注样式，让内容更生动
 - 💬 **Gitalk 评论系统** - 基于 GitHub Issues 的评论功能
-- 🌙 **主题适配** - 完美支持亮色/暗色主题切换
 - 📱 **响应式设计** - 优雅适配移动端和桌面端
 - 🚀 **自动化部署** - GitHub Actions 自动构建和部署到 GitHub Pages
 - 🔍 **全文搜索** - 内置搜索功能
@@ -58,16 +57,58 @@
 │   │   ├── index.ts           # 主题入口
 │   │   └── style.css          # 全局样式
 ├── Article/                   # 文章内容目录
+│   ├── InterviewQ/            # 面试题系列
+│   │   ├── Frontend/          # 前端面试题
+│   │   ├── Backend/           # 后端面试题
+│   │   └── TheWayofCode/      # 代码之道（GitFlow 工作流等）
+│   ├── Lives/                 # 程序员成长感悟
+│   ├── Tips/                  # 实用工具配置
+│   └── components/            # 自定义组件
 ├── package.json
 ├── prettier.config.js         # 代码格式化配置
 └── tsconfig.json              # TypeScript 配置
 ```
 
+## 📚 文章分类
+
+### 🎯 面试题系列
+
+#### 前端面试题
+
+- [首屏优化](https://bd-dxg.github.io/InterviewQ/Frontend/FirstScreenOptimization) - 前端性能优化核心方案
+- [系统稳定性保障方案](https://bd-dxg.github.io/InterviewQ/Frontend/SystemStability) - 构建可靠的前端系统
+
+#### 后端面试题
+
+- [32 位机器上的 int64 类型](https://bd-dxg.github.io/InterviewQ/Backend/GoInt64On32Bit) - Go 语言中的类型陷阱
+
+#### 代码之道
+
+- [GitFlow 五大分支概述](https://bd-dxg.github.io/InterviewQ/TheWayofCode/GitFlow/gitflowOverview) - 详解 GitFlow 工作流的核心分支
+
+### 💡 程序员成长
+
+**热门文章**:
+
+- [如何成为越干越值钱的程序员](https://bd-dxg.github.io/Lives/EvolvingDev) - AI 协作与职场成长心法
+- [做通用服务的一些感悟](https://bd-dxg.github.io/Lives/CommonServiceInsights) - 通用服务开发的核心理念
+- [从"学不进去"到"主动突破"](https://bd-dxg.github.io/Lives/FromStuckToBreakthrough) - 突破瓶颈的方法
+- [程序员从幼稚走向成熟的标志](https://bd-dxg.github.io/Lives/SuccessfulMarketing) - 职场进阶指南
+
+更多感悟文章请访问：[程序员成长专栏](https://bd-dxg.github.io/Lives/)
+
+### 🛠️ 实用工具配置
+
+- [AI 工具配置](https://bd-dxg.github.io/Tips/AIToolsConfig) - AI 辅助开发工具集
+- [Eslint + Prettier 配置方案](https://bd-dxg.github.io/Tips/EslintPrettierConfig) - 代码规范自动化
+- [Vue3 + TypeScript + ESLint 配置](https://bd-dxg.github.io/Tips/EslintVue3Ts) - 现代前端项目规范
+- [GlazeWM 窗口管理器](https://bd-dxg.github.io/Tips/GlazeWMIntro) - Windows 平铺式窗口管理
+
 ## 🚀 快速开始
 
 ### 环境要求
 
-- Node.js 18+
+- Node.js 24+
 - pnpm
 
 ### 安装依赖
@@ -147,17 +188,20 @@ pnpm preview
 - **首页背景图**: 添加个性化背景图
 - **配置模块化**: head 配置分离到单文件，便于维护
 
-## 📝 写作
+### 文章 Frontmatter
 
-文章放在 `Article/` 目录下，支持：
+所有文章建议添加 Frontmatter 以增强 SEO 和页面信息：
 
-- Markdown 语法
-- Vue 组件
-- 代码高亮
-- 数学公式
-- 图表展示
+```yaml
+---
+title: 文章标题
+description: 文章描述
+---
+```
 
-### 使用 Rough Notation
+**提示**: 使用 `/add-frontmatter` 技能可自动为 Markdown 文章添加 Frontmatter
+
+### Rough Notation 手绘样式
 
 Rough Notation 已自动适配 Markdown 语法，无需手动添加类名：
 
@@ -168,17 +212,6 @@ _斜体文本_ - 自动应用手绘下划线效果
 > 引用内容 - 自动应用手绘左括号效果
 > ~~删除线~~ - 自动应用手绘删除效果
 > [链接文本](url) - 自动应用手绘下划线效果
-```
-
-### 文章 Frontmatter
-
-所有文章建议添加 Frontmatter 以增强 SEO 和页面信息：
-
-```yaml
----
-title: 文章标题
-description: 文章描述
----
 ```
 
 ## 📄 许可证
