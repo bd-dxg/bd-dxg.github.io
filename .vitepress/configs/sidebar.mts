@@ -4,32 +4,29 @@ export default {
       text: '前端',
       collapsed: false,
       items: [
-        {
-          text: '首屏优化',
-          link: '/InterviewQ/Frontend/FirstScreenOptimization',
-        },
-        {
-          text: '系统稳定性保障方案',
-          link: '/InterviewQ/Frontend/SystemStability',
-        },
+        { text: '首屏优化', link: '/InterviewQ/Frontend/FirstScreenOptimization' },
+        { text: '系统稳定性保障方案', link: '/InterviewQ/Frontend/SystemStability' },
       ],
     },
     {
       text: '后端',
       collapsed: false,
+      items: [{ text: '32位机器上的int64类型', link: '/InterviewQ/Backend/GoInt64On32Bit' }],
+    },
+    {
+      text: '代码通用',
+      collapsed: false,
       items: [
         {
-          text: '32位机器上的int64类型',
-          link: '/InterviewQ/Backend/goInt64On32Bit',
+          text: 'gitflow',
+          collapsed: false,
+          items: [{ text: 'gitflowOverview', link: '/InterviewQ/TheWayofCode/GitFlow/GitflowOverview' }],
         },
       ],
     },
   ],
   '/Lives/': [
-    {
-      text: '如果回到过去，我会这样告诫我自己',
-      link: '/Lives/AdviceToMyPastSelf',
-    },
+    { text: '如果回到过去，我会这样告诫我自己', link: '/Lives/AdviceToMyPastSelf' },
     { text: '学不进去到主动突破', link: '/Lives/FromStuckToBreakthrough' },
     { text: '自我的提升', link: '/Lives/AssessAndImprove' },
     { text: '规避笔记陷阱', link: '/Lives/AvoidNoteTrap' },
@@ -45,6 +42,7 @@ export default {
     { text: '谎谬之言or至理名言', link: '/Lives/ProgrammerMyths' },
     { text: '程序员从幼稚走向成熟的标志', link: '/Lives/SuccessfulMarketing' },
     { text: '做通用服务的一些感悟', link: '/Lives/CommonServiceInsights' },
+    { text: '如何成为越干越值钱的程序员', link: '/Lives/EvolvingDev' },
   ],
   '/Tips/': [
     { text: 'AI工具配置', link: '/Tips/AIToolsConfig' },

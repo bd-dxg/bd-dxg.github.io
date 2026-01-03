@@ -20,7 +20,7 @@ features:
   - title: 做通用服务的一些感悟
     details: 总结通用服务开发的核心理念
     link: /Lives/CommonServiceInsights
-  - title: 从“学不进去” 到 “主动突破”
-    details: 专注深耕领域,突破瓶颈
-    link: /Lives/FromStuckToBreakthrough
+  - title: 如何成为越干越值钱的程序员
+    details: 个人与职场发展
+    link: /Lives/EvolvingDev
 ---
