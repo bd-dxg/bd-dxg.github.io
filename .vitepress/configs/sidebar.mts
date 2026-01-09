@@ -20,7 +20,10 @@ export default {
         {
           text: 'gitflow',
           collapsed: false,
-          items: [{ text: 'gitflowOverview', link: '/InterviewQ/TheWayofCode/GitFlow/GitflowOverview' }],
+          items: [
+            { text: 'gitflowOverview', link: '/InterviewQ/TheWayofCode/GitFlow/GitflowOverview' },
+            { text: 'GitProTips', link: '/InterviewQ/TheWayofCode/GitFlow/GitProTips' },
+          ],
         },
       ],
     },
