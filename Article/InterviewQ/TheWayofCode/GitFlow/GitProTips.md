@@ -63,7 +63,7 @@ git reset HEAD siderbar.mts
 ```shell
 get reset --hard HEAD^
 # 退一步一个^,多步就是多个^,也可以用波浪线~+数字代替
-get reset --hard HEAD^ === get reset --hard HEAD~3
+get reset --hard HEAD^^^ === get reset --hard HEAD~3
 ```
 
 图形化界面:
@@ -92,4 +92,32 @@ git push origin 推送的分支
 
 ![2026-01-09_17-13-36.webp](https://images.bddxg.top/blog/1767950025946.webp)
 
-## TODO(未更完,先回家)
+## 文件存储(git stash)
+
+> 背景环境: 你在 `feat/xxx功能`分支下开发某功能,
+>
+> 突然收到线上出现了BUG(如8折活动**充100到80**),需要立即修复
+>
+> 但是你手头的功能没有开发完毕,不方便提交代码,但是不提交就无法切换分支
+>
+> 文件存储(git stash)为此而生
+
+作用: 将你未开发完成的文件暂存起来,还原成一个干净的环境, 方便你切换分支去修BUG
+
+命令行方法:
+
+```shell
+# 文件存储命令,然后切换分支去修BUG
+git stash
+# 修完BUG之后, 切换回功能分支
+# 查看存储的列表(可选)
+git stash list
+# 取回存储的文件并删除存储的记录(一般都用这个)
+git stash pop
+# 取回文件并保留存储的记录(看个人喜好)
+git stash apply
+```
+
+图形化界面:
+
+![2026-01-10_10-17-35.webp](https://images.bddxg.top/blog/1768011468972.webp)
