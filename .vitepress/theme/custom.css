@@ -3,6 +3,7 @@
   --vp-font-family-mono: '汉仪玛奇朵', ui-monospace;
   /* 设置代码块区域字体大小 */
   --vp-code-font-size: 1.1rem;
+  --darkreader-background-0060d4: #4a6e3b !important;
 }
 /* 修改VPBadge标签位置为同标题同一水平线 */
 .VPBadge {
