@@ -12,7 +12,7 @@ export default {
       text: '后端',
       collapsed: false,
       items: [
-        { text: '如果32位机器上的int64类型', link: '/InterviewQ/Backend/GoInt64On32Bit' },
+        { text: '如果32位机器上的int64类型', link: '/InterviewQ/Backend/Go' },
         { text: '关于 map 创建与性能优化的思考', link: '/InterviewQ/Backend/GoMapMake' },
       ],
     },
