@@ -1,5 +1,5 @@
 ---
-title: 32位机器上的int64类型
+title: 如果32位机器上的int64类型
 description: 解释Go语言中int64类型在32位架构上的行为特点
 ---
 
