@@ -18,15 +18,13 @@ concurrency:
   group: deploy-to-github-pages
   cancel-in-progress: false
 
-# 设置 GitHub Pages 环境
-environment:
-  name: github-pages
-  url: ${{ steps.deployment.outputs.page_url }}
-
 jobs:
   build-and-deploy:
     name: 构建并部署到 GitHub Pages
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: 检查仓库
         uses: actions/checkout@v4
