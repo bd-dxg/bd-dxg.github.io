@@ -26,6 +26,7 @@ export default {
           items: [
             { text: 'gitflowOverview', link: '/InterviewQ/TheWayofCode/GitFlow/GitflowOverview' },
             { text: 'GitProTips', link: '/InterviewQ/TheWayofCode/GitFlow/GitProTips' },
+            { text: 'GitClone', link: '/InterviewQ/TheWayofCode/GitFlow/GitClone' },
           ],
         },
       ],
