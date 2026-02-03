@@ -1,9 +1,9 @@
 ---
-title: 自动导入后不能跳转组件的解决办法
+title: 自动导入组件跳转修复
 description: 解决 Vue 3 + Vite 项目中使用 unplugin-vue-components 自动导入组件后无法跳转定义的问题
 ---
 
-# 自动导入后不能跳转组件的解决办法
+# 自动导入组件跳转修复
 
 ## 环境背景
 

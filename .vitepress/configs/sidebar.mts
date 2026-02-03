@@ -49,7 +49,7 @@ export default {
               'link': '/InterviewQ/TheWayofCode/GitFlow/GitProTips'
             },
             {
-              'text': 'Git 克隆优化指南：如何在速度和完整历史之间取得平衡',
+              'text': 'Git 克隆优化指南',
               'link': '/InterviewQ/TheWayofCode/GitFlow/GitClone'
             }
           ]
@@ -83,7 +83,7 @@ export default {
       'link': '/Lives/AvoidNoteTrap'
     },
     {
-      'text': '你的建议对方听不听，不在于对错而在于身份',
+      'text': '建议的身份法则',
       'link': '/Lives/IdentityMatters'
     },
     {
@@ -141,7 +141,7 @@ export default {
       'link': '/Tips/WorkplaceAbbreviations'
     },
     {
-      'text': '自动导入后不能跳转组件的解决办法',
+      'text': '自动导入组件跳转修复',
       'link': '/Tips/AutoImportJumpFix'
     },
     {
@@ -153,19 +153,19 @@ export default {
       'link': '/Tips/EslintPrettierConfig'
     },
     {
-      'text': 'eslint配置插件指南 - JS项目',
+      'text': 'JS ESLint 配置指南',
       'link': '/Tips/EslintJs'
     },
     {
-      'text': 'eslint配置插件指南 - TS项目',
+      'text': 'TS ESLint 配置指南',
       'link': '/Tips/EslintTs'
     },
     {
-      'text': 'eslint配置插件指南 － Vue3+TS 项目',
+      'text': 'Vue3+TS ESLint 配置指南',
       'link': '/Tips/EslintVue3Ts'
     },
     {
-      'text': 'Windows 上终于有了真正好用的平铺窗口管理器：GlazeWM',
+      'text': 'Windows 平铺管理器 GlazeWM',
       'link': '/Tips/GlazeWMIntro'
     }
   ]
