@@ -6,9 +6,12 @@
   "type": "module",
   "scripts": {
     "dev": "vitepress dev",
-    "build": "vitepress build",
+    "build": "pnpm run sidebar && vitepress build",
     "preview": "vitepress preview",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "sidebar": "node scripts/generate-sidebar.js",
+    "sidebar:watch": "node scripts/watch-sidebar.js",
+    "sidebar:test": "node scripts/test-sidebar.js"
   },
   "author": "bddxg",
   "license": "GPL-3.0-only",

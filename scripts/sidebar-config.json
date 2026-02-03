@@ -1,0 +1,37 @@
+{
+  "articleRoot": "../Article",
+  "sidebarPath": "../.vitepress/configs/sidebar.mts",
+  "sections": {
+    "/InterviewQ/": {
+      "title": "面试题",
+      "subSections": {
+        "Frontend": "前端",
+        "Backend": "后端",
+        "TheWayofCode": "代码通用"
+      }
+    },
+    "/Lives/": {
+      "title": "生活感悟",
+      "subSections": null
+    },
+    "/Tips/": {
+      "title": "技巧分享",
+      "subSections": null
+    }
+  },
+  "titleExtraction": {
+    "useFirstHeading": true,
+    "fallbackToFilename": true,
+    "camelCaseToSpaces": true,
+    "maxLength": 12,
+    "truncateStrategy": "smart"
+  },
+  "sorting": {
+    "enabled": true,
+    "locale": "zh-CN"
+  },
+  "watch": {
+    "debounceDelay": 1000,
+    "fileExtensions": [".md"]
+  }
+}
