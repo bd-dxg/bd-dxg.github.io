@@ -1,5 +1,6 @@
+import pkg from '../../package.json'
+
 export default {
-  message:
-    '<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral">本网站由<img src="https://images.bddxg.top/blog/%E5%8F%88%E6%8B%8D%E4%BA%91.webp" style="width:4rem; display:inline;vertical-align:text-bottom">提供 CDN 加速/云存储服务</a>',
-  copyright: 'Powered by GLM Coding Plan',
+  message: '功不唐捐，玉汝于成',
+  copyright: `Powered by <a href="https://vitepress.dev/">Vitepress ${pkg.devDependencies.vitepress}</a>`,
 }

@@ -5,7 +5,7 @@ description: 详解 GitFlow 工作流的五大核心分支及其使用场景
 
 # 五大分支概述
 
-![fI6dAXt_8.webp](https://images.bddxg.top/blog/1767398313326.webp)
+![fI6dAXt_8.webp](/imgs/1767398313326.avif)
 
 - **主分支 (main/master)**: 项目的生产发布分支, 始终保持稳定可发布状态
 - **热修复分支 (hotfix/\*)**: 从 `main` 分支创建, 用于紧急修复线上 BUG, 修复后同时合并回 `main` 和 `develop`

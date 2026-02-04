@@ -308,7 +308,7 @@ app.use(express.raw({ type: 'text/plain' })) // text/plain
 
 ## 兼容性和降级方案
 
-![2026-02-03_22-06-15.jpg](https://images.bddxg.top/blog/1770127587625.jpg)
+![2026-02-03_22-06-15.jpg](/imgs/1770127587625.avif)
 
 ### 浏览器兼容性检查
 

@@ -16,7 +16,7 @@ export default defineConfig({
     sidebar,
     search,
     footer,
-    logo: 'https://images.bddxg.top/blog/1762394897704.png',
+    logo: '/imgs/1762394897704.avif',
     outline: 'deep',
     outlineTitle: '文章目录',
     lastUpdatedText: '更新于',

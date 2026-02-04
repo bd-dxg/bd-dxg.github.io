@@ -147,7 +147,7 @@
 
 /* 添加首页背景 */
 .Layout:has(.VPHome) {
-  background-image: url('https://images.bddxg.top/blog/1764343184722.webp');
+  background-image: url('/imgs/1764343184722.avif');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

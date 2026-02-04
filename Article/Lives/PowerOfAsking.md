@@ -30,15 +30,15 @@ description: 高效提问的十个技巧，让你的问题更容易得到有价�
 提问，非常能体现一个人的情商是否高低。
 
 在 SF 上，常常能看到很多注定得不到答案的提问。
-![](https://images.bddxg.top/blog/image__TqpJ-zs5n.webp)
+![](/imgs/image__TqpJ-zs5n.avif)
 
-![](https://images.bddxg.top/blog/image_m3JOY-eeYv.webp)
+![](/imgs/image_m3JOY-eeYv.avif)
 
 不懂得如何清晰的描述自己的问题，百度/google 都不一定能找到答案，更别说群里的其他小伙伴能主动帮助你解决了。
 
 其实在当今这个环境下，并不缺愿意帮助你解决问题的小伙伴，缺的，是好问题。例如这样一个问题，很多人都愿意来回答
 
-![](https://images.bddxg.top/blog/image_5YZjyXq9L_.webp)
+![](/imgs/image_5YZjyXq9L_.avif)
 
 所以问题是：如何提问，才能够让自己的问题更容易得到答案？
 

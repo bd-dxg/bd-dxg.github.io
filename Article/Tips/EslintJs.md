@@ -52,7 +52,7 @@ eslint-plugin-promise eslint-plugin-perfectionist \
 
 同时需要安装插件 [**Eslint 点我安装**](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
-![380d79493e10c59977d5292adabca15e2d12b1bc.webp](https://images.bddxg.top/blog/1765180881885.webp)
+![380d79493e10c59977d5292adabca15e2d12b1bc.webp](/imgs/1765180881885.avif)
 
 ## 配置
 

@@ -12,13 +12,13 @@ description: Vue3 + TypeScript 项目 ESLint 配置方案，整合 Vue 官方规
 
 ---
 
-![3.webp](https://images.bddxg.top/blog/1765181281375.webp)
+![3.webp](/imgs/1765181281375.avif)
 
 **配置好 Eslint 显著提高AI代码生成质量, 有图有真相, 令人信服!**
 
 AI相关配置:
 
-![4.webp](https://images.bddxg.top/blog/1765181292293.webp)
+![4.webp](/imgs/1765181292293.avif)
 项目级别配置即可
 
 ---

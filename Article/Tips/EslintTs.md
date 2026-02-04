@@ -48,7 +48,7 @@ pnpm add -D eslint-plugin-unused-imports eslint-plugin-import eslint-plugin-unic
 好在都是装在开发依赖中,不会对实际项目体积产生影响 :joy:
 
 [details="为什么还有 `@eslint/js` 包安装在ts项目中?"]
-![2.webp](https://images.bddxg.top/blog/1765181090212.webp)
+![2.webp](/imgs/1765181090212.avif)
 [/details]
 
 同时需要安装插件 [**Eslint 点我安装**](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
