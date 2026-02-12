@@ -15,6 +15,10 @@ export default {
         {
           'text': '页面关闭统计数据',
           'link': '/InterviewQ/Frontend/PageCloseAnalytics'
+        },
+        {
+          'text': 'vite打包结构控制 <Badge type=\'tip\' text=\'Vite 8\' />',
+          'link': '/InterviewQ/Frontend/ViteChunkControl'
         }
       ]
     },
