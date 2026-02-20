@@ -74,7 +74,8 @@ svg.rough-annotation {
 
 /* 确保包含SVG和标注元素的容器有正确的层叠上下文 */
 .content-container .main p,
-.content-container .main div,
+/* :not(.line-numbers-wrapper) - 修复markdown代码块显示行号的错位问题 */
+.content-container .main div:not(.line-numbers-wrapper),
 .content-container .main span {
   position: relative;
 }
