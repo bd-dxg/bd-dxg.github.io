@@ -1,4 +1,4 @@
-name: 部署到 GitHub Pages
+name: GitHub Pages
 
 on:
   # 推送到 main 分支时自动触发
