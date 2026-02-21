@@ -17,9 +17,9 @@ features:
   - title: AI 工具配置
     details: 配置使用方法及提示词
     link: /Tips/AIToolsConfig
-  - title: 做通用服务的一些感悟
-    details: 总结通用服务开发的核心理念
-    link: /Lives/CommonServiceInsights
+  - title: 使用 CSS @layer 优雅覆盖
+    details: 告别选择器权重战争和 !important
+    link: /Tips/CssLayerOverride
   - title: 如何成为越干越值钱的程序员
     details: 个人与职场发展
     link: /Lives/EvolvingDev

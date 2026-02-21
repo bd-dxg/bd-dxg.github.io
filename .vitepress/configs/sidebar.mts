@@ -141,6 +141,10 @@ export default {
       'link': '/Tips/RecSoftware'
     },
     {
+      'text': '使用 CSS @layer 优雅覆盖',
+      'link': '/Tips/CssLayerOverride'
+    },
+    {
       'text': '职场高频英语缩写',
       'link': '/Tips/WorkplaceAbbreviations'
     },
