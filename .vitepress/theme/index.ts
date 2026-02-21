@@ -11,9 +11,6 @@ import { initCopyListener, removeCopyListener } from './utils/copyWithCopyright'
 
 import './style.css'
 import 'virtual:group-icons.css'
-import './rough-notation/rough-notation.css'
-import './gitalk/gitalk.css'
-import './custom.css'
 
 export default {
   extends: DefaultTheme,

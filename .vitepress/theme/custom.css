@@ -1,6 +1,6 @@
 :root {
   /* 设置代码块区域自定义字体 */
-  --vp-font-family-mono: '汉仪玛奇朵', ui-monospace;
+  --vp-font-family-mono: '汉仪玛奇朵', ui-monospace !important;
   /* 设置代码块区域字体大小 */
   --vp-code-font-size: 1.1rem;
   --darkreader-background-0060d4: #4a6e3b !important;
@@ -63,7 +63,7 @@
 /* 调整页面默认宽度,适配高分屏 */
 @media (min-width: 1920px) {
   :root {
-    --vp-layout-max-width: 1920px;
+    --vp-layout-max-width: 1920px !important;
   }
 
   .VPDoc:not(.has-sidebar) .container {
@@ -161,6 +161,25 @@
     .container p {
       color: aliceblue !important;
       text-shadow: 0 0 2px #000;
+    }
+  }
+}
+
+/* 优化代码块标题图标位置和大小 */
+.vp-code-block-title-bar {
+  padding: unset !important;
+  overflow: hidden;
+  .vp-code-block-title-text {
+    padding: unset !important;
+    line-height: unset !important;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
+
+    &::before {
+      width: 2rem !important;
+      height: 2rem !important;
+      vertical-align: middle;
     }
   }
 }
