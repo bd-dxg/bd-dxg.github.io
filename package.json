@@ -8,7 +8,8 @@
     "dev": "vitepress dev",
     "build": "pnpm run sidebar && vitepress build",
     "preview": "vitepress preview",
-    "format": "prettier --write .",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
     "sidebar": "node scripts/generate-sidebar.js",
     "sidebar:watch": "node scripts/watch-sidebar.js",
     "sidebar:test": "node scripts/test-sidebar.js"
@@ -17,7 +18,7 @@
   "license": "GPL-3.0-only",
   "devDependencies": {
     "@types/node": "^24.10.13",
-    "prettier": "^3.8.1",
+    "oxfmt": "^0.35.0",
     "typescript": "^5.9.3",
     "vitepress": "2.0.0-alpha.16",
     "vitepress-plugin-group-icons": "^1.7.1",
