@@ -35,10 +35,20 @@ let updateTimer = null
  */
 function updateSidebar() {
   try {
-    console.log('📝 检测到文件变化，更新 sidebar 配置...')
+    console.log('📝 检测到文件变化，检查 sidebar 配置...')
 
     const sidebarConfig = generateSidebarConfig()
     const fileContent = generateSidebarFile(sidebarConfig)
+
+    // 对比现有配置，无变化则跳过写入
+    const existing = fs.existsSync(WATCH_CONFIG.sidebarPath)
+      ? fs.readFileSync(WATCH_CONFIG.sidebarPath, 'utf-8')
+      : ''
+
+    if (fileContent === existing) {
+      console.log('⏭️  sidebar 配置无变化，跳过写入')
+      return
+    }
 
     fs.writeFileSync(WATCH_CONFIG.sidebarPath, fileContent, 'utf-8')
 
