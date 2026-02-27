@@ -27,7 +27,7 @@
 ## 🎯 技术栈
 
 - **框架**: VitePress 2.0.0-alpha.15 + Vue 3.5
-- **包管理**: pnpm
+- **包管理**: bun
 - **样式**: CSS
 - **评论**: Gitalk (CDN 引入)
 - **动画**: Rough Notation (CDN 引入)
@@ -97,7 +97,7 @@
 
 项目配置了 GitHub Actions，当代码推送到 `main` 分支时自动：
 
-1. 安装依赖（使用 pnpm）
+1. 安装依赖（使用 bun）
 2. 构建静态网站
 3. 部署到 GitHub Pages
 

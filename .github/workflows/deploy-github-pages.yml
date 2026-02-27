@@ -31,22 +31,16 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: 设置 pnpm 为包管理器
-        uses: pnpm/action-setup@v3
+      - name: 设置 Bun 为包管理器
+        uses: oven-sh/setup-bun@v2
         with:
-          version: 10
-
-      - name: 安装 Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 25
-          cache: pnpm
+          bun-version: latest
 
       - name: 安装依赖
-        run: pnpm install
+        run: bun install
 
       - name: 打包网页
-        run: pnpm build
+        run: bun run build
         env:
           VITE_GITALK_CLIENT_ID: ${{ secrets.GITALK_CLIENT_ID }}
           VITE_GITALK_CLIENT_SECRET: ${{ secrets.GITALK_CLIENT_SECRET }}
