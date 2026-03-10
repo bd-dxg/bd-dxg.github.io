@@ -10,9 +10,9 @@
     "preview": "vitepress preview",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
-    "sidebar": "pnpm scripts/generate-sidebar.js",
-    "sidebar:watch": "pnpm scripts/watch-sidebar.js",
-    "sidebar:test": "pnpm scripts/test-sidebar.js"
+    "sidebar": "node scripts/generate-sidebar.js",
+    "sidebar:watch": "node scripts/watch-sidebar.js",
+    "sidebar:test": "node scripts/test-sidebar.js"
   },
   "author": "bddxg",
   "license": "GPL-3.0-only",
