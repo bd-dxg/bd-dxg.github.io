@@ -6,13 +6,13 @@
   "type": "module",
   "scripts": {
     "dev": "vitepress dev",
-    "build": "bun run sidebar && vitepress build",
+    "build": "pnpm  sidebar && vitepress build",
     "preview": "vitepress preview",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
-    "sidebar": "bun scripts/generate-sidebar.js",
-    "sidebar:watch": "bun scripts/watch-sidebar.js",
-    "sidebar:test": "bun scripts/test-sidebar.js"
+    "sidebar": "pnpm scripts/generate-sidebar.js",
+    "sidebar:watch": "pnpm scripts/watch-sidebar.js",
+    "sidebar:test": "pnpm scripts/test-sidebar.js"
   },
   "author": "bddxg",
   "license": "GPL-3.0-only",

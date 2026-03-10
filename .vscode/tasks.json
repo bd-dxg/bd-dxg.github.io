@@ -4,8 +4,8 @@
     {
       "label": "sidebar:watch",
       "type": "shell",
-      "command": "bun",
-      "args": ["run", "sidebar:watch"],
+      "command": "pnpm",
+      "args": ["sidebar:watch"],
       "group": "build",
       "presentation": {
         "echo": true,
