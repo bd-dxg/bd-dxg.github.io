@@ -119,6 +119,10 @@ export default {
       'link': '/Lives/FirstDevJob'
     },
     {
+      'text': '写给自学前端同学的编程法则',
+      'link': '/Lives/FrontendPrinciples'
+    },
+    {
       'text': '一个人过很好的 10 条建议',
       'link': '/Lives/LivingWellAlone'
     },

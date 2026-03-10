@@ -17,9 +17,9 @@ features:
   - title: AI 工具配置
     details: 配置使用方法及提示词
     link: /Tips/AIToolsConfig
-  - title: 使用 CSS @layer 优雅覆盖
-    details: 告别选择器权重战争和 !important
-    link: /Tips/CssLayerOverride
+  - title: 写给自学前端同学的编程法则
+    details: 帮助写出高质量、易维护的代码
+    link: /Lives/FrontendPrinciples
   - title: 如何成为越干越值钱的程序员
     details: 个人与职场发展
     link: /Lives/EvolvingDev
