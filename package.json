@@ -2,26 +2,33 @@
   "name": "blog",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "license": "AGPL-3.0-only",
+  "author": "bddxg",
   "type": "module",
+  "main": "index.js",
   "scripts": {
     "dev": "vitepress dev",
-    "build": "pnpm  sidebar && vitepress build",
+    "build": "vp  sidebar && vitepress build",
     "preview": "vitepress preview",
-    "fmt": "oxfmt",
-    "fmt:check": "oxfmt --check",
+    "fmt": "vp fmt",
+    "fmt:check": "vp fmt --check",
     "sidebar": "node scripts/generate-sidebar.js",
     "sidebar:watch": "node scripts/watch-sidebar.js",
     "sidebar:test": "node scripts/test-sidebar.js"
   },
-  "author": "bddxg",
-  "license": "GPL-3.0-only",
   "devDependencies": {
     "@types/node": "^24.10.15",
-    "oxfmt": "^0.35.0",
     "typescript": "^5.9.3",
+    "vite-plus": "latest",
     "vitepress": "2.0.0-alpha.16",
     "vitepress-plugin-group-icons": "^1.7.1",
     "vue": "^3.5.29"
+  },
+  "packageManager": "pnpm@10.32.1",
+  "pnpm": {
+    "overrides": {
+      "vite": "npm:@voidzero-dev/vite-plus-core@latest",
+      "vitest": "npm:@voidzero-dev/vite-plus-test@latest"
+    }
   }
 }
