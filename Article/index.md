@@ -4,14 +4,7 @@ layout: home
 hero:
   name: '冰冻大西瓜'
   text: '简单的个人博客'
-  tagline: '技术栈: vue2/3,typescript,tailwindcss,miniprogram'
-  actions:
-    - theme: brand
-      text: 加入聊天群
-      link: https://t.me/+BTMz5PhmElJiMjBl
-    - theme: alt
-      text: 访问旧站
-      link: https://old.bddxg.top
+  tagline: '技术栈: vue3、typescript、tailwindcss4、miniprogram'
 
 features:
   - title: AI 工具配置
