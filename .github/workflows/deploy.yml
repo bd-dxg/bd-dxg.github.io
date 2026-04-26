@@ -27,8 +27,6 @@ jobs:
           fetch-depth: 0 # 如果未启用 lastUpdated，则不需要
       - name: 设置 pnpm 为包管理器
         uses: pnpm/action-setup@v5.0.0 # 如果使用 pnpm，请取消此区域注释
-        with:
-          version: 10
       - name: 安装Node
         uses: actions/setup-node@v6.3.0
         with:
