@@ -169,6 +169,10 @@ export default {
       'link': '/Tips/EslintJs'
     },
     {
+      'text': 'OXC —— 下一代 JS 工具链：oxlint + oxfmt 配置指南',
+      'link': '/Tips/OxcLintFmt'
+    },
+    {
       'text': 'TS ESLint 配置指南',
       'link': '/Tips/EslintTs'
     },
