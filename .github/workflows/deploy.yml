@@ -22,15 +22,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 检查仓库
-        uses: actions/checkout@main
+        uses: actions/checkout@v6.0.2
         with:
           fetch-depth: 0 # 如果未启用 lastUpdated，则不需要
       - name: 设置 pnpm 为包管理器
-        uses: pnpm/action-setup@v3 # 如果使用 pnpm，请取消此区域注释
+        uses: pnpm/action-setup@v5.0.0 # 如果使用 pnpm，请取消此区域注释
         with:
           version: 10
       - name: 安装Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6.3.0
         with:
           node-version: 25
           cache: pnpm
@@ -42,7 +42,7 @@ jobs:
           VITE_GITALK_CLIENT_ID: ${{ secrets.GITALK_CLIENT_ID }}
           VITE_GITALK_CLIENT_SECRET: ${{ secrets.GITALK_CLIENT_SECRET }}
       - name: 发布到腾讯云
-        uses: easingthemes/ssh-deploy@main
+        uses: easingthemes/ssh-deploy@v6.0.1
         env:
           # 私钥
           SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
