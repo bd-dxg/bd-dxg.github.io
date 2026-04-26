@@ -151,7 +151,7 @@ git stash apply
 
 ### 使用场景
 
-#### 个人项目中(假设你有一到两个分支),
+#### 个人项目中(假设你有一到两个分支)
 
 推荐使用`git rebase`
 
@@ -170,7 +170,7 @@ git pull --rebase origin main
 - 没有多余的 merge commit
 - 方便查看项目演进过程
 
-#### 公司项目(git flow流程):
+#### 公司项目(git flow流程)
 
 对于本地、未推送的提交 → 使用 Rebase:
 

@@ -96,21 +96,21 @@ AI 改变了写代码的方式，但没有改变好代码的标准。
 // 这样的函数做太多事情了
 async function processUser() {
   // 1. 从数据库获取用户数据
-  const users = await database.fetchAllUsers()
+  const users = await database.fetchAllUsers();
 
   // 2. 筛选活跃用户
-  const activeUsers = users.filter(user => user.isActive)
+  const activeUsers = users.filter((user) => user.isActive);
 
   // 3. 给活跃用户发邮件
-  activeUsers.forEach(user => {
-    sendEmail(user.email, 'Hello active user!')
-  })
+  activeUsers.forEach((user) => {
+    sendEmail(user.email, "Hello active user!");
+  });
 
   // 4. 统计活跃用户数量
-  const count = activeUsers.length
+  const count = activeUsers.length;
 
   // 5. 记录日志
-  console.log(`处理了 ${count} 个活跃用户`)
+  console.log(`处理了 ${count} 个活跃用户`);
 }
 ```
 
@@ -121,25 +121,25 @@ async function processUser() {
 ```js
 // 拆分成多个专一的函数
 async function getActiveUsers() {
-  const users = await database.fetchAllUsers()
-  return users.filter(user => user.isActive)
+  const users = await database.fetchAllUsers();
+  return users.filter((user) => user.isActive);
 }
 
 function sendEmailsToUsers(users) {
-  users.forEach(user => {
-    sendEmail(user.email, 'Hello active user!')
-  })
+  users.forEach((user) => {
+    sendEmail(user.email, "Hello active user!");
+  });
 }
 
 function logUserCount(count) {
-  console.log(`处理了 ${count} 个活跃用户`)
+  console.log(`处理了 ${count} 个活跃用户`);
 }
 
 // 主要流程函数，只负责协调
 async function processUsers() {
-  const activeUsers = await getActiveUsers()
-  sendEmailsToUsers(activeUsers)
-  logUserCount(activeUsers.length)
+  const activeUsers = await getActiveUsers();
+  sendEmailsToUsers(activeUsers);
+  logUserCount(activeUsers.length);
 }
 ```
 
@@ -158,14 +158,14 @@ async function processUsers() {
 
 ```js
 // 不幂等的写法
-let count = 0
+let count = 0;
 function increment() {
-  count = count + 1 // 每次调用结果都不一样
+  count = count + 1; // 每次调用结果都不一样
 }
 
 // 幂等的写法
 function setCount(value) {
-  count = value // 不管调用多少次，传同样的值结果都一样
+  count = value; // 不管调用多少次，传同样的值结果都一样
 }
 ```
 
@@ -186,26 +186,26 @@ function setCount(value) {
 ```js
 // 不好的写法 - 抽象层次混乱
 function processUser(userId) {
-  const user = getUser(userId)
+  const user = getUser(userId);
 
   // 突然开始写具体的实现细节
-  if (user.age > 18 && user.status === 'active' && !user.banned) {
+  if (user.age > 18 && user.status === "active" && !user.banned) {
     // 又回到高层抽象
-    sendWelcomeEmail(user)
+    sendWelcomeEmail(user);
   }
 }
 
 // 好的写法 - 抽象层次一致
 function processUser(userId) {
-  const user = getUser(userId)
+  const user = getUser(userId);
 
   if (isEligibleUser(user)) {
-    sendWelcomeEmail(user)
+    sendWelcomeEmail(user);
   }
 }
 
 function isEligibleUser(user) {
-  return user.age > 18 && user.status === 'active' && !user.banned
+  return user.age > 18 && user.status === "active" && !user.banned;
 }
 ```
 

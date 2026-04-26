@@ -15,7 +15,7 @@ description: 详解 GitFlow 工作流的五大核心分支及其使用场景
 
 ## 分支合并关系
 
-```
+```text
 feature/*  →  develop
 develop    →  release/*
 release/*  →  main + develop

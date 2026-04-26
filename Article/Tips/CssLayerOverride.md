@@ -48,18 +48,18 @@ description: 使用 CSS @layer 级联层优雅覆盖第三方 UI 库样式，告
 }
 ```
 
-1.  `@layer reset, demo;` (声明层顺序) 这行代码是在定义层的优先级顺序。
-    - 规则：在这个列表中，越靠后的层，优先级越高。
+1. `@layer reset, demo;` (声明层顺序) 这行代码是在定义层的优先级顺序。
+   - 规则：在这个列表中，越靠后的层，优先级越高。
 
-    - 这里的逻辑： demo 层的样式会覆盖 reset 层。
+   - 这里的逻辑： demo 层的样式会覆盖 reset 层。
 
-    - 好处： 无论你后续在代码文件的哪个位置编写这些层的具体内容，浏览器都会严格按照这行声明的顺序来决定谁覆盖谁。
+   - 好处： 无论你后续在代码文件的哪个位置编写这些层的具体内容，浏览器都会严格按照这行声明的顺序来决定谁覆盖谁。
 
-2.  `@layer demo { ... }` 和 `@layer reset { ... }` (定义层内容)
-    这些代码块是将具体的 CSS 规则分配到指定的“层”中。
-    - `@layer reset { ... }``：通常放一些基础的样式重置（如去掉边距、设置 border-box）。因为在声明顺序中它在最前面，所以它的优先级最低。
+2. `@layer demo { ... }` 和 `@layer reset { ... }` (定义层内容)
+   这些代码块是将具体的 CSS 规则分配到指定的“层”中。
+   - `@layer reset { ... }``：通常放一些基础的样式重置（如去掉边距、设置 border-box）。因为在声明顺序中它在最前面，所以它的优先级最低。
 
-    - `@layer demo { ... }`：这里放的是当前案例的核心样式（梯形效果）。因为它在声明顺序中排在最后，所以即使这里的选择器权重较低，它也能确保覆盖前面层里的冲突样式。
+   - `@layer demo { ... }`：这里放的是当前案例的核心样式（梯形效果）。因为它在声明顺序中排在最后，所以即使这里的选择器权重较低，它也能确保覆盖前面层里的冲突样式。
 
 ### 为什么需要这个功能？
 
@@ -104,13 +104,13 @@ description: 使用 CSS @layer 级联层优雅覆盖第三方 UI 库样式，告
 确保它是第一个被引入的样式文件：
 
 ```ts [main.ts]
-import { createApp } from 'vue'
-import App from './App.vue'
-import './assets/main.css' // 确保在这里引入
+import { createApp } from "vue";
+import App from "./App.vue";
+import "./assets/main.css"; // 确保在这里引入
 
-const app = createApp(App)
+const app = createApp(App);
 // ... 其他配置
-app.mount('#app')
+app.mount("#app");
 ```
 
 ### 第三步：在组件中“降维打击”
@@ -174,7 +174,7 @@ export default defineConfig({
       },
     },
   },
-})
+});
 ```
 
 ### 为什么这种方式更优雅？

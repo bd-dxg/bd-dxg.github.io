@@ -60,19 +60,19 @@ eslint-plugin-promise eslint-plugin-perfectionist \
 
 ```js
 // eslint.config.js
-import js from '@eslint/js'
-import imports from 'eslint-plugin-import'
-import perfectionist from 'eslint-plugin-perfectionist'
-import promise from 'eslint-plugin-promise'
-import unicorn from 'eslint-plugin-unicorn'
-import unusedImports from 'eslint-plugin-unused-imports'
+import js from "@eslint/js";
+import imports from "eslint-plugin-import";
+import perfectionist from "eslint-plugin-perfectionist";
+import promise from "eslint-plugin-promise";
+import unicorn from "eslint-plugin-unicorn";
+import unusedImports from "eslint-plugin-unused-imports";
 
 export default [
   // 1. 官方推荐的核心规则（必须最先）
   js.configs.recommended,
 
   // 2. unicorn（包含大量 recommended 规则，建议第二位）
-  unicorn.configs['recommended'],
+  unicorn.configs["recommended"],
 
   // 3. import 插件（路径检查、重复导入等，要在 perfectionist 之前）
   {
@@ -82,17 +82,17 @@ export default [
     rules: {
       ...imports.configs.recommended.rules,
       // 关闭与 perfectionist 冲突的排序规则（perfectionist 更强）
-      'import/order': 'off',
+      "import/order": "off",
     },
     settings: {
-      'import/resolver': {
-        node: { extensions: ['.js', '.mjs', '.cjs'] },
+      "import/resolver": {
+        node: { extensions: [".js", ".mjs", ".cjs"] },
       },
     },
   },
 
   // 4. promise 插件（规则很少，放中间就行）
-  promise.configs['flat/recommended'],
+  promise.configs["flat/recommended"],
 
   // 5. perfectionist（排序神器，必须在 import 之后！）
   {
@@ -100,31 +100,41 @@ export default [
       perfectionist,
     },
     rules: {
-      'perfectionist/sort-imports': [
-        'warn',
+      "perfectionist/sort-imports": [
+        "warn",
         {
-          type: 'natural', // 排序算法
-          order: 'asc', // 排序方向
+          type: "natural", // 排序算法
+          order: "asc", // 排序方向
           // 分组顺序: Node内置➡ 第三方依赖➡ 项目内部别名➡ 父级目录➡ 同级目录➡ 当前目录index➡ 对象导入➡ 类型导入➡ 无法识别导入
-          groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type', 'unknown'],
+          groups: [
+            "builtin",
+            "external",
+            "internal",
+            "parent",
+            "sibling",
+            "index",
+            "object",
+            "type",
+            "unknown",
+          ],
         },
       ],
 
-      'perfectionist/sort-exports': 'warn', // 导出排序 export { apple, banana, zebra }
-      'perfectionist/sort-named-exports': 'warn', // 导出排序 export { a, m, z } from './module'
+      "perfectionist/sort-exports": "warn", // 导出排序 export { apple, banana, zebra }
+      "perfectionist/sort-named-exports": "warn", // 导出排序 export { a, m, z } from './module'
     },
   },
 
   // 6. unused-imports（必须放最后！因为它依赖前面的解析结果来判断“是否真的没用”）
   {
     plugins: {
-      'unused-imports': unusedImports,
+      "unused-imports": unusedImports,
     },
     rules: {
-      'unused-imports/no-unused-imports': 'error',
+      "unused-imports/no-unused-imports": "error",
       // 可选：连未使用的变量也一起管（比内置 no-unused-vars 更快更准）
-      'unused-imports/no-unused-vars': 'error',
-      'no-unused-vars': 'off', // 关闭内置的，防止重复报错
+      "unused-imports/no-unused-vars": "error",
+      "no-unused-vars": "off", // 关闭内置的，防止重复报错
     },
   },
 
@@ -133,27 +143,27 @@ export default [
     languageOptions: {
       globals: {
         // Node.js 全局变量
-        console: 'readonly',
-        process: 'readonly',
-        Buffer: 'readonly',
-        __dirname: 'readonly',
-        __filename: 'readonly',
-        global: 'readonly',
-        module: 'readonly',
-        require: 'readonly',
-        exports: 'readonly',
+        console: "readonly",
+        process: "readonly",
+        Buffer: "readonly",
+        __dirname: "readonly",
+        __filename: "readonly",
+        global: "readonly",
+        module: "readonly",
+        require: "readonly",
+        exports: "readonly",
       },
     },
     rules: {
       // unicorn 里个别对纯后端太严格的规则可以关掉
-      'unicorn/filename-case': 'off',
+      "unicorn/filename-case": "off",
 
       // 后端常见放宽
-      'no-console': 'off', // 方便调试
-      'no-underscore-dangle': 'off', // 允许下划线命名 如 __dirname
+      "no-console": "off", // 方便调试
+      "no-underscore-dangle": "off", // 允许下划线命名 如 __dirname
     },
   },
-]
+];
 ```
 
 同时需要在编辑器(这里以vscode为例)的设置中添加以下配置,以达到**自动修复**的目的
