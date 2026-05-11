@@ -10,9 +10,9 @@ features:
   - title: 下一代 JS 工具链
     details: oxlint + oxfmt 配置指南
     link: /Tips/OxcLintFmt
-  - title: 写给自学前端同学的编程法则
-    details: 帮助写出高质量、易维护的代码
-    link: /Lives/FrontendPrinciples
+  - title: 认知投降
+    details: 探讨软件工程师如何在使用AI时保持独立思考
+    link: /Lives/CognitiveSurrender
   - title: 写给前端同学的 21 条职场教训
     details: 个人与职场发展
     link: /Lives/FrontendCareerTips

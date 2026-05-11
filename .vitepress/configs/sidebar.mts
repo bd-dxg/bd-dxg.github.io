@@ -91,6 +91,10 @@ export default {
       'link': '/Lives/IdentityMatters'
     },
     {
+      'text': '认知投降',
+      'link': '/Lives/CognitiveSurrender'
+    },
+    {
       'text': '如果回到过去，我会这样告诫我自己',
       'link': '/Lives/AdviceToMyPastSelf'
     },
