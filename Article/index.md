@@ -13,7 +13,7 @@ features:
   - title: 写给自学前端同学的编程法则
     details: 帮助写出高质量、易维护的代码
     link: /Lives/FrontendPrinciples
-  - title: 如何成为越干越值钱的程序员
+  - title: 写给前端同学的 21 条职场教训
     details: 个人与职场发展
-    link: /Lives/EvolvingDev
+    link: /Lives/FrontendCareerTips
 ---

@@ -119,6 +119,10 @@ export default {
       'link': '/Lives/FirstDevJob'
     },
     {
+      'text': '写给前端同学的 21 条职场教训',
+      'link': '/Lives/FrontendCareerTips'
+    },
+    {
       'text': '写给自学前端同学的编程法则',
       'link': '/Lives/FrontendPrinciples'
     },
@@ -169,7 +173,7 @@ export default {
       'link': '/Tips/EslintJs'
     },
     {
-      'text': 'OXC —— 下一代 JS 工具链：oxlint + oxfmt 配置指南',
+      'text': 'OXC —— 下一代 JS 工具链',
       'link': '/Tips/OxcLintFmt'
     },
     {

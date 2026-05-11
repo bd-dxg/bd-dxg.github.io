@@ -3,7 +3,7 @@ title: OXC —— 下一代 JS 工具链：oxlint + oxfmt 配置指南
 description: 用 Rust 编写的超高速 JS 工具链，oxlint 比 ESLint 快 50-100 倍，oxfmt 比 Prettier 快 30 倍。零依赖、700+ 规则开箱即用
 ---
 
-# OXC —— 下一代 JS 工具链：oxlint + oxfmt 配置指南
+# OXC —— 下一代 JS 工具链
 
 ## 为什么你需要了解 OXC
 
