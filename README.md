@@ -1,13 +1,13 @@
 # 冰冻大西瓜的个人博客
 
-[![Deploy](https://github.com/bd-dxg/bd-dxg.github.io/actions/workflows/deploy-github-pages.yml/badge.svg)](https://github.com/bd-dxg/bd-dxg.github.io/actions/workflows/deploy.yml)
-[![VitePress](https://img.shields.io/badge/VitePress-2.0.0--alpha.15-blue)](https://vitepress.dev/)
+[![Deploy](https://github.com/bd-dxg/bd-dxg.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/bd-dxg/bd-dxg.github.io/actions/workflows/deploy.yml)
+[![VitePress](https://img.shields.io/badge/VitePress-2.0.0--alpha.16-blue)](https://vitepress.dev/)
 [![Vue](https://img.shields.io/badge/Vue-3.5-green)](https://vuejs.org/)
 [![License](https://img.shields.io/badge/License-AGPL--3.0-red)](LICENSE)
 
 基于 VitePress 构建的现代化个人博客，集成了手绘风格样式、评论系统和多种交互效果，支持自动化部署。
 
-🔗 **在线访问**: [https://bd-dxg.github.io](https://bd-dxg.github.io)
+🔗 **在线访问**: [https://bddxg.top](https://bddxg.top)
 
 ## ✨ 特性
 
@@ -15,7 +15,7 @@
 - 🎨 **Rough Notation 手绘风格** - 独特的手绘标注样式，让内容更生动
 - 💬 **Gitalk 评论系统** - 基于 GitHub Issues 的评论功能
 - 📱 **响应式设计** - 优雅适配移动端和桌面端
-- 🚀 **自动化部署** - GitHub Actions 自动构建和部署到 GitHub Pages
+- 🚀 **自动化部署** - GitHub Actions 自动构建并部署到自用服务器
 - 🔍 **全文搜索** - 内置搜索功能
 - 📊 **SEO 优化** - 完整的 meta 标签和站点地图
 - 🎯 **性能优化** - Gitalk 和 Rough Notation 通过 CDN 引入，减少打包体积
@@ -23,26 +23,37 @@
 - 🖼️ **视觉优化** - 首页背景图、版权提示功能
 - ⚡ **动画控制** - 覆盖系统"减少动画"设置，强制显示动画效果
 - 🛠️ **Sidebar 自动化** - 自动生成侧边栏配置，减少手动维护
+- 📡 **RSS 订阅** - 通过 vitepress-plugin-rss 提供 RSS 订阅功能
+- 🎨 **图标分组** - 通过 vitepress-plugin-group-icons 支持代码块图标分组展示
 
 ## 🎯 技术栈
 
-- **框架**: VitePress 2.0.0-alpha.15 + Vue 3.5
-- **包管理**: bun
+- **框架**: VitePress 2.0.0-alpha.16 + Vue 3.5
+- **包管理**: pnpm
 - **样式**: CSS
 - **评论**: Gitalk (CDN 引入)
 - **动画**: Rough Notation (CDN 引入)
-- **部署**: GitHub Actions + GitHub Pages
-- **工具**: Prettier + TypeScript
+- **部署**: GitHub Actions + SSH 部署到自用服务器
+- **工具**: vite-plus (格式化) + TypeScript
+- **插件**: vitepress-plugin-rss、vitepress-plugin-group-icons
 
 ## 🏗️ 项目结构
 
-```
+```text
 .
 ├── .github/workflows/
 │   └── deploy.yml              # GitHub Actions 部署配置
 ├── .vitepress/
 │   ├── config.mts             # VitePress 主配置
-│   ├── configs/               # 配置文件模块（head 配置等）
+│   ├── configs/               # 配置文件模块
+│   │   ├── index.mts          # 配置统一导出
+│   │   ├── head.mts           # HTML head 配置
+│   │   ├── nav.mts            # 导航栏配置
+│   │   ├── sidebar.mts        # 侧边栏配置（自动生成）
+│   │   ├── search.mts         # 搜索配置
+│   │   ├── markdown.mts       # Markdown 渲染配置
+│   │   ├── footer.mts         # 页脚配置
+│   │   └── vite.mts           # Vite 构建配置
 │   ├── theme/                 # 自定义主题
 │   │   ├── gitalk/            # Gitalk 评论系统
 │   │   │   ├── config.ts      # Gitalk 配置
@@ -53,13 +64,16 @@
 │   │   │   ├── rough-notation-plugin.ts
 │   │   │   └── rough-notation.css
 │   │   ├── utils/             # 工具函数
-│   │   ├── assets/            # 静态资源
+│   │   │   └── copyWithCopyright.ts  # 复制版权追加
 │   │   ├── custom.css         # 自定义样式
 │   │   ├── index.ts           # 主题入口
 │   │   └── style.css          # 全局样式
-│   └── sidebar.config.ts      # Sidebar 自动化生成配置
 ├── scripts/                   # 工具脚本
-│   └── generateSidebar.ts     # Sidebar 自动生成脚本
+│   ├── generate-sidebar.js    # Sidebar 自动生成脚本
+│   ├── watch-sidebar.js       # Sidebar 文件监听脚本
+│   ├── test-sidebar.js        # Sidebar 测试脚本
+│   ├── sidebar-config.json    # Sidebar 生成配置
+│   └── README.md              # 脚本说明文档
 ├── Article/                   # 文章内容目录
 │   ├── InterviewQ/            # 面试题系列
 │   │   ├── Frontend/          # 前端面试题
@@ -67,9 +81,8 @@
 │   │   └── TheWayofCode/      # 代码之道（GitFlow 工作流等）
 │   ├── Lives/                 # 程序员成长感悟
 │   ├── Tips/                  # 实用工具配置
-│   └── components/            # 自定义组件
+│   └── public/                # 静态资源（图片等）
 ├── package.json
-├── prettier.config.js         # 代码格式化配置
 └── tsconfig.json              # TypeScript 配置
 ```
 
@@ -79,10 +92,12 @@
 
 1. 在 GitHub 创建 OAuth App
 2. 配置环境变量：
-   ```env
+
+   ```text
    VITE_GITALK_CLIENT_ID=your_client_id
    VITE_GITALK_CLIENT_SECRET=your_client_secret
    ```
+
 3. **注意**: Gitalk 已改为 CDN 引入，无需安装依赖包
 4. 详细配置请参考：[Gitalk 配置指南](./.vitepress/theme/gitalk/README.md)
 
@@ -97,14 +112,16 @@
 
 项目配置了 GitHub Actions，当代码推送到 `main` 分支时自动：
 
-1. 安装依赖（使用 bun）
+1. 安装依赖（使用 pnpm）
 2. 构建静态网站
-3. 部署到 GitHub Pages
+3. 通过 SSH 部署到自用服务器
 
 需要在仓库 Settings > Secrets 中配置：
 
 - `GITALK_CLIENT_ID`
 - `GITALK_CLIENT_SECRET`
+- `PRIVATE_KEY` - SSH 私钥
+- `REMOTE_TXHOST` - 服务器地址
 
 ### 新增功能配置
 
@@ -124,7 +141,7 @@
 #### 视觉优化
 
 - **首页背景图**: 添加个性化背景图
-- **配置模块化**: head 配置分离到单文件，便于维护
+- **配置模块化**: 配置按功能拆分为独立模块（head、nav、sidebar、search 等），便于维护
 
 ### 文章 Frontmatter
 
