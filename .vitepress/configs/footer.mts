@@ -1,6 +1,4 @@
-import pkg from '../../package.json'
-
 export default {
-  message: '陇ICP备2021002743号-1',
-  copyright: `Powered by <a href="https://vitepress.dev/">Vitepress ${pkg.devDependencies.vitepress}</a>`,
-}
+  message: "陇ICP备2021002743号-1",
+  copyright: `在 AI 时代，“答案”是廉价的，高质量的“问题”才是最有价值的`,
+};
