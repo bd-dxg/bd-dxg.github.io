@@ -123,6 +123,10 @@ export default {
       'link': '/Lives/FirstDevJob'
     },
     {
+      'text': '我不再做的12件事',
+      'link': '/Lives/ThingsINoLongerDo'
+    },
+    {
       'text': '写给前端同学的 21 条职场教训',
       'link': '/Lives/FrontendCareerTips'
     },

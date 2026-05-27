@@ -7,9 +7,9 @@ hero:
   tagline: "技术栈: vue3、typescript、tailwindcss4、miniprogram"
 
 features:
-  - title: 下一代 JS 工具链
-    details: oxlint + oxfmt 配置指南
-    link: /Tips/OxcLintFmt
+  - title: 我不再做的12件事
+    details: 不再做的12件事及背后的思考
+    link: /Lives/ThingsINoLongerDo
   - title: 认知投降
     details: 探讨软件工程师如何在使用AI时保持独立思考
     link: /Lives/CognitiveSurrender
