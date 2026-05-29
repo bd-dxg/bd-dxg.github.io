@@ -63,6 +63,10 @@ export default {
   ],
   '/Lives/': [
     {
+      'text': '不要把学习外包给 AI',
+      'link': '/Lives/DontOutsourceLearning'
+    },
+    {
       'text': '程序员从幼稚走向成熟的标志',
       'link': '/Lives/SuccessfulMarketing'
     },
