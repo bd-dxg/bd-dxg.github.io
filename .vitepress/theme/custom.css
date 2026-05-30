@@ -192,8 +192,49 @@
 
 /* 调整自定义块的字体样式 */
 #VPContent .main .custom-block {
-  font-weight: bold;
+  --background: #fafaf9;
+  border-radius: 0.75rem;
   p.custom-block-title {
     font-size: 18px;
+  }
+  &.info {
+    --info-color: #0969da;
+    border-left: 4px solid var(--info-color);
+    background: color-mix(in srgb, var(--info-color) 8%, var(--vp-c-bg));
+    p.custom-block-title::before {
+      content: "ℹ️";
+    }
+  }
+  &.tip {
+    --info-color: #1a7f37;
+    border-left: 4px solid var(--info-color);
+    background: color-mix(in srgb, var(--info-color) 8%, var(--vp-c-bg));
+    p.custom-block-title::before {
+      content: "💗";
+    }
+  }
+  &.important {
+    --info-color: #8250df;
+    border-left: 4px solid var(--info-color);
+    background: color-mix(in srgb, var(--info-color) 8%, var(--vp-c-bg));
+    p.custom-block-title::before {
+      content: "📢";
+    }
+  }
+  &.warning {
+    --info-color: #9a6700;
+    border-left: 4px solid var(--info-color);
+    background: color-mix(in srgb, var(--info-color) 8%, var(--vp-c-bg));
+    p.custom-block-title::before {
+      content: "⚠️";
+    }
+  }
+  &.caution {
+    --info-color: #cf222e;
+    border-left: 4px solid var(--info-color);
+    background: color-mix(in srgb, var(--info-color) 8%, var(--vp-c-bg));
+    p.custom-block-title::before {
+      content: "🚫";
+    }
   }
 }
