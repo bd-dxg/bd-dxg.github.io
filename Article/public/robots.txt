@@ -1,0 +1,11 @@
+# 欢迎所有搜索引擎爬虫访问我的网站
+User-agent: *
+Allow: /
+
+# 禁止爬虫抓取系统缓存、临时文件或某些不需要被搜索到的配置目录（可根据实际情况调整）
+Disallow: /_not_found/
+Disallow: /assets/chunks/
+Disallow: /node_modules/
+
+# 💡 告诉搜索引擎你的站点地图在哪里，方便它们抓取
+Sitemap: https://bddxg.top/sitemap.xml
