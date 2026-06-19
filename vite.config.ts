@@ -1,11 +1,4 @@
 import { defineConfig } from "vite-plus";
-import { RSSOptions, RssPlugin } from "vitepress-plugin-rss";
-
-const RSS: RSSOptions = {
-  title: "冰冻大西瓜",
-  baseUrl: "https://bddxg.top",
-  copyright: "Copyright (c) 2018-present, 粥里有勺糖",
-};
 
 export default defineConfig({
   lint: {
@@ -36,6 +29,4 @@ export default defineConfig({
       ".env",
     ],
   },
-
-  plugins: [RssPlugin(RSS)],
 });
