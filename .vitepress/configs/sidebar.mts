@@ -123,6 +123,10 @@ export default {
       'link': '/Lives/EvolvingDev'
     },
     {
+      'text': '为什么已经有 VitePress 了，还需要 undocs？',
+      'link': '/Lives/WhyUndocs'
+    },
+    {
       'text': '我毕业、转行了，怎么适应我的第一份开发工作？',
       'link': '/Lives/FirstDevJob'
     },
