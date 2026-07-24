@@ -14,6 +14,7 @@ const vite: UserConfig = {
     host: '0.0.0.0',
   },
   build: {
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       external: ['gitalk', 'rough-notation'],
       output: {
