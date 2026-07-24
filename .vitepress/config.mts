@@ -26,6 +26,6 @@ export default defineConfig({
     },
   },
   sitemap: {
-    hostname: 'https://bddxg.top'
-  }
+    hostname: 'https://bddxg.top',
+  },
 })

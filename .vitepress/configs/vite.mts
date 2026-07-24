@@ -1,5 +1,6 @@
 import { groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 import { RSSOptions, RssPlugin } from 'vitepress-plugin-rss'
+import { type UserConfig } from 'vite'
 
 const RSS: RSSOptions = {
   title: '冰冻大西瓜',
@@ -7,8 +8,7 @@ const RSS: RSSOptions = {
   copyright: '奇迹不过是努力的另一个名字，愿机会永远对你有利(｡･∀･)ﾉﾞ',
 }
 
-/** @type {import('vite').UserConfig} */
-export default {
+const vite: UserConfig = {
   plugins: [groupIconVitePlugin(), RssPlugin(RSS)],
   server: {
     host: '0.0.0.0',
@@ -25,3 +25,4 @@ export default {
     },
   },
 }
+export default vite

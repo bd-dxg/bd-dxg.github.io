@@ -1,5 +1,7 @@
-export default {
-  provider: 'local' as const,
+import { type DefaultTheme } from 'vitepress'
+
+const search: DefaultTheme.Config['search'] = {
+  provider: 'local',
   options: {
     translations: {
       button: {
@@ -18,3 +20,5 @@ export default {
     },
   },
 }
+
+export default search

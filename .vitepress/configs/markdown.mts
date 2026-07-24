@@ -1,6 +1,7 @@
 import { groupIconMdPlugin } from 'vitepress-plugin-group-icons'
+import { type MarkdownOptions } from 'vitepress'
 
-export default {
+const markdown: MarkdownOptions = {
   lineNumbers: true,
   image: {
     lazyLoading: true,
@@ -9,3 +10,5 @@ export default {
     md.use(groupIconMdPlugin)
   },
 }
+
+export default markdown

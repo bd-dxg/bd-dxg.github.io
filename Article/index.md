@@ -5,7 +5,10 @@ hero:
   name: '冰冻大西瓜'
   text: '简单的个人博客'
   tagline: '技术栈: vue3、typescript、tailwindcss4、miniprogram'
-
+  actions:
+    - theme: brand
+      text: 文档站 →
+      link: https://docs.bddxg.top
 features:
   - title: 我不再做的12件事
     details: 不再做的12件事及背后的思考
