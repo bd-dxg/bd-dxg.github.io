@@ -169,6 +169,10 @@ export default {
       'link': '/Tips/CssLayerOverride'
     },
     {
+      'text': '我的 Pi 扩展与 Skills 集合笔记 {#pi-extensions-and-skills}',
+      'link': '/Tips/myPiOption'
+    },
+    {
       'text': '职场高频英语缩写',
       'link': '/Tips/WorkplaceAbbreviations'
     },

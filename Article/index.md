@@ -10,8 +10,8 @@ hero:
       text: 文档站 →
       link: https://docs.bddxg.top
 features:
-  - title: 我不再做的12件事
-    details: 不再做的12件事及背后的思考
+  - title: 我的 Pi 扩展与Skills集合笔记
+    details: 介绍Pi终端的扩展、Skills 配置与美化方案
     link: /Lives/ThingsINoLongerDo
   - title: 认知投降
     details: 探讨软件工程师如何在使用AI时保持独立思考
