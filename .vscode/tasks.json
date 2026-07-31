@@ -4,7 +4,7 @@
     {
       "label": "sidebar:watch",
       "type": "shell",
-      "command": "vp",
+      "command": "pnpm",
       "args": ["run", "sidebar:watch"],
       "group": "build",
       "presentation": {
