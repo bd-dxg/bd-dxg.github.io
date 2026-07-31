@@ -3,7 +3,7 @@ title: vite打包结构控制
 description: 介绍 Vite 8 使用 Rolldown 引擎时的打包结构控制方法，包括入口、动态分包和静态资源的分类配置，以及优化部署流程的最佳实践。
 ---
 
-# vite打包结构控制 <Badge type="tip" text="Vite 8" />
+# vite打包结构控制 <Badge type="tip" text="Vite 8" /> {#vite-bundle-structure-control}
 
 如果你还在忍受 `dist/assets` 那堆乱七八糟的输出，或者甚至不知道 Vite 的底层已经从 Rollup 进化到了 **Rolldown**，
 
@@ -13,17 +13,17 @@ description: 介绍 Vite 8 使用 Rolldown 引擎时的打包结构控制方法�
 
 今天我就教你如何通过配置 Rollup 插件，像控制代码逻辑一样控制你的打包产物结构。
 
-## 1. 现状：Rolldown 时代的“换芯不换壳”
+## 1. 现状：Rolldown 时代的“换芯不换壳” {#rolldown-era}
 
 在 Vite 8 中，生产环境的打包引擎由 Rolldown 接管。好消息是，为了兼容生态，
 
 Vite 依然保留了 `build.rollupOptions` 接口。这意味着你以前积攒的配置经验依然奏效，但执行效率已经不可同日而语。
 
-## 2. 核心配置：如何接管命名权？
+## 2. 核心配置：如何接管命名权？ {#core-configuration}
 
 不要指望默认配置能满足复杂的部署需求。我们需要在 `vite.config.ts` 中通过函数式配置，实现资源的高级分流。
 
-### 2.1 精准控制代码
+### 2.1 精准控制代码 {#precise-code-control}
 
 ```typescript
 import { defineConfig } from "vite";
@@ -69,13 +69,13 @@ export default defineConfig({
 });
 ```
 
-## 3. 为什么在 2026 年你必须掌握这个？
+## 3. 为什么在 2026 年你必须掌握这个？ {#why-master-in-2026}
 
-### 3.1 Rolldown 的性能红利
+### 3.1 Rolldown 的性能红利 {#rolldown-performance}
 
 Rolldown 处理 assetFileNames 回调的速度远超 Rollup。在拥有数千个静态资源的大型项目中，这种分类配置不会再像以前那样拖慢打包速度。
 
-### 3.2 运维安全的深度考量
+### 3.2 运维安全的深度考量 {#ops-security}
 
 现代化的部署流程通常涉及 CDN 边缘计算。将资源分类后：
 
@@ -85,7 +85,7 @@ Rolldown 处理 assetFileNames 回调的速度远超 Rollup。在拥有数千个
 
 - 针对 `static/js/` 配合监控系统进行精准的 SourceMap 映射。
 
-### 3.3 零歧义的目录结构
+### 3.3 零歧义的目录结构 {#clean-directory-structure}
 
 一个整洁的 `dist` 目录：
 

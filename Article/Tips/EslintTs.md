@@ -3,7 +3,7 @@ title: TS ESLint 配置指南
 description: TypeScript 项目 ESLint 完整配置指南，包含类型检查、路径解析等现代化规则
 ---
 
-# TS ESLint 配置指南
+# TS ESLint 配置指南 {#eslint-ts-guide}
 
 JS项目配置指南:
 https://linux.do/t/topic/1183320
@@ -11,7 +11,7 @@ https://linux.do/t/topic/1183320
 > [!tip]
 > 文档适用于Typescript版本>=5.0以上,最好是最新版
 
-## 现代插件介绍
+## 现代插件介绍 {#modern-plugins}
 
 | 包名                              | 主要作用                                                                                  |
 | --------------------------------- | ----------------------------------------------------------------------------------------- |
@@ -30,7 +30,7 @@ JS项目中的包都支持TS:
 | eslint-plugin-perfectionist  | 超级强大的 import、export、对象属性、class、member 排序插件, 支持自然排序、分组、自定义顺序          |
 | @eslint/js                   | ESLint 官方自己出的规则集合(相当于内置规则的精选版),包含所有 recommended 规则                        |
 
-## 安装
+## 安装 {#installation}
 
 ```shell
 pnpm add -D eslint-plugin-unused-imports eslint-plugin-import eslint-plugin-unicorn eslint-plugin-perfectionist @eslint/js typescript @types/node  eslint-import-resolver-typescript typescript-eslint globals
@@ -54,7 +54,7 @@ pnpm add -D eslint-plugin-unused-imports eslint-plugin-import eslint-plugin-unic
 同时需要安装插件 [**Eslint 点我安装**](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 ![](https://linux.do/uploads/default/original/4X/3/8/0/380d79493e10c59977d5292adabca15e2d12b1bc.jpeg)
 
-## 配置
+## 配置 {#configuration}
 
 ```js
 // eslint.config.js
@@ -175,7 +175,7 @@ export default [
       },
 ```
 
-## 插件周下载量(2025年11月19日)
+## 插件周下载量(2025年11月19日) {#plugin-downloads}
 
 - [eslint-plugin-unused-imports](https://www.npmjs.com/package/eslint-plugin-unused-imports): 4,967,752
 - [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import): 32,590,009
@@ -193,14 +193,14 @@ export default [
 > [!tip]
 > 这里只是列举了通用插件, 如果有使用到第三方库 如 express, react, jest lodash, mongodb等等,需自行安装额外的ts支持库.
 
-## 更新内容
+## 更新内容 {#changelog}
 
-### 2025年12月6日
+### 2025年12月6日 {#2025-12-06}
 
 1. 移除了`eslint-plugin-promise`规则,并且移除了相关配置项,因为不支持ts声明,后续是否补回待定(佬友有建设性观点可以发布在评论区)
 2. 添加了`globals`库, **提供预定义的全局变量集合**，用于 ESLint 配置中声明不同环境下的全局变量。
 3. 更新了安装脚本:移除`eslint-plugin-promise`,`@typescript-eslint/eslint-plugin` 和 `@typescript-eslint/parser`,添加`globals`
 
-### 2025年11月19日
+### 2025年11月19日 {#2025-11-19}
 
 替换 `@typescript-eslint/eslint-plugin` 和 `@typescript-eslint/parser` 为 `typescript-eslint` ts官方已将2个包合并为一个包,降低配置负担和心智负担

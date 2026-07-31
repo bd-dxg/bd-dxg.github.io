@@ -3,7 +3,7 @@ title: JS ESLint 配置指南
 description: 详解 ESLint v9 扁平化配置，涵盖现代 JS 项目必备插件及最佳实践配置方案
 ---
 
-# JS ESLint 配置指南
+# JS ESLint 配置指南 {#eslint-js-guide}
 
 建立本文档的目的,在于 `eslint` 规则在v9后启用了扁平化配置规则,
 
@@ -21,7 +21,7 @@ description: 详解 ESLint v9 扁平化配置，涵盖现代 JS 项目必备插�
 
 ---
 
-## 现代插件介绍
+## 现代插件介绍 {#modern-plugins}
 
 > [!tip]
 > 本人承诺介绍的插件都是现代流行插件,全部支持扁平化配置
@@ -38,7 +38,7 @@ description: 详解 ESLint v9 扁平化配置，涵盖现代 JS 项目必备插�
 | eslint-plugin-perfectionist  | 超级强大的 import、export、对象属性、class、member 排序插件, 支持自然排序、分组、自定义顺序          |
 | @eslint/js                   | ESLint 官方自己出的规则集合(相当于内置规则的精选版),包含所有 recommended 规则                        |
 
-## 安装
+## 安装 {#installation}
 
 ```shell
 pnpm add -D eslint eslint-plugin-unused-imports \
@@ -54,7 +54,7 @@ eslint-plugin-promise eslint-plugin-perfectionist \
 
 ![380d79493e10c59977d5292adabca15e2d12b1bc.webp](/imgs/1765180881885.avif)
 
-## 配置
+## 配置 {#configuration}
 
 在项目根目录中,创建文件 `eslint.config.js`,配置如下:
 
@@ -178,7 +178,7 @@ export default [
 
 ---
 
-## 插件周下载量(2025年11月18日)
+## 插件周下载量(2025年11月18日) {#plugin-downloads}
 
 - [eslint-plugin-unused-imports](https://www.npmjs.com/package/eslint-plugin-unused-imports): 4,967,752
 - [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import): 32,590,009
@@ -189,6 +189,6 @@ export default [
 
 ---
 
-## 更新内容
+## 更新内容 {#changelog}
 
 - 2025年11月18日: 新增nodeJS环境中的全局变量声明

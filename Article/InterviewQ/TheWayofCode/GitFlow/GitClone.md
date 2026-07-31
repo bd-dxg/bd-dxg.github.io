@@ -3,9 +3,9 @@ title: Git 克隆优化指南
 description: 介绍 Git 部分克隆技术，解决浅克隆历史不完整问题，实现快速克隆同时保留完整提交历史的最佳实践。
 ---
 
-# Git 克隆优化指南
+# Git 克隆优化指南 {#git-clone-optimization}
 
-## 问题描述
+## 问题描述 {#problem-description}
 
 在使用 Git 克隆大型开源项目时，经常会遇到这样的困扰：
 
@@ -13,7 +13,7 @@ description: 介绍 Git 部分克隆技术，解决浅克隆历史不完整问�
 - 使用浅克隆 `--depth=1` 虽然快，但丢失了完整历史记录
 - 某些 Git 操作（如 rebase、merge）可能因为历史不完整而失败
 
-## 问题根源：浅克隆的陷阱
+## 问题根源：浅克隆的陷阱 {#shallow-clone-pitfalls}
 
 很多人为了加快克隆速度，会设置这样的简写命令：
 
@@ -23,7 +23,7 @@ function gcl { git clone --depth=1 $args }
 
 **问题出在 `--depth=1` 参数上**。
 
-### 浅克隆的特点
+### 浅克隆的特点 {#shallow-clone-characteristics}
 
 | 特点              | 说明                                     |
 | ----------------- | ---------------------------------------- |
@@ -33,7 +33,7 @@ function gcl { git clone --depth=1 $args }
 | ❌ 操作受限       | `git rebase`、`git merge` 等操作可能出错 |
 | ❌ fetch 配置异常 | 可能导致无法获取其他分支的更新           |
 
-### 如何判断是否为浅克隆
+### 如何判断是否为浅克隆 {#check-shallow-clone}
 
 ```bash
 git rev-parse --is-shallow-repository
@@ -42,7 +42,7 @@ git rev-parse --is-shallow-repository
 
 ---
 
-## 最佳解决方案：部分克隆（Partial Clone）
+## 最佳解决方案：部分克隆（Partial Clone） {#partial-clone}
 
 Git 2.19+ 引入了**部分克隆**功能，这是目前最优的解决方案。
 
@@ -50,13 +50,13 @@ Git 2.19+ 引入了**部分克隆**功能，这是目前最优的解决方案。
 git clone --filter=blob:none <repo-url>
 ```
 
-### 工作原理
+### 工作原理 {#how-it-works}
 
 - 只下载提交历史和树结构
 - 文件内容（blob）按需下载
 - 当你访问文件时才自动下载内容
 
-### 优点
+### 优点 {#advantages}
 
 | 优点              | 说明                         |
 | ----------------- | ---------------------------- |
@@ -67,7 +67,7 @@ git clone --filter=blob:none <repo-url>
 
 ---
 
-## 实用克隆方案对比
+## 实用克隆方案对比 {#clone-strategies-comparison}
 
 | 方案         | 命令                                    | 克隆速度 | 完整历史 | 适用场景               |
 | ------------ | --------------------------------------- | -------- | -------- | ---------------------- |
@@ -78,15 +78,15 @@ git clone --filter=blob:none <repo-url>
 
 ---
 
-## 常见使用场景
+## 常见使用场景 {#common-use-cases}
 
-### 1. 日常开发和学习
+### 1. 日常开发和学习 {#daily-development}
 
 ```bash
 git clone --filter=blob:none https://github.com/user/repo.git
 ```
 
-### 2. 浅克隆 + 按需加深
+### 2. 浅克隆 + 按需加深 {#shallow-clone-deepen}
 
 先快速克隆，后续需要历史时再加深：
 
@@ -102,13 +102,13 @@ git fetch --depth=100
 git fetch --unshallow
 ```
 
-### 3. 只克隆特定分支
+### 3. 只克隆特定分支 {#clone-specific-branch}
 
 ```bash
 git clone --depth=1 --branch main --single-branch <repo-url>
 ```
 
-### 4. 只下载部分目录
+### 4. 只下载部分目录 {#clone-partial-dir}
 
 ```bash
 # 克隆时使用稀疏检出
@@ -121,16 +121,16 @@ git sparse-checkout set src/ lib/
 
 ---
 
-## 优化你的克隆命令
+## 优化你的克隆命令 {#optimize-clone-command}
 
-### 不推荐的做法
+### 不推荐的做法 {#not-recommended}
 
 ```powershell
 # ❌ 丢失完整历史，可能导致各种问题
 function gcl { git clone --depth=1 $args }
 ```
 
-### 推荐的做法
+### 推荐的做法 {#recommended}
 
 ```powershell
 # ✅ 速度快，保留完整历史
@@ -143,7 +143,7 @@ function gcll { git clone $args }                     # 完整克隆
 
 ---
 
-## 解决浅克隆问题
+## 解决浅克隆问题 {#fix-shallow-clone}
 
 如果你已经使用了浅克隆，可以转换为完整克隆：
 
@@ -161,7 +161,7 @@ git clone --filter=blob:none <repo-url>
 
 ---
 
-## 常见问题 FAQ
+## 常见问题 FAQ {#faq}
 
 ### Q: `--filter=blob:none` 支持所有 Git 托管平台吗？
 
@@ -194,7 +194,7 @@ A: 有用，但场景有限：
 
 ---
 
-## 总结
+## 总结 {#summary}
 
 | 需求           | 推荐命令                                |
 | -------------- | --------------------------------------- |

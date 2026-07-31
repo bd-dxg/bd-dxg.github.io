@@ -3,13 +3,13 @@ title: 页面关闭统计数据
 description: 详解页面关闭时发送统计数据的最佳实践，介绍 Navigator.sendBeacon() API 的使用方法和兼容性方案
 ---
 
-# 页面关闭统计数据
+# 页面关闭统计数据 {#page-close-analytics}
 
 在现代 Web 应用中，收集用户行为数据对于产品优化至关重要。其中一个常见需求是在用户关闭页面时发送统计数据，比如页面停留时间、用户操作记录等。然而，这个看似简单的需求却有不少技术陷阱。
 
-## 传统方案的问题
+## 传统方案的问题 {#traditional-approach-problems}
 
-### unload 和 beforeunload 事件的不可靠性
+### unload 和 beforeunload 事件的不可靠性 {#unload-beforeunload-unreliability}
 
 许多开发者首先想到的是使用 `unload` 或 `beforeunload` 事件：
 
@@ -30,7 +30,7 @@ window.addEventListener('beforeunload', function () {
 2. **异步请求被中断**：页面卸载时，异步请求往往来不及完成就被浏览器取消
 3. **用户体验差**：如果使用同步请求，会阻塞页面关闭过程
 
-### 同步请求的弊端
+### 同步请求的弊端 {#sync-request-drawbacks}
 
 为了确保数据发送成功，有些开发者会使用同步的 XMLHttpRequest：
 
@@ -50,7 +50,7 @@ window.addEventListener('beforeunload', function () {
 - 浏览器界面冻结
 - 用户体验极差
 
-## 最佳解决方案：Navigator.sendBeacon()
+## 最佳解决方案：Navigator.sendBeacon() {#sendbeacon}
 
 `Navigator.sendBeacon()` 是专门为解决这个问题而设计的 API。它具有以下优势：
 
@@ -58,7 +58,7 @@ window.addEventListener('beforeunload', function () {
 - **可靠性高**：浏览器会确保数据发送完成，即使页面已经关闭
 - **简单易用**：API 设计简洁，使用方便
 
-### 基本语法
+### 基本语法 {#basic-syntax}
 
 ```javascript
 navigator.sendBeacon(url, data)
@@ -68,11 +68,11 @@ navigator.sendBeacon(url, data)
 - `data`：要发送的数据（可选）
 - 返回值：`boolean`，表示是否成功加入发送队列
 
-### 支持的数据类型
+### 支持的数据类型 {#supported-data-types}
 
 `sendBeacon()` 支持多种数据格式：
 
-#### 1. 普通字符串 (text/plain)
+#### 1. 普通字符串 (text/plain) {#text-plain}
 
 ```javascript
 const analyticsData = JSON.stringify({
@@ -84,7 +84,7 @@ const analyticsData = JSON.stringify({
 navigator.sendBeacon('/api/analytics', analyticsData)
 ```
 
-#### 2. FormData 对象
+#### 2. FormData 对象 {#formdata}
 
 ```javascript
 const formData = new FormData()
@@ -95,7 +95,7 @@ formData.append('duration', Date.now() - pageStartTime)
 navigator.sendBeacon('/api/analytics', formData)
 ```
 
-#### 3. URLSearchParams (application/x-www-form-urlencoded)
+#### 3. URLSearchParams (application/x-www-form-urlencoded) {#urlsearchparams}
 
 ```javascript
 const params = new URLSearchParams()
@@ -106,7 +106,7 @@ params.append('duration', Date.now() - pageStartTime)
 navigator.sendBeacon('/api/analytics', params)
 ```
 
-#### 4. Blob 对象
+#### 4. Blob 对象 {#blob}
 
 ```javascript
 const data = {
@@ -122,9 +122,9 @@ const blob = new Blob([JSON.stringify(data)], {
 navigator.sendBeacon('/api/analytics', blob)
 ```
 
-## 实际应用示例
+## 实际应用示例 {#practical-examples}
 
-### 页面停留时间统计
+### 页面停留时间统计 {#page-dwell-time}
 
 ```javascript
 // 页面分析功能
@@ -195,7 +195,7 @@ const createPageAnalytics = () => {
 const analytics = createPageAnalytics()
 ```
 
-### 用户行为追踪
+### 用户行为追踪 {#user-behavior-tracking}
 
 ```javascript
 // 用户行为追踪功能
@@ -283,7 +283,7 @@ const createUserBehaviorTracker = () => {
 const behaviorTracker = createUserBehaviorTracker()
 ```
 
-## 服务端处理
+## 服务端处理 {#server-side-handling}
 
 服务端需要正确处理 `sendBeacon` 发送的数据：
 
@@ -306,11 +306,11 @@ app.use(express.urlencoded({ extended: true })) // application/x-www-form-urlenc
 app.use(express.raw({ type: 'text/plain' })) // text/plain
 ```
 
-## 兼容性和降级方案
+## 兼容性和降级方案 {#compatibility-and-fallback}
 
 ![2026-02-03_22-06-15.jpg](/imgs/1770127587625.avif)
 
-### 浏览器兼容性检查
+### 浏览器兼容性检查 {#browser-compatibility-check}
 
 ```javascript
 function sendAnalyticsData(url, data) {
@@ -340,7 +340,7 @@ function sendAnalyticsData(url, data) {
 }
 ```
 
-### 完整的兼容性方案
+### 完整的兼容性方案 {#complete-fallback-solution}
 
 ```javascript
 // 分析数据发送工具
@@ -393,7 +393,7 @@ const analyticsBeacon = createAnalyticsBeacon()
 analyticsBeacon.send('/api/analytics', JSON.stringify(data))
 ```
 
-## 最佳实践总结
+## 最佳实践总结 {#best-practices-summary}
 
 1. **优先使用 `visibilitychange` 事件**：比 `beforeunload` 更可靠
 2. **数据格式选择**：JSON 字符串简单直接，FormData 适合复杂数据
@@ -402,7 +402,7 @@ analyticsBeacon.send('/api/analytics', JSON.stringify(data))
 5. **服务端优化**：快速响应，避免超时
 6. **隐私考虑**：遵循数据保护法规，获得用户同意
 
-## 注意事项
+## 注意事项 {#notes}
 
 - `sendBeacon` 只支持 POST 请求
 - 数据大小有限制（浏览器实现不同）

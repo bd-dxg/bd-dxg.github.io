@@ -3,11 +3,11 @@ title: 从"学不进去" 到 "主动突破"
 description: 计算机专业学生的学习突破指南，专注深耕、转变思维、主动实践的成长之路
 ---
 
-# 从"学不进去" 到 "主动突破"
+# 从"学不进去" 到 "主动突破" {#from-stuck-to-breakthrough}
 
 > 原地址: [Advice for lost computer science students](https://www.youtube.com/watch?v=RoW5E-HGP5Y)
 
-## 专注深耕领域,突破瓶颈
+## 专注深耕领域,突破瓶颈 {#focus-on-one-field}
 
 ![软件工程师学习.webp](/imgs/1759548908093.avif)
 
@@ -61,7 +61,7 @@ description: 计算机专业学生的学习突破指南，专注深耕、转变�
 
 而那个让你找到定位的决定会让一切变得简单许多
 
-## 转变开发思维
+## 转变开发思维 {#shift-mindset}
 
 ![项目实战与职业突破.webp](/imgs/1759570824321.avif)
 
@@ -89,7 +89,7 @@ description: 计算机专业学生的学习突破指南，专注深耕、转变�
 
 这也引出了我的下一个话题
 
-## 主动发布项目成果
+## 主动发布项目成果 {#showcase-projects}
 
 ![主动发布项目成果.webp](/imgs/1759572780865.avif)
 
@@ -117,7 +117,7 @@ description: 计算机专业学生的学习突破指南，专注深耕、转变�
 
 你已经是那种他们本该在团队中的人, 你也是团队已经认识的人
 
-## 立即行动启动代码实践
+## 立即行动启动代码实践 {#start-coding-now}
 
 ![立即行动启动代码实践.webp](/imgs/1759573019579.avif)
 

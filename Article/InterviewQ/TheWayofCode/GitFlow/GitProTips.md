@@ -3,9 +3,9 @@ title: git 进阶技巧
 description: 介绍 Git 版本回退、撤销、重置的四种场景，涵盖命令行与 VSCode 图形化界面的操作方法。
 ---
 
-# git 进阶技巧
+# git 进阶技巧 {#git-advanced-tips}
 
-## git fetch 与 git pull 的区别
+## git fetch 与 git pull 的区别 {#git-fetch-vs-pull}
 
 很多新手朋友都知道 `git pull`
 
@@ -23,7 +23,7 @@ description: 介绍 Git 版本回退、撤销、重置的四种场景，涵盖�
 
 `git pull` = `git fetch` + `git merge`(下载并合并)
 
-## 版本回退/撤销/重置
+## 版本回退/撤销/重置 {#version-reset-revert}
 
 ![unnamed.webp](/imgs/1767921354449.avif)
 git中的回退/撤销/重置, 有四种条件,分别是:
@@ -36,7 +36,7 @@ git中的回退/撤销/重置, 有四种条件,分别是:
 > [!tip] 提示
 > 博主这里使用的是 `vscode` , 就用这个编辑器来演示
 
-### 撤销未添加到暂存区的文件
+### 撤销未添加到暂存区的文件 {#unstaged-file-revert}
 
 ![2026-01-09_11-25-10.webp](/imgs/1767929136116.avif)
 
@@ -51,7 +51,7 @@ git checkout -- GitProTips.md
 图形化界面:
 ![2026-01-09_14-19-12.webp](/imgs/1767939560839.avif)
 
-### 撤销已添加到暂存区的文件
+### 撤销已添加到暂存区的文件 {#staged-file-revert}
 
 命令行方法:
 
@@ -73,7 +73,7 @@ git reset HEAD siderbar.mts
 ![2026-01-09_14-30-28.webp](/imgs/1767940243304.avif)
 第一次**从暂存区撤回**, 第二次**恢复原来的工作空间**
 
-### 撤销已提交到本地库的文件
+### 撤销已提交到本地库的文件 {#committed-file-revert}
 
 命令行方法:
 
@@ -87,7 +87,7 @@ git reset --hard HEAD^^^ === git reset --hard HEAD~3
 ![2026-01-09_16-22-02.webp](/imgs/1767947173065.avif)
 这里是撤销到暂存区,可以在编辑器中可以编辑后,将新改动添加到暂存区,也可以继续撤销到工作空间
 
-### 撤销已推送到远程仓库的文件
+### 撤销已推送到远程仓库的文件 {#pushed-file-revert}
 
 > [!warning] 警告
 > 本操作会创建一个新的提交来"抵消"错误提交的影响，原始错误提交仍保留在历史中,**不会被撤销**
@@ -109,7 +109,7 @@ git push origin 推送的分支
 
 ![2026-01-09_17-13-36.webp](/imgs/1767950025946.avif)
 
-## 文件存储(git stash)-高频使用
+## 文件存储(git stash)-高频使用 {#git-stash}
 
 > 背景环境: 你在 `feat/xxx功能`分支下开发某功能,
 >
@@ -139,7 +139,7 @@ git stash apply
 
 ![2026-01-10_10-17-35.webp](/imgs/1768011468972.avif)
 
-## git merge 与 git rebase 的区别
+## git merge 与 git rebase 的区别 {#git-merge-vs-rebase}
 
 - `git merge`: **保留历史原貌**, 通过创建一个"合并提交"来连接两个分支的历史, 记录了分支合并的真实过程.
 - `git rebase`: **重写历史**, 建一个分支的提交,重新挪动到另一个分支的最新提交, 是历史看起来是线性简洁的
@@ -149,9 +149,9 @@ git stash apply
   | `git merge feat/xxx`         | Git 默认会进行"快进合并", `main` 分支的指针直接移动到 `feature` 的最新提交,**看不出曾经有过分支**,没有创建新的 merge commit |
   | `git merge --no-ff feat/xxx` | 强制创建一个 merge commit, **保留了分支的完整历史**, 方便回滚整个功能(推荐使用)                                             |
 
-### 使用场景
+### 使用场景 {#usage-scenarios}
 
-#### 个人项目中(假设你有一到两个分支)
+#### 个人项目中(假设你有一到两个分支) {#personal-projects}
 
 推荐使用`git rebase`
 
@@ -170,7 +170,7 @@ git pull --rebase origin main
 - 没有多余的 merge commit
 - 方便查看项目演进过程
 
-#### 公司项目(git flow流程)
+#### 公司项目(git flow流程) {#company-projects}
 
 对于本地、未推送的提交 → 使用 Rebase:
 
@@ -214,7 +214,7 @@ git merge --no-ff feature/user-login  # --no-ff 保留分支信息
 >
 > 个人项目可以追求简洁,多用 rebase
 
-## 更新记录
+## 更新记录 {#changelog}
 
 - 2026年1月12日:
   1. 更新 `git fetch` 和 `git pull` 的区别

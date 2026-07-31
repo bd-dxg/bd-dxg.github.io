@@ -3,15 +3,15 @@ title: 前端系统稳定性保障方案
 description: 全面介绍前端系统稳定性建设，涵盖 TypeScript 类型检查、错误边界、请求容错、Sentry 监控、性能指标追踪等预防-容错-监控三层防护体系
 ---
 
-# 前端系统稳定性保障方案
+# 前端系统稳定性保障方案 {#frontend-stability}
 
-## 问题:前端系统面临哪些稳定性挑战?
+## 问题:前端系统面临哪些稳定性挑战? {#stability-challenges}
 
 前端系统的稳定性挑战主要来自以下四个方面:
 
 ![无标题-2025-11-05-2301.webp](/imgs/1762355643517.avif)
 
-## 核心原则:构建可预测系统
+## 核心原则:构建可预测系统 {#core-principles}
 
 稳定性保障的核心是**构建可预测系统**,即:
 
@@ -23,9 +23,9 @@ description: 全面介绍前端系统稳定性建设，涵盖 TypeScript 类型�
 
 ---
 
-### 一、预防阶段:在开发期发现和避免问题
+### 一、预防阶段:在开发期发现和避免问题 {#prevention-phase}
 
-#### 1.1 TypeScript:静态类型检查
+#### 1.1 TypeScript:静态类型检查 {#typescript-type-checking}
 
 **作用:**
 
@@ -65,7 +65,7 @@ getUserInfo('123') // Error: Argument of type 'string' is not assignable to para
 - 提升代码可维护性和团队协作效率
 - 重构时降低引入 bug 的风险
 
-#### 1.2 代码规范与静态检查
+#### 1.2 代码规范与静态检查 {#code-style-and-linting}
 
 **工具链:**
 
@@ -122,7 +122,7 @@ useEffect(() => {
 - 自动规避常见错误模式
 - 在 CI/CD 中阻止不合规代码上线
 
-#### 1.3 自动化测试
+#### 1.3 自动化测试 {#automated-testing}
 
 **E2E测试覆盖关键流程:**
 
@@ -199,9 +199,9 @@ describe('Counter', () => {
 
 ---
 
-### 二、运行阶段:容错和降级处理
+### 二、运行阶段:容错和降级处理 {#runtime-phase}
 
-#### 2.1 错误边界(Error Boundary)
+#### 2.1 错误边界(Error Boundary) {#error-boundary}
 
 **Vue 3 全局错误处理:**
 
@@ -250,7 +250,7 @@ app.mount('#app')
 - 关键功能模块(如支付组件)建议单独包裹错误边界
 - 提供降级UI,保证页面其他部分可用
 
-#### 2.2 异步请求容错
+#### 2.2 异步请求容错 {#async-request-fault-tolerance}
 
 **完整的请求容错方案:**
 
@@ -366,9 +366,9 @@ async function getUserProfile(userId: number) {
 
 ---
 
-### 三、监控阶段:发现和定位问题
+### 三、监控阶段:发现和定位问题 {#monitoring-phase}
 
-#### 3.1 错误监控系统
+#### 3.1 错误监控系统 {#error-monitoring}
 
 **Sentry 集成示例:**
 
@@ -432,7 +432,7 @@ try {
 - 关键页面错误率超过1%
 - 立即通知相关负责人
 
-#### 3.2 性能监控
+#### 3.2 性能监控 {#performance-monitoring}
 
 **Web Vitals 监控:**
 
@@ -492,7 +492,7 @@ fetch('/api/data').then(response => {
 })
 ```
 
-#### 3.3 用户行为回放
+#### 3.3 用户行为回放 {#user-behavior-replay}
 
 **LogRocket 或自建回放系统:**
 
@@ -532,30 +532,30 @@ LogRocket.identify(userId, {
 
 ---
 
-## 完整的稳定性保障流程
+## 完整的稳定性保障流程 {#full-stability-workflow}
 
-### 开发阶段
+### 开发阶段 {#development-phase}
 
 1. 使用 TypeScript 编写代码,开启严格模式
 2. 配置 ESLint、Prettier,集成到 Git hooks
 3. 为关键功能编写单元测试和 E2E 测试
 4. Code Review 关注错误处理和边界情况
 
-### 测试阶段
+### 测试阶段 {#testing-phase}
 
 1. 运行自动化测试套件
 2. 手工测试关键流程的异常场景
 3. 进行弱网测试(Chrome DevTools Network throttling)
 4. 跨浏览器兼容性测试
 
-### 发布阶段
+### 发布阶段 {#release-phase}
 
 1. 灰度发布,先对小部分用户开放
 2. 监控错误率和性能指标
 3. 发现问题及时回滚
 4. 全量发布后持续监控
 
-### 运营阶段
+### 运营阶段 {#operation-phase}
 
 1. 设置错误告警,及时响应
 2. 定期分析错误日志,发现潜在问题
@@ -564,7 +564,7 @@ LogRocket.identify(userId, {
 
 ---
 
-## 五、面试常见问题
+## 五、面试常见问题 {#interview-questions}
 
 **Q1:如何处理跨域请求失败?**
 A:
@@ -606,7 +606,7 @@ A:
 
 ---
 
-## 总结
+## 总结 {#summary}
 
 前端系统稳定性保障是一个系统工程,需要从**预防、容错、监控**三个维度全面建设:
 

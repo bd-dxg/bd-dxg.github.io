@@ -3,9 +3,9 @@ title: 使用 CSS @layer 优雅覆盖
 description: 使用 CSS @layer 级联层优雅覆盖第三方 UI 库样式，告别选择器权重战争和 !important
 ---
 
-# 使用 CSS @layer 优雅覆盖
+# 使用 CSS @layer 优雅覆盖 {#css-layer-override}
 
-## 前言
+## 前言 {#introduction}
 
 在开发 Vue 项目时，你是否遇到过这种尴尬：想改一个 Element Plus 按钮的颜色，
 
@@ -13,7 +13,7 @@ description: 使用 CSS @layer 级联层优雅覆盖第三方 UI 库样式，告
 
 今天分享一个现代 CSS 利器：**级联层(@layer)**。它能让你从“选择器权重战争”中彻底解脱出来。
 
-## 什么是 @layer？
+## 什么是 @layer？ {#what-is-layer}
 
 简单来说，`@layer` 允许我们手动定义样式的优先级顺序。
 
@@ -23,7 +23,7 @@ description: 使用 CSS @layer 级联层优雅覆盖第三方 UI 库样式，告
 
 哪怕你的选择器只是一个简单的 `.el-button`，也能轻松覆盖掉低优先级层里复杂的嵌套选择器。
 
-## 原生项目
+## 原生项目 {#native-project}
 
 ```css [style.css]
 @layer reset,demo;
@@ -61,7 +61,7 @@ description: 使用 CSS @layer 级联层优雅覆盖第三方 UI 库样式，告
 
    - `@layer demo { ... }`：这里放的是当前案例的核心样式（梯形效果）。因为它在声明顺序中排在最后，所以即使这里的选择器权重较低，它也能确保覆盖前面层里的冲突样式。
 
-### 为什么需要这个功能？
+### 为什么需要这个功能？ {#why-need-this}
 
 在传统的 CSS 中，如果你想覆盖一个第三方库的样式，
 
@@ -73,11 +73,11 @@ description: 使用 CSS @layer 级联层优雅覆盖第三方 UI 库样式，告
 
 - 结构清晰： 像截图中展示的一样，开发者将“重置(reset)”、“基础(base)”和“演示(demo)”分开，逻辑非常明确。
 
-## Vue3 项目实战：三步走方案
+## Vue3 项目实战：三步走方案 {#vue3-practice}
 
 如果你使用的是 Vue3 + Vite，且不想折腾 SCSS，只用原生 CSS 就能搞定。
 
-### 第一步：定义全局样式中枢
+### 第一步：定义全局样式中枢 {#step-1-global-style}
 
 在 `src/assets/main.css` 中，我们先“排座次”。这一步至关重要，越靠后的层，话语权越大。
 
@@ -99,7 +99,7 @@ description: 使用 CSS @layer 级联层优雅覆盖第三方 UI 库样式，告
 }
 ```
 
-### 第二步：在 main.ts 中引入
+### 第二步：在 main.ts 中引入 {#step-2-import}
 
 确保它是第一个被引入的样式文件：
 
@@ -113,7 +113,7 @@ const app = createApp(App);
 app.mount("#app");
 ```
 
-### 第三步：在组件中“降维打击”
+### 第三步：在组件中"降维打击" {#step-3-component-override}
 
 现在，当你想修改组件样式时，只需要把代码包裹在 `override` 层里。
 
@@ -134,12 +134,12 @@ app.mount("#app");
 </style>
 ```
 
-### 使用scss的环境
+### 使用scss的环境 {#scss-environment}
 
 > [!INFO]
 > `main.css` 确实已经设置了层级顺序，但在某些特定场景下，如果不配合预处理器注入，可能会出现“层顺序失效”的风险。
 
-#### 为什么还要提“预处理器自动注入”？
+#### 为什么还要提"预处理器自动注入"？ {#preprocessor-injection}
 
 主要为了规避以下两个“极端场景”：
 
@@ -161,7 +161,7 @@ app.mount("#app");
 
 在每个文件头部“复读”一遍顺序声明是最稳妥的“防御性编程”。
 
-#### 需要添加的配置
+#### 需要添加的配置 {#scss-config}
 
 ```ts [vite.config.ts]
 export default defineConfig({
@@ -177,7 +177,7 @@ export default defineConfig({
 });
 ```
 
-### 为什么这种方式更优雅？
+### 为什么这种方式更优雅？ {#why-elegant}
 
 **逻辑清晰**：第三方库归第三方库，业务覆盖归业务覆盖，井水不犯河水。
 
@@ -185,7 +185,7 @@ export default defineConfig({
 
 **可维护性极强**：如果以后更换 UI 库，只需更换 `vendor` 层的引入，`override` 层的逻辑依然清晰可见。
 
-### 兼容性说明
+### 兼容性说明 {#compatibility}
 
 目前 `@layer` 的兼容性已经非常成熟：
 
@@ -195,7 +195,7 @@ Chrome 99+、Firefox 97+、Safari 15.4+ 均已支持。
 
 如果你的项目需要兼容极老版本的浏览器，可以使用 `PostCSS` 插件 `postcss-cascade-layers` 进行向下兼容处理。
 
-## 总结
+## 总结 {#summary}
 
 `CSS @layer` 是样式管理的一次重大变革。它把“开发者”从“选择器算术题”中解放了出来。
 

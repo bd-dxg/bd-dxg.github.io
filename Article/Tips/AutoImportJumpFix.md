@@ -3,9 +3,9 @@ title: 自动导入组件跳转修复
 description: 解决 Vue 3 + Vite 项目中使用 unplugin-vue-components 自动导入组件后无法跳转定义的问题
 ---
 
-# 自动导入组件跳转修复
+# 自动导入组件跳转修复 {#auto-import-jump-fix}
 
-## 环境背景
+## 环境背景 {#environment}
 
 - VSCode
 - Vite
@@ -13,7 +13,7 @@ description: 解决 Vue 3 + Vite 项目中使用 unplugin-vue-components 自动�
 - TypeScript
 - unplugin-vue-components
 
-## 现象
+## 现象 {#symptom}
 
 组件成功自动导入, 也生成了component.d.ts文件, 但在自动导入后不能跳转到组件的定义位置
 
@@ -23,7 +23,7 @@ description: 解决 Vue 3 + Vite 项目中使用 unplugin-vue-components 自动�
 
 但如果是使用自动导入`unplugin-vue-components`的话，点击就没有反应了，
 
-## 问题分析
+## 问题分析 {#analysis}
 
 默认生成的 d.ts 文件在根目录，不在 src 目录下，
 
@@ -35,7 +35,7 @@ description: 解决 Vue 3 + Vite 项目中使用 unplugin-vue-components 自动�
 
 导致了跳转失败，
 
-## 解决方案
+## 解决方案 {#solution}
 
 通过配置项，将生成的 `d.ts` 文件放在 `src/types/` 目录下就可以了
 

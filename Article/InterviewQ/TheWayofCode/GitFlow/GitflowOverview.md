@@ -3,7 +3,7 @@ title: GitFlow 五大分支概述
 description: 详解 GitFlow 工作流的五大核心分支及其使用场景
 ---
 
-# 五大分支概述
+# 五大分支概述 {#five-branches-overview}
 
 ![fI6dAXt_8.webp](/imgs/1767398313326.avif)
 
@@ -13,7 +13,7 @@ description: 详解 GitFlow 工作流的五大核心分支及其使用场景
 - **特性分支 (feature/\*)**: 从 `develop` 创建, 开发新功能, 完成后合并回 `develop`
 - **预发布分支 (release/\*)**: 从 `develop` 创建, 用于发布前的测试和最终调整, 测试通过后合并回 `main`(打版本标签) 和 `develop`
 
-## 分支合并关系
+## 分支合并关系 {#branch-merge-relationships}
 
 ```text
 feature/*  →  develop
@@ -22,7 +22,7 @@ release/*  →  main + develop
 hotfix/*   →  main + develop
 ```
 
-## 主分支
+## 主分支 {#main-branch}
 
 作用: 存放 **稳定**, 可**随时部署到生产环境**的代码
 
@@ -32,7 +32,7 @@ hotfix/*   →  main + develop
 - 不允许在此分支直接开发
 - 通常被打上版本标签 (如: v1.0.0 或 v20260101)
 
-## 开发分支
+## 开发分支 {#develop-branch}
 
 作用: 存放 **最新开发成果** 的集成分支, 是功能开发的集线器
 
@@ -41,7 +41,7 @@ hotfix/*   →  main + develop
 - 当 `develop` 分支上的代码到达稳定状态并准备发布时, 会合并到 `main` 分支 (如果有 `release` 分支, 则合并到此分支)
 - 所有功能的分支、发布分支都从 `develop` 分支拉取
 
-## 功能分支
+## 功能分支 {#feature-branch}
 
 来源: `develop`
 
@@ -57,7 +57,7 @@ hotfix/*   →  main + develop
 - 开发完成后, 合并回 `develop`
 - 合并后, 该功能分支通常被删除
 
-## 发布分支
+## 发布分支 {#release-branch}
 
 来源: `develop`
 
@@ -74,7 +74,7 @@ hotfix/*   →  main + develop
 - 准备就绪后, 将 `release` 分支合并到 `main` 分支 **并打上版本标签**
 - 同时, 必须合并回 `develop` 分支, 因为 `release` 分支上修复的 BUG 可能 `develop` 分支上还没修复
 
-## 热修复分支
+## 热修复分支 {#hotfix-branch}
 
 来源:`main`
 
@@ -90,7 +90,7 @@ hotfix/*   →  main + develop
 - 修复完成后,合并回`main`分支**并打上新的版本标签**(如:v1.0.1)
 - 同时,必须合并回`develop`分支,确保修复在后续开发中也生效
 
-## 人话
+## 人话 {#plain-language}
 
 > 恭喜你能看到这里, 理论看起来确实是枯燥的, 感谢你自己的坚持,
 >

@@ -3,12 +3,12 @@ title: 首屏优化
 description: 深入讲解前端首屏性能优化策略，包括性能指标（FP/FCP/LCP）、资源体积优化、预加载技术、SSG/SSR 方案等实战方法
 ---
 
-# 首屏优化
+# 首屏优化 {#first-screen-optimization}
 
 > [!tip] 提醒
 > 很多同学其实都陷入了一个误区，面试问你性能优化，其实并不是要你背性能优化八股文的！
 
-## 一、性能指标
+## 一、性能指标 {#performance-metrics}
 
 | 简称 | 全称                     | 翻译           | 解释                                                       |
 | :--: | :----------------------- | :------------- | :--------------------------------------------------------- |
@@ -26,9 +26,9 @@ description: 深入讲解前端首屏性能优化策略，包括性能指标（F
 >
 > **FMP**: 告诉用户"页面主要内容出来了"
 
-## 二、优化策略
+## 二、优化策略 {#optimization-strategies}
 
-### 1. 减少首屏加载文件资源体积
+### 1. 减少首屏加载文件资源体积 {#reduce-resource-size}
 
 1. **优化图片**：使用合适的图片格式（如 WebP），并对图片进行压缩。确保图片尺寸适合其显示区域，不要使用过大的图片。​
 2. **延迟加载**：使用懒加载（lazy loading）技术，只有在用户滚动到特定区域时才加载相关资源。​
@@ -47,9 +47,9 @@ description: 深入讲解前端首屏性能优化策略，包括性能指标（F
 7. **压缩文本资源**：启用 Gzip 或 Brotli 压缩，减少 HTML、CSS 和 JavaScript 文件的体积。​
 8. **服务端渲染和静态生成**：使用服务端渲染或静态生成技术，减少客户端渲染的压力。
 
-### 2. 预加载主要内容
+### 2. 预加载主要内容 {#preload-main-content}
 
-#### 2.1 使用 `<link rel="preload">` 标签
+#### 2.1 使用 `<link rel="preload">` 标签 {#preload-link}
 
 - 预加载关键资源如字体、图片、CSS 和 JavaScript 文件
 - 示例:
@@ -61,7 +61,7 @@ description: 深入讲解前端首屏性能优化策略，包括性能指标（F
   <link rel="preload" href="fonts/myfont.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
   ```
 
-#### 2.2 优先加载关键 CSS
+#### 2.2 优先加载关键 CSS {#critical-css}
 
 - 将关键 CSS 直接嵌入到 HTML 文件的头部，减少首次渲染的阻塞
 - 示例:
@@ -73,7 +73,7 @@ description: 深入讲解前端首屏性能优化策略，包括性能指标（F
   </style>
   ```
 
-#### 2.3 异步加载和延迟加载 JavaScript
+#### 2.3 异步加载和延迟加载 JavaScript {#async-defer-js}
 
 - 使用 `async` 或 `defer` 属性来加载非关键的 JavaScript 文件，避免阻塞 HTML 解析
 - 示例:
@@ -82,7 +82,7 @@ description: 深入讲解前端首屏性能优化策略，包括性能指标（F
   <script src="scripts/main.js" defer></script>
   ```
 
-#### 2.4 预加载字体
+#### 2.4 预加载字体 {#preload-fonts}
 
 - 通过预加载字体资源，避免首次渲染时的字体闪烁（FOIT）
 - 示例:
@@ -91,7 +91,7 @@ description: 深入讲解前端首屏性能优化策略，包括性能指标（F
   <link rel="preload" href="fonts/myfont.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
   ```
 
-#### 2.5 预加载关键图片
+#### 2.5 预加载关键图片 {#preload-images}
 
 - 对于首屏关键图片，可以使用预加载标签提前加载，确保它们尽快显示
 - 示例:
@@ -100,7 +100,7 @@ description: 深入讲解前端首屏性能优化策略，包括性能指标（F
   <link rel="preload" href="images/main-image.jpg" as="image" />
   ```
 
-#### 2.6 使用 HTTP/2
+#### 2.6 使用 HTTP/2 {#http2}
 
 - 如果服务器支持 HTTP/2，可以配置服务器在客户端请求 HTML 时推送关键资源
 - 示例:
@@ -112,14 +112,14 @@ description: 深入讲解前端首屏性能优化策略，包括性能指标（F
   }
   ```
 
-### 3. 预渲染(SSG)
+### 3. 预渲染(SSG) {#ssg}
 
 可参考 2 个预渲染库
 
 1. [vite-prerender-plugin](https://github.com/preactjs/vite-prerender-plugin)
 2. [Vite SSG](https://github.com/antfu-collective/vite-ssg)
 
-### 4. 服务端渲染(SSR)
+### 4. 服务端渲染(SSR) {#ssr}
 
 SSR 的优势
 性能优化:
@@ -138,7 +138,7 @@ SEO 友好:
 在慢网络环境下表现更好
 即使 JavaScript 失效也能显示内容
 
-## SSG 和 SSR 的区别
+## SSG 和 SSR 的区别 {#ssg-vs-ssr}
 
 1. SSG 示例场景：
    > 博客网站 → 构建时生成所有文章页面 → 部署到 CDN

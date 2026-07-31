@@ -3,13 +3,13 @@ title: AI 工具配置
 description: Claude Code 配置指南，包含环境变量设置、全局提示词和子代理配置
 ---
 
-# AI 工具配置
+# AI 工具配置 {#ai-tools-config}
 
-## Claude Code <Badge type="tip" text="版本: 2.0.49" />
+## Claude Code <Badge type="tip" text="版本: 2.0.49" /> {#claude-code}
 
 这个是我目前(2025 年 10 月 7 日)最常用的 AI 辅助工具,可以在[LinuxDo](https://linux.do/)蹲守到不错的公益站来白嫖 Claude
 
-### 配置文件
+### 配置文件 {#configuration-file}
 
 配置 Claude Code 的方法有很多中,比如在 claude 的配置文件里配置 key 和 url,不过我更喜欢在终端的配置文件里注入环境配置方式来实现
 
@@ -46,7 +46,7 @@ export ANTHROPIC_BASE_URL="https://open.bigmodel.cn/api/anthropic"
 
 :::
 
-### 全局提示词
+### 全局提示词 {#global-prompt}
 
 全局提示词的位置:
 
@@ -121,7 +121,7 @@ export ANTHROPIC_BASE_URL="https://open.bigmodel.cn/api/anthropic"
 
 ```
 
-### 子代理
+### 子代理 {#sub-agents}
 
 > [!tip] 提示
 > 当前子代理的是 Claude code 独有的功能, genmini、codex、qwencli 之类好像都没出这个功能

@@ -3,9 +3,9 @@ title: OXC —— 下一代 JS 工具链：oxlint + oxfmt 配置指南
 description: 用 Rust 编写的超高速 JS 工具链，oxlint 比 ESLint 快 50-100 倍，oxfmt 比 Prettier 快 30 倍。零依赖、700+ 规则开箱即用
 ---
 
-# OXC —— 下一代 JS 工具链
+# OXC —— 下一代 JS 工具链 {#oxc-lint-fmt}
 
-## 为什么你需要了解 OXC
+## 为什么你需要了解 OXC {#why-oxc}
 
 如果你已经被 ESLint 的扁平化配置搞得头昏脑涨，或者受够了 Prettier 在大项目中的龟速格式化，那 OXC 就是为你准备的。
 
@@ -15,7 +15,7 @@ description: 用 Rust 编写的超高速 JS 工具链，oxlint 比 ESLint 快 50
 
 ---
 
-## OXC 是什么
+## OXC 是什么 {#what-is-oxc}
 
 OXC（Oxidation Compiler）是一个用 **Rust** 编写的 JavaScript 工具集合，由 Boshen（前阿里巴巴工程师）创建，目前已积累 **21K+ GitHub Stars**。
 
@@ -32,9 +32,9 @@ OXC（Oxidation Compiler）是一个用 **Rust** 编写的 JavaScript 工具集�
 
 ---
 
-## oxlint —— 比 ESLint 快两个数量级的 Linter
+## oxlint —— 比 ESLint 快两个数量级的 Linter {#oxlint}
 
-### 核心优势
+### 核心优势 {#oxlint-core-advantages}
 
 | 对比项         | oxlint                                 | ESLint                          |
 | -------------- | -------------------------------------- | ------------------------------- |
@@ -45,7 +45,7 @@ OXC（Oxidation Compiler）是一个用 **Rust** 编写的 JavaScript 工具集�
 | **依赖数**     | **0**（单一二进制文件）                | 十几到几十个包                  |
 | **配置格式**   | `.oxlintrc.json` 或 `oxlint.config.ts` | `eslint.config.js`（扁平化）    |
 
-### 内置插件一览
+### 内置插件一览 {#oxlint-builtin-plugins}
 
 oxlint 的内置插件不需要安装，直接在配置中开即可：
 
@@ -66,7 +66,7 @@ oxlint 的内置插件不需要安装，直接在配置中开即可：
 > [!tip]
 > **和 ESLint 不同的是**：oxlint 无需安装任何 npm 包来扩展规则——所有插件的规则都编译进了二进制文件，启用插件只是在配置里写个名字的事。
 
-### 安装
+### 安装 {#oxlint-installation}
 
 ```shell
 pnpm add -D oxlint
@@ -74,7 +74,7 @@ pnpm add -D oxlint
 
 > 就这么一个包，没有 `-w`、没有 monorepo 特殊处理、没有 `@typescript-eslint/*` 那一串。
 
-### 配置
+### 配置 {#oxlint-configuration}
 
 在项目根目录创建 `.oxlintrc.json`：
 
@@ -141,7 +141,7 @@ export default defineConfig({
 });
 ```
 
-### CLI 使用
+### CLI 使用 {#oxlint-cli}
 
 ```shell
 # 直接运行（零配置，默认就有效果）
@@ -168,9 +168,9 @@ npx oxlint --init
 
 ---
 
-## oxfmt —— 比 Prettier 快 30 倍的 Formatter
+## oxfmt —— 比 Prettier 快 30 倍的 Formatter {#oxfmt}
 
-### 核心优势
+### 核心优势 {#oxfmt-core-advantages}
 
 | 对比项                | oxfmt                            | Prettier |
 | --------------------- | -------------------------------- | -------- |
@@ -181,13 +181,13 @@ npx oxlint --init
 | **printWidth 默认值** | **100**                          | 80       |
 | **Prettier 插件**     | 不支持（计划中）                 | 支持     |
 
-### 安装
+### 安装 {#oxfmt-installation}
 
 ```shell
 pnpm add -D oxfmt
 ```
 
-### 配置
+### 配置 {#oxfmt-configuration}
 
 ```jsonc
 // .oxfmtrc.json
@@ -230,7 +230,7 @@ export default defineConfig({
 });
 ```
 
-### CLI 使用
+### CLI 使用 {#oxfmt-cli}
 
 ```shell
 # 格式化所有文件
@@ -251,9 +251,9 @@ npx oxfmt --init
 
 ---
 
-## 从 ESLint / Prettier 迁移
+## 从 ESLint / Prettier 迁移 {#migration}
 
-### 自动化迁移工具
+### 自动化迁移工具 {#auto-migration-tools}
 
 oxlint 官方提供了迁移工具：
 
@@ -275,7 +275,7 @@ oxfmt 支持从 Prettier 配置直接转换：
 npx oxfmt --migrate prettier
 ```
 
-### 渐进式迁移策略
+### 渐进式迁移策略 {#gradual-migration}
 
 不放心可以先用着 ESLint，用 `eslint-plugin-oxlint` 在 ESLint 中禁用已被 oxlint 覆盖的规则：
 
@@ -293,7 +293,7 @@ export default [
 
 ---
 
-## 添加到 package.json
+## 添加到 package.json {#package-json-scripts}
 
 ```json
 {
@@ -308,7 +308,7 @@ export default [
 
 ---
 
-## Vite 项目集成（vite-plus）
+## Vite 项目集成（vite-plus） {#vite-plus-integration}
 
 如果你使用的是 **vite-plus**（基于 Rolldown 的打包工具），OXC 已经深度集成到构建工具链中。本项目 `vite.config.ts` 中的配置即是一例：
 
@@ -338,9 +338,9 @@ export default defineConfig({
 
 ---
 
-## 编辑器设置
+## 编辑器设置 {#editor-setup}
 
-### VS Code
+### VS Code {#vs-code}
 
 安装 **[OXC VS Code 扩展](https://marketplace.visualstudio.com/items?itemName=oxc.oxc-vscode)**（搜索 `oxc`）：
 
@@ -372,14 +372,14 @@ export default defineConfig({
 
 ---
 
-## 插件周下载量（2026年4月）
+## 插件周下载量（2026年4月） {#plugin-downloads}
 
 - [oxlint](https://www.npmjs.com/package/oxlint): 5,300,000+
 - [oxfmt](https://www.npmjs.com/package/oxfmt): 4,100,000+
 
 ---
 
-## 总结
+## 总结 {#summary}
 
 **什么时候该用 OXC？**
 
@@ -393,7 +393,7 @@ export default defineConfig({
 
 ---
 
-## 参考链接
+## 参考链接 {#references}
 
 - [OXC 官网](https://oxc.rs/)
 - [oxlint 配置文档](https://oxc.rs/docs/guide/usage/linter/config.html)
@@ -406,6 +406,6 @@ export default defineConfig({
 
 ---
 
-## 更新内容
+## 更新内容 {#changelog}
 
 - **2026年4月26日**：初版发布，基于 oxlint v1.61+ / oxfmt v0.46+

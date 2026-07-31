@@ -3,16 +3,16 @@ title: eslint 与 prettier 配置
 description: ESLint 9.x 和 Prettier 3.x 的完整配置指南，涵盖 Vue 和 React 项目
 ---
 
-# eslint 与 prettier 配置
+# eslint 与 prettier 配置 {#eslint-prettier-config}
 
 今天在群里又看到群友讨论 eslint 和 prettier 的配置, 感觉有必要写一篇博客记录一下, 顺便加深一下印象.
 
-## Eslint <Badge type="tip" text="^9.0.0" />
+## Eslint <Badge type="tip" text="^9.0.0" /> {#eslint-section}
 
 > [!tip] 提示
 > 文档介绍的 eslint 版本为 `^9.0.0`, **请注意教程的时效性**, 以官方文档为准.
 
-### Vue 系列
+### Vue 系列 {#vue-series}
 
 ::: code-group
 
@@ -139,7 +139,7 @@ export default defineConfigWithVueTs(
 
 :::
 
-### React 系列
+### React 系列 {#react-series}
 
 ::: code-group
 
@@ -153,7 +153,7 @@ export default defineConfigWithVueTs(
 
 :::
 
-## Prettier <Badge type="tip" text="^3.6.2" />
+## Prettier <Badge type="tip" text="^3.6.2" /> {#prettier-section}
 
 > [!tip] 提示
 > 文档介绍的 prettier 版本为 `^3.6.2`, **请注意教程的时效性**, 以官方文档为准.
@@ -191,9 +191,9 @@ const config = {
 export default config
 ```
 
-## 编辑器设置
+## 编辑器设置 {#editor-setup}
 
-### VSCode
+### VSCode {#vscode}
 
 需要安装的插件:
 

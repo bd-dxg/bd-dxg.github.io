@@ -3,7 +3,7 @@ title: '为什么已经有 VitePress 了，还需要 undocs？'
 description: '探讨 VitePress 与 undocs 的设计理念差异，理解为何已有成熟方案仍会出现新项目。'
 ---
 
-# 为什么已经有 VitePress 了，还需要 undocs？
+# 为什么已经有 VitePress 了，还需要 undocs？ {#why-undocs}
 
 ![](/imgs/1783565252.avif)
 
@@ -23,7 +23,7 @@ description: '探讨 VitePress 与 undocs 的设计理念差异，理解为何�
 
 为什么还要重新做一个类似的项目？
 
-## VitePress 已经很好用了
+## VitePress 已经很好用了 {#vitepress-is-good}
 
 如果你做过前端项目，大概率接触过 VitePress。
 
@@ -73,7 +73,7 @@ npm install xxx
 
 > 既然 VitePress 已经这么成熟了，为什么还要造一个类似的轮子？
 
-## 后来发现，两者解决的其实不是同一个问题
+## 后来发现，两者解决的其实不是同一个问题 {#different-problems}
 
 继续了解之后，我发现自己一开始的理解有偏差。
 
@@ -91,7 +91,7 @@ VitePress 和 undocs 虽然最终产物都是：
 
 **undocs 更偏向「代码生成文档」。**
 
-## VitePress：Markdown First
+## VitePress：Markdown First {#vitepress-markdown-first}
 
 ![](/imgs/1783565251.avif)
 VitePress 的核心对象是 Markdown。
@@ -128,7 +128,7 @@ options:
 
 如果项目 API 很多，维护成本会越来越高。
 
-## undocs：Code First
+## undocs：Code First {#undocs-code-first}
 
 ![](/imgs/1783565253.avif)
 而 undocs 面向的是另一类场景。
@@ -178,7 +178,7 @@ string
 
 ![](/imgs/1783565256.avif)
 
-## 为什么 UnJS 需要这样的工具？
+## 为什么 UnJS 需要这样的工具？ {#why-unjs-needs-it}
 
 这里就和 UnJS 自己的生态有关。
 
@@ -214,7 +214,7 @@ types.md
 
 所以自动生成 API 文档会更加合理。
 
-## 为什么不直接给 VitePress 加这些功能？
+## 为什么不直接给 VitePress 加这些功能？ {#why-not-extend-vitepress}
 
 这是我最开始另一个疑问。
 
@@ -243,7 +243,7 @@ undocs -> Code First
 
 有时候不是功能越多越好，而是定位越清晰越好。
 
-## 开源世界为什么总有“重复造轮子”？
+## 开源世界为什么总有"重复造轮子"？ {#why-reinvent-wheel}
 
 ![](/imgs/1783565254.avif)
 其实类似的问题非常多。
@@ -269,7 +269,7 @@ React 已经存在，为什么还有 Vue？
 | Webpack | 前端构建工具     | 解决大型项目复杂的模块打包问题          |
 | Vite    | 前端构建工具     | 通过现代 ESM 提升开发体验和启动速度     |
 
-## 最后的理解
+## 最后的理解 {#final-thoughts}
 
 这次了解 undocs 最大的收获其实不是认识了一个新工具。
 

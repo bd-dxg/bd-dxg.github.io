@@ -3,11 +3,11 @@ title: 关于 map 创建与性能优化的思考
 description: 深入探讨 Go 语言中 map 的创建方式与性能优化，理解 Go 的设计哲学
 ---
 
-# 关于 map 创建与性能优化的思考
+# 关于 map 创建与性能优化的思考 {#map-creation-and-performance}
 
 在学习 Go 语言的过程中，我发现了一些有趣的设计选择，引发了我对语言设计哲学的思考。本文以 `map` 的创建方式为例，记录我的学习心得。
 
-## 起因：一个简单的去重函数
+## 起因：一个简单的去重函数 {#origin}
 
 在实现字符串切片去重功能时，我看到了这样的代码：
 
@@ -26,25 +26,25 @@ func dedup(items []string) []string {
 }
 ```
 
-## 问题：为什么要用 make？
+## 问题：为什么要用 make？ {#why-use-make}
 
 我看到代码中使用了 `make(map[string]bool)`，于是我产生了一个疑问：**为什么要用 `make`？不用 `make` 也能创建 map 啊！**
 
 确实，Go 中创建 map 有多种方式：
 
-### 方式 1：使用 make 创建空 map
+### 方式 1：使用 make 创建空 map {#method-1-make}
 
 ```go
 seen := make(map[string]bool)
 ```
 
-### 方式 2：使用字面量创建空 map
+### 方式 2：使用字面量创建空 map {#method-2-literal}
 
 ```go
 seen := map[string]bool{}
 ```
 
-### 方式 3：使用字面量创建并初始化
+### 方式 3：使用字面量创建并初始化 {#method-3-init}
 
 ```go
 seen := map[string]bool{
@@ -55,7 +55,7 @@ seen := map[string]bool{
 
 前两种方式在功能上**完全等价**，那么为什么要有 `make` 这种写法呢？
 
-## 答案：性能优化的选项
+## 答案：性能优化的选项 {#performance-optimization}
 
 经过了解，`make` 的真正价值在于可以**指定初始容量**：
 
@@ -67,15 +67,15 @@ seen := make(map[string]bool)
 seen := make(map[string]bool, len(items))
 ```
 
-## 思考：这是 Go 的弊端吗？
+## 思考：这是 Go 的弊端吗？ {#is-this-a-go-weakness}
 
 到这里，我开始思考：**为什么需要开发者手动指定容量来优化性能？这不应该是编译器自动做的吗？**
 
-### 从理想角度看
+### 从理想角度看 {#ideal-perspective}
 
 开发者应该关注业务逻辑，底层的性能优化应该由编译器/运行时自动完成。这是现代编程语言的追求。
 
-### Go 的设计哲学
+### Go 的设计哲学 {#go-design-philosophy}
 
 Go 的设计定位是 **"简单 + 实用"**，而不是 **"自动化程度最高"**：
 
@@ -91,7 +91,7 @@ Go 团队认为：**简单性 > 自动化**
 - 如果编译器自动优化，会增加复杂性和不确定性
 - 给开发者简单的工具，让他们自己做决定
 
-### 对比其他语言
+### 对比其他语言 {#comparison-with-other-languages}
 
 不同语言在这方面的处理方式：
 
@@ -116,7 +116,7 @@ Map<String, Boolean> seen = new HashMap<>(16);  // 可不写容量
 let mut seen: HashMap<String, bool> = HashMap::with_capacity(100);
 ```
 
-## 实际影响
+## 实际影响 {#practical-impact}
 
 经过思考，我意识到：
 
@@ -124,7 +124,7 @@ let mut seen: HashMap<String, bool> = HashMap::with_capacity(100);
 2. **Go 的 map 扩容已经比较高效**：不需要过度担心
 3. **过早优化是万恶之源**：大多数情况用简单写法即可
 
-## Go 的取舍
+## Go 的取舍 {#go-tradeoffs}
 
 Go 让开发者自己选择：
 
@@ -144,7 +144,7 @@ seen := make(map[string]bool, len(items))
 | ✅ 调试容易   | ❌ 增加开发者的认知负担 |
 | ✅ 性能可控   | ❌ 不够"智能"           |
 
-## 结论
+## 结论 {#conclusion}
 
 这个问题反映了 Go 的设计哲学：
 
@@ -158,7 +158,7 @@ seen := make(map[string]bool, len(items))
 
 **但这确实是 Go 的一个"不够自动化"的地方**。如果你的团队更注重开发效率而非性能调优，这可能会成为一个痛点。
 
-## 建议
+## 建议 {#recommendations}
 
 在实际开发中：
 
@@ -166,7 +166,7 @@ seen := make(map[string]bool, len(items))
 2. **性能关键路径**：使用 `make(map[K]V, capacity)` 指定容量
 3. **不要过早优化**：先用简单写法，通过 profiling 确定瓶颈后再优化
 
-## 学习收获
+## 学习收获 {#learnings}
 
 通过这个小小的 map 创建方式，我学到了：
 

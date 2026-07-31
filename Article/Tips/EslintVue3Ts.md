@@ -3,7 +3,7 @@ title: Vue3+TS ESLint 配置指南
 description: Vue3 + TypeScript 项目 ESLint 配置方案，整合 Vue 官方规则与 TS 类型检查
 ---
 
-# Vue3+TS ESLint 配置指南
+# Vue3+TS ESLint 配置指南 {#eslint-vue3-ts}
 
 之前的文章:
 
@@ -25,7 +25,7 @@ AI相关配置:
 
 言归正传, 今天分享Vue3+TS相关的eslint配置
 
-## 现代插件介绍
+## 现代插件介绍 {#modern-plugins}
 
 | 包名                          | 主要作用                                                                                             |
 | ----------------------------- | ---------------------------------------------------------------------------------------------------- |
@@ -37,7 +37,7 @@ AI相关配置:
 | eslint-plugin-unused-imports  | 目前最好用的「检测 + 自动删除」未使用 import 的插件, 比 ESLint 内置 no-unused-vars 快 10 倍、准 100% |
 | eslint-plugin-perfectionist   | 超级强大的 import、export、对象属性、class、member 排序插件, 支持自然排序、分组、自定义顺序          |
 
-## 安装
+## 安装 {#installation}
 
 如果你已经安装了 TS 的 eslint 规则插件,执行以下命令:
 
@@ -54,7 +54,7 @@ pnpm add -D eslint eslint-plugin-perfectionist eslint-plugin-unused-imports esli
 > [!tip]提示
 > 看着是有点多,但都是**开发依赖**,不会打包进最终构建项目
 
-## 配置
+## 配置 {#configuration}
 
 项目根目录创建 `eslint.config.ts`
 
@@ -163,21 +163,21 @@ export default defineConfigWithVueTs(
 
 `target` 可以按需求自行修改,**关键点是 `include` 要把这些包含进去**, 不然配置文件会遇到ts警告
 
-## 插件周下载量
+## 插件周下载量 {#plugin-downloads}
 
 - [@vue/eslint-config-prettier](https://www.npmjs.com/package/@vue/eslint-config-prettier?activeTab=versions):336,898
 - [@vue/eslint-config-typescript](https://www.npmjs.com/package/@vue/eslint-config-typescript):491,247
 - [eslint-plugin-vue](https://www.npmjs.com/package/eslint-plugin-vue): 4,515,034
 
-## 更新内容
+## 更新内容 {#changelog}
 
-### 2026年1月1日
+### 2026年1月1日 {#2026-01-01}
 
 - 新增`@vue/eslint-config-prettier`和`@vue/eslint-config-typescript`库
 - 移除了 `eslint-plugin-import`、`eslint-plugin-unicorn`、`eslint-import-resolver-typescript`、`typescript-eslint`和`@eslint/js`
 - **更简洁**：从 150 行减少到 67 行
 - **更易维护**：使用 Vue 官方推荐的 `defineConfigWithVueTs`
 
-### 2025年12月13日
+### 2025年12月13日 {#2025-12-13}
 
 - 将 vue 的 eslint 规则由 `flat/recommended` 降级为 `flat/essential`,因为前者保留了大量格式化规则, 与 prettier 造成冲突
