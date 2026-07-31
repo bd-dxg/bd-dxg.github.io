@@ -12,7 +12,7 @@ hero:
 features:
   - title: 我的 Pi 扩展与Skills集合笔记
     details: 介绍Pi终端的扩展、Skills 配置与美化方案
-    link: /Lives/ThingsINoLongerDo
+    link: /Tips/myPiOption
   - title: 认知投降
     details: 探讨软件工程师如何在使用AI时保持独立思考
     link: /Lives/CognitiveSurrender
