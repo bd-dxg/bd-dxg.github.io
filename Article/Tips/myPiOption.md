@@ -50,11 +50,42 @@ pi 并不是一个开箱即用的工具, 而是**需要手动去配置**合适�
 
 国外御三家,国内智谱,小米,deepseek,kimi,miniMax都支持,还有更多就不一一列举了
 
-如果你使用中转站,则需要配置自定义提供商
+如果你使用中转站,则需要配置自定义模型,在`~/.pi/agent/models.json`
 
-## 功能插件 {#plugins}
+```json
+{
+  "providers": {
+    "ollama": {
+      // 字段可修改为中转站名称,方便识别
+      "baseUrl": "http://localhost:11434/v1", // 填写中转站域名
+      "api": "openai-completions", // 一般不用修改
+      "apiKey": "ollama", // 填写生成的key
+      "models": [
+        {
+          "id": "llama3.1:8b", // 模型名字
+          "name": "Llama 3.1 8B (Local)", // 与上方相同
+          "reasoning": false, // 是否支持思考,不支持就是false,支持就选true
+          "input": ["text"],
+          "compat": {
+            "supportsReasoningEffort": true,
+            "supportsDeveloperRole": false // 部分模型不支持Developer,所以要关闭(可选配置)
+          },
+          "contextWindow": 128000, // 自行查询,现在模型都是1M了
+          "maxTokens": 32000, // 自行查询
+          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }
+        }
+      ]
+    }
+  }
+}
+```
 
-### 通知插件 {#notify-plugin}
+> [!warning]
+> 如果此处配置完毕, 则无需再配置扩展`custom-provider.ts`
+
+### 功能插件 {#plugins}
+
+#### 通知插件 {#notify-plugin}
 
 **安装**: `pi install npm:@pi-lab/notify`
 
@@ -64,7 +95,7 @@ pi 并不是一个开箱即用的工具, 而是**需要手动去配置**合适�
 
 https://github.com/anthod0/pi-lab/tree/main/packages/notify
 
-### MCP桥 {#mcp-bridge}
+#### MCP桥 {#mcp-bridge}
 
 不得不说, MCP还是很好用的, pi默认没有支持mcp, 需要安装插件来实现功能.
 
@@ -538,8 +569,6 @@ https://github.com/othmanadi/planning-with-files
 | `themes`           | `pi install npm:@firstpick/pi-themes-bundle` | 主题合集包，提供多套预设配色方案，安装后可通过 `/settings`进入选项后,输入`theme` 命令切换                                                                                       |
 | `pi-rounded-tools` | `pi install npm:pi-rounded-tools`            | 给内置工具（read/write/edit/bash/grep/find/ls）的调用结果加上圆角边框，用 `╭ ╮ ╰ ╯ ─ │` 勾勒，无左侧色条、无主题匹配，仅圆角；边框颜色跟随 `theme.fg("border", ...)` 自适应主题 |
 
-
 因为考虑到阅读体验,扩展部分没有展示完整的代码,我已经把自己的pi的配置上传到了新建的仓库,供大家参考!
 
 https://github.com/bd-dxg/my-pi
-
