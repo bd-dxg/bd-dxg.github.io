@@ -1,4 +1,9 @@
-# 程序员友好的 Skills
+---
+title: 程序员友好的 Skills
+description: 分享程序员友好的 AI Agent Skill 仓库，推荐 10 个提升开发效率的实用技能。
+---
+
+# 程序员友好的 Skills {#friendly-skills}
 
 最近一段时间，我一直在折腾 AI Agent, 甚至糊了个MCP出来, 这里先不多讲, 因为功能还不完善,有机会继续分享
 
@@ -20,7 +25,7 @@
 
 今天分享一下我目前比较推荐的一些 Skill。
 
-## 什么是 Skill？
+## 什么是 Skill？ {#what-is-skill}
 
 简单说一下(因为总有还在学习的伙伴)：
 
@@ -67,7 +72,7 @@ Skill 就是给 Agent(类似于Claude Code桌面端,Codex桌面端等,CLI也算)
 🔴 红色：
 我认为程序员非常值得使用
 
-## 1. code-review-expert：让 AI 成为你的代码审查专家
+## 1. code-review-expert：让 AI 成为你的代码审查专家 {#code-review-expert}
 
 > 源skill地址: https://github.com/sanyuan0704/sanyuan-skills/tree/main/skills/code-review-expert
 
@@ -106,7 +111,7 @@ Skill 就是给 Agent(类似于Claude Code桌面端,Codex桌面端等,CLI也算)
 
 它更像一个随时在线的高级工程师。
 
-## 2. planning-with-files：复杂任务规划神器
+## 2. planning-with-files：复杂任务规划神器 {#planning-with-files}
 
 > 来源:https://github.com/bd-dxg/skills/tree/main/planning-with-files
 
@@ -149,7 +154,7 @@ Agent 会：
 
 对于大型重构、功能开发特别有效, 受限于篇幅, 这个我就不截图演示了。
 
-## 3. skill-creator：创建 Skill 的 Skill
+## 3. skill-creator：创建 Skill 的 Skill {#skill-creator}
 
 > 源skill地址: https://github.com/anthropics/skills/tree/main/skills/skill-creator
 
@@ -178,7 +183,7 @@ Agent 会：
 
 这也是我维护这个仓库的原因。
 
-## 4. skill-monitor：让 Skill 保持更新
+## 4. skill-monitor：让 Skill 保持更新 {#skill-monitor}
 
 > 来源: https://github.com/bd-dxg/skills/tree/main/skill-monitor
 
@@ -201,7 +206,7 @@ Agent 会：
 
 让 Skill 仓库从「收藏夹」变成真正维护的工具集。
 
-## 5. find-skills：寻找 Skill 的 Skill
+## 5. find-skills：寻找 Skill 的 Skill {#find-skills}
 
 > 来源: https://github.com/vercel-labs/skills/tree/main/skills/find-skills
 
@@ -223,7 +228,7 @@ find-skills 就是解决这个问题。
 
 避免重复造轮子。
 
-## 6. pr-creator / pr-address-comments：GitHub 协作增强
+## 6. pr-creator / pr-address-comments：GitHub 协作增强 {#pr-creator-pr-address-comments}
 
 > 来源: https://github.com/google-gemini/gemini-cli/tree/main/.gemini/skills/pr-address-comments
 
@@ -243,7 +248,7 @@ find-skills 就是解决这个问题。
 
 让 Agent 参与完整开发流程。
 
-## 7. github-issue-creator：自动生成高质量 Issue
+## 7. github-issue-creator：自动生成高质量 Issue {#github-issue-creator}
 
 > 来源: https://github.com/google-gemini/gemini-cli/tree/main/.gemini/skills/github-issue-creator
 
@@ -265,7 +270,7 @@ find-skills 就是解决这个问题。
 
 ![](/imgs/1786126080.avif)
 
-## 8. add-frontmatter / add-anchor：文档工作流优化
+## 8. add-frontmatter / add-anchor：文档工作流优化 {#add-frontmatter-add-anchor}
 
 > 来源: https://github.com/bd-dxg/skills
 
@@ -275,13 +280,13 @@ find-skills 就是解决这个问题。
 
 这两个 Skill 主要解决文档自动化问题。
 
-### add-frontmatter
+### add-frontmatter {#add-frontmatter}
 
 自动补充 Markdown 元信息。方便分享的时候自定义显示标题和描述信息, 例如这样:
 
 ![](/imgs/1786126081.avif)
 
-### add-anchor
+### add-anchor {#add-anchor}
 
 自动添加英文锚点。使用前分享的url
 
@@ -295,7 +300,7 @@ find-skills 就是解决这个问题。
 
 看起来简单，但是大量文档维护时非常省时间。
 
-## 9. naming：中文变量命名助手
+## 9. naming：中文变量命名助手 {#naming}
 
 > 来源: https://github.com/bd-dxg/skills/tree/main/naming
 
@@ -313,7 +318,7 @@ find-skills 就是解决这个问题。
 
 这个 Skill 可以辅助生成更加符合工程习惯的命名。
 
-## 10. init-agents-md：初始化项目 AI 配置
+## 10. init-agents-md：初始化项目 AI 配置 {#init-agents-md}
 
 > 来源: https://github.com/bd-dxg/skills/tree/main/init-agents-md
 
@@ -327,7 +332,7 @@ find-skills 就是解决这个问题。
 
 让 AI 更了解你的项目。
 
-## 我的 AI 开发理念
+## 我的 AI 开发理念 {#my-ai-philosophy}
 
 整理这些 Skill 的过程中，我越来越确定一件事情：
 
@@ -337,7 +342,7 @@ find-skills 就是解决这个问题。
 
 这些才是真正属于你的资产。Skill 就像给 AI 培养出来的职业技能。
 
-## 写在最后
+## 写在最后 {#closing}
 
 这个仓库目前还在持续维护。
 

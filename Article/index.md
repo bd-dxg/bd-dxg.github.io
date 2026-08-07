@@ -14,7 +14,7 @@ features:
     details: 介绍Pi终端的扩展、Skills 配置与美化方案
     link: /Tips/myPiOption
   - title: 程序员友好的 Skills
-    details: 探讨软件工程师如何在使用AI时保持独立思考
+    details: 分享程序员友好的 10 个提升开发效率的skill
     link: /Tips/MySkillOption
   - title: 已经有 VitePress 了，还需要 undocs？
     details: 理解为何已有成熟方案仍会出现新项目
