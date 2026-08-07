@@ -212,5 +212,9 @@ export default {
       text: '关于Reasonix桌面端的使用体验报告',
       link: '/Tips/ReasonixGuide',
     },
+    {
+      text: '程序员友好的 Skills',
+      link: '/Tips/MySkillOption',
+    },
   ],
 }
