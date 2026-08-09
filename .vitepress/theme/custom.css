@@ -1,6 +1,6 @@
 :root {
   /* 设置代码块区域自定义字体 */
-  --vp-font-family-mono: "汉仪玛奇朵", ui-monospace !important;
+  --vp-font-family-mono: '汉仪玛奇朵', ui-monospace !important;
   /* 设置代码块区域字体大小 */
   --vp-code-font-size: 1.1rem;
   --darkreader-background-0060d4: #4a6e3b !important;
@@ -14,7 +14,7 @@
 }
 
 @property --num {
-  syntax: "<number>";
+  syntax: '<number>';
   inherits: false;
   initial-value: 0;
 }
@@ -23,11 +23,7 @@
 .VPDoc main strong {
   --num: 0;
   --deg: calc(var(--num) * 1deg);
-  background: linear-gradient(
-    120deg,
-    hsl(var(--deg), 70%, 60%) 30%,
-    hsl(calc(var(--deg) + 30deg), 70%, 60%)
-  );
+  background: linear-gradient(120deg, hsl(var(--deg), 70%, 60%) 30%, hsl(calc(var(--deg) + 30deg), 70%, 60%));
   font-weight: bold;
   color: transparent;
   background-clip: text;
@@ -101,7 +97,7 @@
 
   &:before {
     position: absolute;
-    content: "";
+    content: '';
     display: inline-block;
     top: -180px;
     left: 0;
@@ -153,7 +149,7 @@
 
 /* 添加首页背景 */
 .Layout:has(.VPHome) {
-  background-image: url("/imgs/1764343184722.avif");
+  background-image: url('/imgs/1764343184722.avif');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -211,7 +207,7 @@
     border-left: 4px solid var(--info-color);
     background: color-mix(in srgb, var(--info-color) 8%, var(--vp-c-bg));
     p.custom-block-title::before {
-      content: "ℹ️";
+      content: 'ℹ️';
     }
   }
   &.tip {
@@ -219,7 +215,7 @@
     border-left: 4px solid var(--info-color);
     background: color-mix(in srgb, var(--info-color) 8%, var(--vp-c-bg));
     p.custom-block-title::before {
-      content: "💗";
+      content: '💗';
     }
   }
   &.important {
@@ -227,7 +223,7 @@
     border-left: 4px solid var(--info-color);
     background: color-mix(in srgb, var(--info-color) 8%, var(--vp-c-bg));
     p.custom-block-title::before {
-      content: "📢";
+      content: '📢';
     }
   }
   &.warning {
@@ -235,7 +231,7 @@
     border-left: 4px solid var(--info-color);
     background: color-mix(in srgb, var(--info-color) 8%, var(--vp-c-bg));
     p.custom-block-title::before {
-      content: "⚠️";
+      content: '⚠️';
     }
   }
   &.caution {
@@ -243,7 +239,13 @@
     border-left: 4px solid var(--info-color);
     background: color-mix(in srgb, var(--info-color) 8%, var(--vp-c-bg));
     p.custom-block-title::before {
-      content: "🚫";
+      content: '🚫';
     }
   }
+}
+
+/* 给图片添加阴影 */
+.vp-doc img {
+  border-radius: 12px;
+  box-shadow: 0 25px 30px -12px rgba(0, 0, 0, 0.25);
 }
