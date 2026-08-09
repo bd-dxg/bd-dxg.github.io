@@ -216,5 +216,9 @@ export default {
       text: '程序员友好的 Skills',
       link: '/Tips/MySkillOption',
     },
+    {
+      text: '排查Pi不能用xxx公益站的问题',
+      link: '/Tips/FixPiNetwork',
+    },
   ],
 }

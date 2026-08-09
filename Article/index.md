@@ -16,7 +16,7 @@ features:
   - title: 程序员友好的 Skills
     details: 分享程序员友好的 10 个提升开发效率的skill
     link: /Tips/MySkillOption
-  - title: 已经有 VitePress 了，还需要 undocs？
-    details: 理解为何已有成熟方案仍会出现新项目
-    link: /Lives/WhyUndocs
+  - title: 排查Pi不能用xxx公益站的问题
+    details: 通过配置自定义UA成功解决403问题
+    link: /Tips/FixPiNetwork
 ---
