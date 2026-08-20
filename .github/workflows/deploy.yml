@@ -22,36 +22,40 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 检查仓库
-        uses: actions/checkout@v6.0.2
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0 # 如果未启用 lastUpdated，则不需要
       - name: 设置 pnpm 为包管理器
-        uses: pnpm/action-setup@v5.0.0 # 如果使用 pnpm，请取消此区域注释
-      - name: 安装Node
-        uses: actions/setup-node@v6.3.0
+        uses: pnpm/setup@v2
         with:
-          node-version: 25
+          version: 11
+          cache: true
+          install: false
+      - name: 安装Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 26
           cache: pnpm
       - name: 安装依赖
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
       - name: 打包网页
         run: pnpm build
         env:
           VITE_GITALK_CLIENT_ID: ${{ secrets.GITALK_CLIENT_ID }}
           VITE_GITALK_CLIENT_SECRET: ${{ secrets.GITALK_CLIENT_SECRET }}
       - name: 发布到腾讯云
-        uses: easingthemes/ssh-deploy@v6.0.1
+        uses: easingthemes/ssh-deploy@v6
         env:
           # 私钥
           SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
           # SCP参数
-          ARGS: '-avzrc --delete'
+          ARGS: "-avzrc --delete"
           # 源目录（末尾的斜杠表示复制目录内容而非目录本身）
-          SOURCE: '.vitepress/dist/'
+          SOURCE: ".vitepress/dist/"
           # 服务器ip
           REMOTE_HOST: ${{ secrets.REMOTE_TXHOST }}
           # 用户
-          REMOTE_USER: 'root'
+          REMOTE_USER: "root"
           REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
           # 目标地址
-          TARGET: '/opt/1panel/www/sites/bddxg.top/index'
+          TARGET: "/opt/1panel/www/sites/bddxg.top/index"

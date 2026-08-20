@@ -17,21 +17,12 @@
     "sidebar:test": "node scripts/test-sidebar.js"
   },
   "devDependencies": {
-    "@types/node": "^24.12.2",
+    "@types/node": "^24.13.3",
     "typescript": "^5.9.3",
-    "vite": "^8.1.5",
-    "vite-plus": "latest",
+    "vite": "^8.2.1",
     "vitepress": "2.0.0-alpha.18",
-    "vitepress-plugin-group-icons": "^1.7.5",
+    "vitepress-plugin-group-icons": "^1.7.6",
     "vitepress-plugin-rss": "^0.4.4",
-    "vue": "^3.5.33"
-  },
-  "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "version": "11.8.0",
-      "onFail": "download"
-    }
-  },
-  "packageManager": "pnpm@11.8.0"
+    "vue": "^3.5.41"
+  }
 }
