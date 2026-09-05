@@ -16,7 +16,7 @@ features:
   - title: 程序员友好的 Skills
     details: 分享程序员友好的 10 个提升开发效率的skill
     link: /Tips/MySkillOption
-  - title: 排查Pi不能用xxx公益站的问题
-    details: 通过配置自定义UA成功解决403问题
-    link: /Tips/FixPiNetwork
+  - title: bili-danmu
+    details: 轻量 B 站弹幕助手
+    link: /MyProject/bili-danmu
 ---

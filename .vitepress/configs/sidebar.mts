@@ -221,4 +221,10 @@ export default {
       link: '/Tips/FixPiNetwork',
     },
   ],
+  '/MyProject/':[
+      {
+      text: 'bili弹幕助手',
+      link: '/MyProject/bili-danmu',
+    },
+  ]
 }
