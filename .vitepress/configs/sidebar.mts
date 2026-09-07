@@ -154,6 +154,10 @@ export default {
       text: '做通用服务的一些感悟',
       link: '/Lives/CommonServiceInsights',
     },
+    {
+      text: '神奇的首页404事件',
+      link: '/Lives/MysteriousHomepage404',
+    }
   ],
   '/Tips/': [
     {
